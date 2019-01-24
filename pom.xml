@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.vartime.easy</groupId>
+    <artifactId>easy</artifactId>
+    <packaging>pom</packaging>
+    <version>${revision}</version>
+    <modules>
+        <module>easy-dependencies</module>
+        <module>easy-parent</module>
+        <module>easy-framework</module>
+        <module>easy-commons</module>
+        <module>easy-spring-boot-starters</module>
+    </modules>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <revision>1.0.0-SNAPSHOT</revision>
+        <nexus.release.url>http://nexus.shishike.com/nexus/content/repositories/releases/</nexus.release.url>
+        <nexus.snapshot.url>http://nexus.shishike.com/nexus/content/repositories/snapshots/</nexus.snapshot.url>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>default</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>release</id>
+            <properties>
+                <revision>1.0.0-RELEASE</revision>
+            </properties>
+        </profile>
+    </profiles>
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <url>${nexus.release.url}</url>
+            <layout>default</layout>
+        </repository>
+        <snapshotRepository>
+            <id>nexussnapshots</id>
+            <url>${nexus.snapshot.url}</url>
+            <layout>default</layout>
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>
