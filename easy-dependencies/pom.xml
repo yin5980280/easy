@@ -18,7 +18,7 @@
         <spring-cloud.version>Finchley.SR1</spring-cloud.version>
         <druid.spring.boot.starter.version>1.1.10</druid.spring.boot.starter.version>
         <commons-lang3.version>3.4</commons-lang3.version>
-        <commons-compress.version>1.17</commons-compress.version>
+        <commons-compress.version>1.18</commons-compress.version>
         <commons-collections4.version>4.0</commons-collections4.version>
         <commons.io.version>2.4</commons.io.version>
         <commons-beanutils.version>1.9.2</commons-beanutils.version>
