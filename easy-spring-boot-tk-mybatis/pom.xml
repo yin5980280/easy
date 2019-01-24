@@ -10,12 +10,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>easy-framework</artifactId>
+    <artifactId>easy-spring-boot-tk-mybatis</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>com.vartime.easy</groupId>
-            <artifactId>easy-commons</artifactId>
+            <artifactId>easy-framework</artifactId>
         </dependency>
     </dependencies>
 
