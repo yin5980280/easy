@@ -79,6 +79,18 @@
             </dependency>
 
             <dependency>
+                <groupId>com.vartime.easy</groupId>
+                <artifactId>easy-spring-boot-tk-mybatis</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.vartime.easy</groupId>
+                <artifactId>easy-tk-mybatis-spring-boot-starter</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>

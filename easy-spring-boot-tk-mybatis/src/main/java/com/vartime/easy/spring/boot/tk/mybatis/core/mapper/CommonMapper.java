@@ -11,7 +11,7 @@ import tk.mybatis.mapper.common.RowBoundsMapper;
  * 自定义通用 Mapper
  *
  * @param <T>
- * @author trang
+ * @author panda
  */
 public interface CommonMapper<T> extends
         BaseMapper<T>,

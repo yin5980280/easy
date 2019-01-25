@@ -20,7 +20,7 @@ import tk.mybatis.mapper.entity.Example;
 /**
  * BaseService 实现类
  *
- * @author trang
+ * @author Panda
  */
 public abstract class AbstractBaseService<T> implements BaseService<T> {
 
@@ -140,7 +140,7 @@ public abstract class AbstractBaseService<T> implements BaseService<T> {
 
     @Override
     public List<T> selectAll() {
-        return mapper.select(null);
+        return mapper.selectAll();
     }
 
     @Override

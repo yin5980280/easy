@@ -11,7 +11,7 @@ import tk.mybatis.mapper.entity.Example;
 /**
  * BaseService，包含常用的单表操作
  *
- * @author trang
+ * @author panda
  */
 public interface BaseService<T> {
 
