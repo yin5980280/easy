@@ -24,6 +24,11 @@
         <commons-beanutils.version>1.9.2</commons-beanutils.version>
         <lombok.version>1.18.2</lombok.version>
         <modelmapper.version>2.3.2</modelmapper.version>
+        <bitwalker.version>1.19</bitwalker.version>
+        <tk.mybatis.version>2.1.2</tk.mybatis.version>
+        <swagger.version>2.9.2</swagger.version>
+        <kaptcha.version>2.3.2</kaptcha.version>
+        <pagehelper.boot.version>1.2.5</pagehelper.boot.version>
 
         <!-- maven -->
         <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
@@ -135,6 +140,44 @@
                 <groupId>com.github.drtrang</groupId>
                 <artifactId>druid-spring-boot2-actuator-starter</artifactId>
                 <version>${druid.spring.boot.starter.version}</version>
+            </dependency>
+
+            <!-- 解析客户端操作系统、浏览器等 -->
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>27.0-jre</version>
+            </dependency>
+
+            <dependency>
+                <groupId>eu.bitwalker</groupId>
+                <artifactId>UserAgentUtils</artifactId>
+                <version>${bitwalker.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-spring-boot-starter</artifactId>
+                <version>${tk.mybatis.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper.boot.version}</version>
+            </dependency>
+
+            <!-- swagger2-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
