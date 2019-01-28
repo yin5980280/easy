@@ -98,5 +98,5 @@ fabric.properties
 hs_err_pid*
 
 **.iml
-*/.flattened-pom.xml
+**/.flattened-pom.xml
 

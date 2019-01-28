@@ -12,6 +12,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>easy-tk-mybatis-spring-boot-starter</module>
+        <module>easy-swagger-spring-boot-starter</module>
     </modules>
     <artifactId>easy-spring-boot-starters</artifactId>
 

@@ -33,6 +33,10 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.vartime.easy</groupId>
+            <artifactId>easy-swagger-spring-boot-starter</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

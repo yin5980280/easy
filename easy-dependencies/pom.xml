@@ -91,6 +91,12 @@
             </dependency>
 
             <dependency>
+                <groupId>com.vartime.easy</groupId>
+                <artifactId>easy-swagger-spring-boot-starter</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
