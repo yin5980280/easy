@@ -48,6 +48,7 @@ public class BaseLogicEntity extends BaseObject {
     @Column(name = "server_create_time", columnDefinition = "TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '系统创建时间'")
     @Temporal(TemporalType.TIMESTAMP)
     @JsonSerialize(using = JsonDateSerialize.class)
+    @ApiModelProperty(value = "系统创建时间", example = "2019-01-28 10:10:10")
     private Date serverCreateTime;
 
     /**
@@ -56,17 +57,20 @@ public class BaseLogicEntity extends BaseObject {
     @Column(name = "server_update_time", columnDefinition = "TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '系统更新时间'")
     @Temporal(TemporalType.TIMESTAMP)
     @JsonSerialize(using = JsonDateSerialize.class)
+    @ApiModelProperty(value = "系统更新时间", example = "2019-01-28 10:10:10")
     private Date serverUpdateTime;
 
     /**
      * 操作者
      */
     @Column(name = "operating", columnDefinition = "VARCHAR(32) NULL DEFAULT '' COMMENT '操作人'")
+    @ApiModelProperty(value = "操作人", example = "成都熊猫")
     private String operating;
 
     /**
      * 是否是可用数据
      */
     @Column(name = "usable", columnDefinition = "TINYINT(1) NOT NULL DEFAULT true COMMENT '是否可用'")
+    @ApiModelProperty(value = "是否可用", example = "true")
     private Boolean usable = true;
 }
