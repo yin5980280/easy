@@ -1,6 +1,6 @@
 package com.vartime.easy.spring.boot.converter;
 
-import com.vartime.easy.spring.boot.response.Response;
+import com.vartime.easy.commons.base.Response;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpOutputMessage;
