@@ -11,13 +11,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.OrderBy;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import tk.mybatis.mapper.annotation.Order;
 
 /**
  * @author : yinlin
@@ -39,7 +39,7 @@ public class BaseLogicEntity extends BaseObject {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", columnDefinition = "bigint(20) COMMENT '主键ID,自动生成'")
     @ApiModelProperty(value = "主键编号", example = "1")
-    @OrderBy("DESC")
+    @Order(value = "DESC")
     private Long id;
 
     /**
