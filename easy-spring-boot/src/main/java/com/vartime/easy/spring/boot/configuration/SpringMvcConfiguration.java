@@ -13,6 +13,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
@@ -47,8 +48,15 @@ public class SpringMvcConfiguration {
     }
 
     @Bean
+    @ConditionalOnMissingBean
     public HttpMessageConverters fastJsonHttpMessageConverters() {
-        return new HttpMessageConverters(new GlobalMessageConverter());
+        return new HttpMessageConverters(converter());
+    }
+
+    @Bean
+    @ConditionalOnMissingBean
+    public MappingJackson2HttpMessageConverter converter() {
+        return new GlobalMessageConverter();
     }
 
 }

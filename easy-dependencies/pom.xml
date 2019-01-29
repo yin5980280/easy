@@ -81,6 +81,12 @@
 
             <dependency>
                 <groupId>com.vartime.easy</groupId>
+                <artifactId>easy-spring-boot-starter-web</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.vartime.easy</groupId>
                 <artifactId>easy-spring-boot-tk-mybatis</artifactId>
                 <version>${revision}</version>
             </dependency>

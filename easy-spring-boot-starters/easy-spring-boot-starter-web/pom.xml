@@ -3,19 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>easy-parent</artifactId>
+        <artifactId>easy-spring-boot-starters</artifactId>
         <groupId>com.vartime.easy</groupId>
         <version>${revision}</version>
-        <relativePath>../easy-parent</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <packaging>pom</packaging>
-    <modules>
-        <module>easy-tk-mybatis-spring-boot-starter</module>
-        <module>easy-swagger-spring-boot-starter</module>
-        <module>easy-spring-boot-starter-web</module>
-    </modules>
-    <artifactId>easy-spring-boot-starters</artifactId>
 
+    <artifactId>easy-spring-boot-starter-web</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.vartime.easy</groupId>
+            <artifactId>easy-spring-boot</artifactId>
+        </dependency>
+    </dependencies>
 </project>
