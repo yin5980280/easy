@@ -19,39 +19,39 @@ import java.util.List;
  * @Company : KeRuYun Technology(Beijing) Chengdu Co. Ltd.
  * @link : com.vartime.easy.spring.boot.tk.mybatis.core.service.impl.AbstractBaseLogicService
  */
-public abstract class AbstractBaseLogicServiceImpl extends AbstractBaseServiceImpl<BaseLogicEntity> implements BaseLogicService {
+public abstract class AbstractBaseLogicServiceImpl<T extends BaseLogicEntity> extends AbstractBaseServiceImpl<T> implements BaseLogicService<T> {
 
     @Autowired
-    private CommonMapper<BaseLogicEntity> commonMapper;
+    private CommonMapper<T> commonMapper;
 
     @Override
-    public List<BaseLogicEntity> select(BaseLogicEntity param) {
+    public List<T> select(T param) {
         param.setUsable(true);
         return super.select(param);
     }
 
     @Override
-    public int delete(BaseLogicEntity param) {
+    public int delete(T param) {
         param.setUsable(false);
         return super.update(param);
     }
 
     @Override
-    public BaseLogicEntity selectByPk(Serializable pk) {
-        BaseLogicEntity entity = super.selectByPk(pk);
+    public T selectByPk(Serializable pk) {
+        T entity = super.selectByPk(pk);
         return entity != null && entity.getUsable() ? entity : null;
     }
 
     @Override
-    public List<BaseLogicEntity> selectAll() {
+    public List<T> selectAll() {
         BaseLogicEntity param = new BaseLogicEntity();
         param.setUsable(true);
-        return super.select(param);
+        return super.select((T) param);
     }
 
     @Override
-    public List<BaseLogicEntity> selectByPks(Iterable<? extends Serializable> pks) {
-        List<BaseLogicEntity> entities = super.selectByPks(pks);
+    public List<T> selectByPks(Iterable<? extends Serializable> pks) {
+        List<T> entities = super.selectByPks(pks);
         for (int i = entities.size() - 1; i >= 0; i --) {
             if (!entities.get(i).getUsable()) {
                 entities.remove(i);
@@ -61,19 +61,19 @@ public abstract class AbstractBaseLogicServiceImpl extends AbstractBaseServiceIm
     }
 
     @Override
-    public BaseLogicEntity selectOne(BaseLogicEntity param) {
+    public T selectOne(T param) {
         param.setUsable(true);
         return super.selectOne(param);
     }
 
     @Override
-    public PageInfo<BaseLogicEntity> selectPage(BaseLogicEntity param, int pageNum, int pageSize) {
+    public PageInfo<T> selectPage(T param, int pageNum, int pageSize) {
         param.setUsable(true);
         return super.selectPage(param, pageNum, pageSize);
     }
 
     @Override
-    public PageInfo<BaseLogicEntity> selectPageAndCount(BaseLogicEntity param, int pageNum,
+    public PageInfo<T> selectPageAndCount(T param, int pageNum,
             int pageSize) {
         param.setUsable(true);
         return super.selectPageAndCount(param, pageNum, pageSize);

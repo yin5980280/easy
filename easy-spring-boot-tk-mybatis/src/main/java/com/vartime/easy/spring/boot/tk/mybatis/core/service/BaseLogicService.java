@@ -11,5 +11,5 @@ import com.vartime.easy.spring.boot.tk.mybatis.core.entity.BaseLogicEntity;
  * @Company : KeRuYun Technology(Beijing) Chengdu Co. Ltd.
  * @link : com.vartime.easy.spring.boot.tk.mybatis.core.service.BaseLogicService
  */
-public interface BaseLogicService extends BaseService<BaseLogicEntity> {
+public interface BaseLogicService<T extends BaseLogicEntity> extends BaseService<T> {
 }

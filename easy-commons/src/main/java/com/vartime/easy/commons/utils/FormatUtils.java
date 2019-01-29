@@ -3,9 +3,6 @@ package com.vartime.easy.commons.utils;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
-import lombok.extern.slf4j.Slf4j;
-
-@Slf4j
 public class FormatUtils {
 
 	private static final DecimalFormat DECIMAL_FORMAT = new  DecimalFormat("#####0.00");
