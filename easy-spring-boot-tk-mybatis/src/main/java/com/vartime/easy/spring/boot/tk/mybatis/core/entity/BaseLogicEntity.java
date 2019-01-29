@@ -1,4 +1,4 @@
-package com.vartime.easy.spring.boot.tk.mybatis.web.model;
+package com.vartime.easy.spring.boot.tk.mybatis.core.entity;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.vartime.easy.commons.base.BaseObject;
@@ -25,7 +25,7 @@ import lombok.Data;
  * @Description :
  * @Copyright : Copyright (c) 2018
  * @Company : KeRuYun Technology(Beijing) Chengdu Co. Ltd.
- * @link : com.vartime.easy.spring.boot.tk.mybatis.web.model.BaseLogicEntity
+ * @link : com.vartime.easy.spring.boot.tk.mybatis.core.entity.BaseLogicEntity
  */
 @Data
 @ApiModel

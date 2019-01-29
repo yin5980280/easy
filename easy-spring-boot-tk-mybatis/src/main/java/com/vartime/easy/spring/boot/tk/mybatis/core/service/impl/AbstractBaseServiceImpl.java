@@ -22,7 +22,7 @@ import tk.mybatis.mapper.entity.Example;
  *
  * @author Panda
  */
-public abstract class AbstractBaseService<T> implements BaseService<T> {
+public abstract class AbstractBaseServiceImpl<T> implements BaseService<T> {
 
     @Autowired
     private CommonMapper<T> mapper;
