@@ -8,7 +8,10 @@ import com.vartime.easy.spring.boot.tk.mybatis.core.service.BaseLogicService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.Serializable;
+import java.lang.reflect.ParameterizedType;
 import java.util.List;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author : yinlin
@@ -19,14 +22,34 @@ import java.util.List;
  * @Company : KeRuYun Technology(Beijing) Chengdu Co. Ltd.
  * @link : com.vartime.easy.spring.boot.tk.mybatis.core.service.impl.AbstractBaseLogicService
  */
+@Slf4j
 public abstract class AbstractBaseLogicServiceImpl<T extends BaseLogicEntity> extends AbstractBaseServiceImpl<T> implements BaseLogicService<T> {
+
+    /**
+     * 创建一个Class的对象来获取泛型的class
+     */
+    private Class<?> clazz;
+
+    public Class<?> getClazz() {
+        if (clazz == null) {
+            //获取泛型的Class对象
+            if (this.getClass().getGenericSuperclass() instanceof ParameterizedType) {
+
+                clazz = ((Class<?>)
+                        (((ParameterizedType) (this.getClass().getGenericSuperclass())).getActualTypeArguments()[0]));
+            }
+        }
+        return clazz;
+    }
 
     @Autowired
     private CommonMapper<T> commonMapper;
 
     @Override
     public List<T> select(T param) {
-        param.setUsable(true);
+        if (param != null) {
+            param.setUsable(true);
+        }
         return super.select(param);
     }
 
@@ -44,9 +67,15 @@ public abstract class AbstractBaseLogicServiceImpl<T extends BaseLogicEntity> ex
 
     @Override
     public List<T> selectAll() {
-        BaseLogicEntity param = new BaseLogicEntity();
-        param.setUsable(true);
-        return super.select((T) param);
+        T param = null;
+        try {
+            param = (T) getClazz().newInstance();
+        } catch (InstantiationException e) {
+            log.warn(e.getMessage(), e);
+        } catch (IllegalAccessException e) {
+            log.warn(e.getMessage(), e);
+        }
+        return this.select(param);
     }
 
     @Override
