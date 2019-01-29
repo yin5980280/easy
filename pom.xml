@@ -15,6 +15,7 @@
         <module>easy-commons</module>
         <module>easy-spring-boot-starters</module>
         <module>easy-spring-boot-tk-mybatis</module>
+        <module>easy-spring-boot</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

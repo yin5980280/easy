@@ -27,6 +27,7 @@
         <bitwalker.version>1.19</bitwalker.version>
         <tk.mybatis.version>2.1.2</tk.mybatis.version>
         <swagger.version>2.9.2</swagger.version>
+        <swagger.bootstrap.ui.version>1.8.5</swagger.bootstrap.ui.version>
         <kaptcha.version>2.3.2</kaptcha.version>
         <pagehelper.boot.version>1.2.5</pagehelper.boot.version>
 
@@ -93,6 +94,12 @@
             <dependency>
                 <groupId>com.vartime.easy</groupId>
                 <artifactId>easy-swagger-spring-boot-starter</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.vartime.easy</groupId>
+                <artifactId>easy-spring-boot</artifactId>
                 <version>${revision}</version>
             </dependency>
 
@@ -196,6 +203,11 @@
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>swagger-bootstrap-ui</artifactId>
+                <version>${swagger.bootstrap.ui.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
