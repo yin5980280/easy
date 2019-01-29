@@ -2,10 +2,7 @@ package com.vartime.easy.spring.boot.tk.mybatis.core.service.impl;
 
 import com.github.pagehelper.PageInfo;
 import com.vartime.easy.spring.boot.tk.mybatis.core.entity.BaseLogicEntity;
-import com.vartime.easy.spring.boot.tk.mybatis.core.mapper.CommonMapper;
 import com.vartime.easy.spring.boot.tk.mybatis.core.service.BaseLogicService;
-
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
@@ -41,9 +38,6 @@ public abstract class AbstractBaseLogicServiceImpl<T extends BaseLogicEntity> ex
         }
         return clazz;
     }
-
-    @Autowired
-    private CommonMapper<T> commonMapper;
 
     @Override
     public List<T> select(T param) {
