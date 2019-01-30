@@ -3,9 +3,12 @@ package com.vartime.easy.commons.base;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import static com.vartime.easy.commons.base.Response.Status.FAILURE;
+import static com.vartime.easy.commons.base.Response.Status.SUCCESS;
+
 /**
  * Created by Panda on 2016/9/27.
- *
+ * @author yinlin
  * @version 1.0
  * @description com.vpay.exchange.base.Response
  */
@@ -23,7 +26,7 @@ public class Response<T> extends BaseObject {
     /**
      * 是否操作成功
      */
-    private boolean success = Status.SUCCESS;
+    private boolean success = SUCCESS;
 
     /**
      * 数据返回数据对象
@@ -57,7 +60,7 @@ public class Response<T> extends BaseObject {
     }
 
     public static Response build(Object data) {
-        return build(200, "请求成功", data, true);
+        return build(200, "请求成功", data, SUCCESS);
     }
 
     public static Response build(Integer code, String message, boolean success) {
@@ -65,19 +68,19 @@ public class Response<T> extends BaseObject {
     }
 
     public static Response buildSuccess() {
-        return build(200, null, true);
+        return build(200, null, SUCCESS);
     }
 
     public static Response buildSuccess(String message) {
-        return build(200, message, true);
+        return build(200, message, SUCCESS);
     }
 
     public static Response buildError() {
-        return build(500, null, false);
+        return build(500, null, FAILURE);
     }
 
     public static Response buildError(Integer code, String message) {
-        return build(code, message, false);
+        return build(code, message, FAILURE);
     }
 
     public interface Status {
@@ -87,6 +90,6 @@ public class Response<T> extends BaseObject {
     }
 
     public static Response buildError(String message) {
-        return build(500, message, false);
+        return build(500, message, FAILURE);
     }
 }
