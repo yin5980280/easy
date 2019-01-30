@@ -5,9 +5,12 @@ import com.vartime.easy.framework.utils.SpringUtils;
 import com.vartime.easy.spring.boot.converter.GlobalMessageConverter;
 import com.vartime.easy.spring.boot.converter.TextPlainMappingJackson2HttpMessageConverter;
 import com.vartime.easy.spring.boot.interceptor.ClientHttpRequestInterceptorImpl;
+import com.vartime.easy.spring.boot.interceptor.DefaultExceptionHandler;
+import com.vartime.easy.spring.boot.interceptor.ResponseBodyWrapFactoryBean;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
@@ -27,6 +30,7 @@ import java.util.List;
  */
 @Configuration
 @EnableAspectJAutoProxy
+@EnableConfigurationProperties(GlobalReturnValuePathProperties.class)
 public class SpringMvcConfiguration {
 
     @ConditionalOnMissingBean
@@ -64,4 +68,16 @@ public class SpringMvcConfiguration {
     public SpringUtils springUtils() {
         return new SpringUtils();
     }
+
+    @ConditionalOnMissingBean
+    @Bean
+    public DefaultExceptionHandler defaultExceptionHandler() {
+        return new DefaultExceptionHandler();
+    }
+
+    @Bean
+    public ResponseBodyWrapFactoryBean responseBodyWrapFactoryBean() {
+        return new ResponseBodyWrapFactoryBean();
+    }
+
 }

@@ -38,8 +38,12 @@ public class LoggingInterceptor extends HandlerInterceptorAdapter {
     @Override
     public void afterCompletion(HttpServletRequest request,
             HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        log.info("请求处理方法 [{}], 返回响应状态码 [{}], 该请求共花费时间 [{}] ms", handler.toString(),
-                    response.getStatus(), System.currentTimeMillis() - startTime.get());
-        startTime.remove();
+        if (ex == null) {
+            log.info("请求处理方法 [{}], 返回响应状态码 [{}], 该请求共花费时间 [{}] ms",
+                    handler.toString(),
+                    response.getStatus(),
+                    System.currentTimeMillis() - startTime.get());
+            startTime.remove();
+        }
     }
 }
