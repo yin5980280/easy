@@ -1,6 +1,7 @@
 package com.vartime.easy.spring.boot.configuration;
 
 
+import com.vartime.easy.framework.utils.SpringUtils;
 import com.vartime.easy.spring.boot.converter.GlobalMessageConverter;
 import com.vartime.easy.spring.boot.converter.TextPlainMappingJackson2HttpMessageConverter;
 import com.vartime.easy.spring.boot.interceptor.ClientHttpRequestInterceptorImpl;
@@ -59,4 +60,8 @@ public class SpringMvcConfiguration {
         return new GlobalMessageConverter();
     }
 
+    @Bean
+    public SpringUtils springUtils() {
+        return new SpringUtils();
+    }
 }
