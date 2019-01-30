@@ -1,5 +1,6 @@
 package com.vartime.easy.spring.boot.converter;
 
+import com.alibaba.fastjson.JSON;
 import com.vartime.easy.commons.base.Response;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -43,9 +44,16 @@ public class GlobalMessageConverter extends MappingJackson2HttpMessageConverter 
             return;
         }
         if (type instanceof Json || type instanceof Response) {
+            if (log.isDebugEnabled()) {
+                log.debug("接口返回数据结果[{}]", JSON.toJSONString(object));
+            }
             super.writeInternal(object, type, outputMessage);
             return;
         }
-        super.writeInternal(Response.build(object), Response.class, outputMessage);
+        Response res = Response.build(object);
+        if (log.isDebugEnabled()) {
+            log.debug("接口返回数据结果[{}]", JSON.toJSONString(res));
+        }
+        super.writeInternal(res, Response.class, outputMessage);
     }
 }
