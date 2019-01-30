@@ -28,15 +28,15 @@ public class Response<T> extends BaseObject {
     /**
      * 数据返回数据对象
      */
-    private T content;
+    private T data;
 
     /**
      * 错误消息
      */
     private String msg;
 
-    public Response(T content) {
-        this.content = content;
+    public Response(T data) {
+        this.data = data;
         this.code = Status.OK;
     }
 
@@ -44,20 +44,20 @@ public class Response<T> extends BaseObject {
         this.msg = message;
     }
 
-    public Response(Integer code, boolean success, T content) {
+    public Response(Integer code, boolean success, T data) {
         this.code = code;
         this.success = success;
-        this.content = content;
+        this.data = data;
     }
 
-    public static Response build(Integer code, String message, Object content, boolean success) {
-        Response response = new Response(code, success, content);
+    public static Response build(Integer code, String message, Object data, boolean success) {
+        Response response = new Response(code, success, data);
         response.setMsg(message);
         return response;
     }
 
-    public static Response build(Object content) {
-        return build(200, "请求成功", content, true);
+    public static Response build(Object data) {
+        return build(200, "请求成功", data, true);
     }
 
     public static Response build(Integer code, String message, boolean success) {
