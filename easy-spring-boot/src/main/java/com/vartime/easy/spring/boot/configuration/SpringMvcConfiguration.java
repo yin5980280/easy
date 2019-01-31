@@ -8,7 +8,6 @@ import com.vartime.easy.spring.boot.interceptor.ClientHttpRequestInterceptorImpl
 import com.vartime.easy.spring.boot.interceptor.DefaultExceptionHandler;
 import com.vartime.easy.spring.boot.interceptor.ResponseBodyWrapFactoryBean;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
@@ -35,12 +34,9 @@ import java.util.List;
 @EnableConfigurationProperties({GlobalReturnValuePathProperties.class, HttpConnectionProperties.class})
 public class SpringMvcConfiguration {
 
-    @Autowired
-    private HttpConnectionProperties httpConnectionProperties;
-
     @ConditionalOnMissingBean
     @Bean
-    ClientHttpRequestFactory clientHttpRequestFactory() {
+    ClientHttpRequestFactory clientHttpRequestFactory(HttpConnectionProperties httpConnectionProperties) {
         SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
         requestFactory.setConnectTimeout(httpConnectionProperties.getConnectionTimeOut());
         requestFactory.setReadTimeout(httpConnectionProperties.getReadTimeOut());

@@ -1,6 +1,7 @@
 package com.vartime.easy.spring.boot.configuration;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 
 import lombok.Data;
 
@@ -13,6 +14,7 @@ import lombok.Data;
  * @Company : KeRuYun Technology(Beijing) Chengdu Co. Ltd.
  * @link : com.vartime.easy.spring.boot.configuration.HttpConnectionProperties
  */
+@Configuration
 @ConfigurationProperties(prefix = "easy.http.connection")
 @Data
 public class HttpConnectionProperties {
