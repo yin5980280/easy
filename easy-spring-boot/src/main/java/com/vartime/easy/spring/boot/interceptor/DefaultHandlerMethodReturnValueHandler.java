@@ -2,7 +2,7 @@ package com.vartime.easy.spring.boot.interceptor;
 
 import com.alibaba.fastjson.JSON;
 import com.vartime.easy.commons.base.Response;
-import com.vartime.easy.framework.utils.SpringUtils;
+import com.vartime.easy.framework.utils.SpringApplicationUtils;
 import com.vartime.easy.spring.boot.configuration.GlobalReturnValuePathProperties;
 
 import org.apache.commons.lang3.ArrayUtils;
@@ -58,7 +58,7 @@ public class DefaultHandlerMethodReturnValueHandler implements HandlerMethodRetu
 
     private boolean needGlobal(Object returnValue, MethodParameter returnType, ModelAndViewContainer mavContainer, NativeWebRequest webRequest) {
         String uri = webRequest.getNativeRequest(HttpServletRequest.class).getServletPath();
-        GlobalReturnValuePathProperties pathProperties = SpringUtils.getBean(GlobalReturnValuePathProperties.class);
+        GlobalReturnValuePathProperties pathProperties = SpringApplicationUtils.getBean(GlobalReturnValuePathProperties.class);
         boolean need = true;
         if (pathProperties.getStartWith() != null && pathProperties.getStartWith().length > 0) {
             need = startWith(pathProperties.getStartWith(), uri);

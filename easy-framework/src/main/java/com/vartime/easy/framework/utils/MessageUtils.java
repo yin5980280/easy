@@ -16,7 +16,7 @@ public class MessageUtils {
      * @return
      */
     public static String message(String code, Object... args) {
-        MessageSource messageSource = SpringUtils.getBean(MessageSource.class);
+        MessageSource messageSource = SpringApplicationUtils.getBean(MessageSource.class);
         return messageSource.getMessage(code, args, null);
     }
 }

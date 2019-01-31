@@ -12,13 +12,13 @@ import org.springframework.stereotype.Component;
  * @author panda
  */
 @Component
-public final class SpringUtils implements BeanFactoryPostProcessor {
+public final class SpringApplicationUtils implements BeanFactoryPostProcessor {
     /** Spring应用上下文环境 */
     private static ConfigurableListableBeanFactory beanFactory;
 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-        SpringUtils.beanFactory = beanFactory;
+        SpringApplicationUtils.beanFactory = beanFactory;
     }
 
     /**
