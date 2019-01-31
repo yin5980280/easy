@@ -8,6 +8,7 @@ import com.vartime.easy.spring.boot.interceptor.ClientHttpRequestInterceptorImpl
 import com.vartime.easy.spring.boot.interceptor.DefaultExceptionHandler;
 import com.vartime.easy.spring.boot.interceptor.ResponseBodyWrapFactoryBean;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
@@ -31,18 +32,22 @@ import java.util.List;
  */
 @Configuration
 @EnableAspectJAutoProxy
-@EnableConfigurationProperties(GlobalReturnValuePathProperties.class)
+@EnableConfigurationProperties({GlobalReturnValuePathProperties.class, HttpConnectionProperties.class})
 public class SpringMvcConfiguration {
+
+    @Autowired
+    private HttpConnectionProperties httpConnectionProperties;
 
     @ConditionalOnMissingBean
     @Bean
     ClientHttpRequestFactory clientHttpRequestFactory() {
         SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
-        requestFactory.setConnectTimeout(1000);
-        requestFactory.setReadTimeout(5000);
+        requestFactory.setConnectTimeout(httpConnectionProperties.getConnectionTimeOut());
+        requestFactory.setReadTimeout(httpConnectionProperties.getReadTimeOut());
         return requestFactory;
     }
 
+    @ConditionalOnMissingBean
     @Bean
     RestTemplate restTemplate(ClientHttpRequestFactory clientHttpRequestFactory) {
         RestTemplate restTemplate = new RestTemplate(clientHttpRequestFactory);
