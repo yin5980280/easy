@@ -7,6 +7,7 @@ import com.vartime.easy.spring.boot.converter.TextPlainMappingJackson2HttpMessag
 import com.vartime.easy.spring.boot.interceptor.ClientHttpRequestInterceptorImpl;
 import com.vartime.easy.spring.boot.interceptor.DefaultExceptionHandler;
 import com.vartime.easy.spring.boot.interceptor.ResponseBodyWrapFactoryBean;
+import com.vartime.easy.spring.boot.interceptor.ValidateInterceptor;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -81,6 +82,12 @@ public class SpringMvcConfiguration {
     @ConditionalOnProperty(prefix = "easy.global.json.return.value", name = "enable", matchIfMissing = true, havingValue = "true")
     public ResponseBodyWrapFactoryBean responseBodyWrapFactoryBean() {
         return new ResponseBodyWrapFactoryBean();
+    }
+
+    @Bean
+    @ConditionalOnMissingBean
+    public ValidateInterceptor validateInterceptor() {
+        return new ValidateInterceptor();
     }
 
 }
