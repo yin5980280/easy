@@ -1,5 +1,6 @@
 package com.vartime.easy.spring.boot.tk.mybatis.core.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.vartime.easy.commons.base.BaseObject;
 import com.vartime.easy.spring.boot.tk.mybatis.web.json.JsonDateSerialize;
@@ -51,6 +52,7 @@ public class BaseLogicEntity extends BaseObject {
     @Temporal(TemporalType.TIMESTAMP)
     @JsonSerialize(using = JsonDateSerialize.class)
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     @ApiModelProperty(value = "系统创建时间", example = "2019-01-28 10:10:10")
     private Date serverCreateTime;
 
@@ -61,6 +63,7 @@ public class BaseLogicEntity extends BaseObject {
     @Temporal(TemporalType.TIMESTAMP)
     @JsonSerialize(using = JsonDateSerialize.class)
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     @ApiModelProperty(value = "系统更新时间", example = "2019-01-28 10:10:10")
     private Date serverUpdateTime;
 
