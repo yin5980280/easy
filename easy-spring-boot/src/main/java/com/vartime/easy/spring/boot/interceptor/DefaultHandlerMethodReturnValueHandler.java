@@ -42,7 +42,7 @@ public class DefaultHandlerMethodReturnValueHandler implements HandlerMethodRetu
     @Override
     public void handleReturnValue(Object returnValue, MethodParameter returnType, ModelAndViewContainer mavContainer, NativeWebRequest webRequest) throws Exception {
 
-        if (needGlobal(returnValue, returnType, mavContainer, webRequest)) {
+        if (this.needGlobal(returnValue, returnType, mavContainer, webRequest)) {
             Response res = Response.build(returnValue);
             if (log.isDebugEnabled()) {
                 log.debug("接口返回数据结果[{}]", JSON.toJSONString(res));
