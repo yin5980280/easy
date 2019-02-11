@@ -113,6 +113,18 @@
             </dependency>
 
             <dependency>
+                <groupId>com.vartime.easy</groupId>
+                <artifactId>easy-spring-cloud-feign</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.vartime.easy</groupId>
+                <artifactId>easy-spring-cloud-starter-feign</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>

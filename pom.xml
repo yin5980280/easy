@@ -16,6 +16,7 @@
         <module>easy-spring-boot-starters</module>
         <module>easy-spring-boot-tk-mybatis</module>
         <module>easy-spring-boot</module>
+        <module>easy-spring-cloud-feign</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
