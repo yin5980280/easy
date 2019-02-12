@@ -1,4 +1,4 @@
-package com.vartime.easy.commons.base.model;
+package com.vartime.easy.spring.boot.model;
 
 import com.github.pagehelper.Page;
 import com.vartime.easy.commons.base.BaseObject;
@@ -27,12 +27,12 @@ public class PageInfo<T> extends BaseObject {
     /**
      * 当前页号（前端传入）
      */
-    private Integer pageNum;
+    private Integer page;
 
     /**
      * 每页像是条数（前端传入）
      */
-    private Integer pageSize;
+    private Integer rows;
 
     /**
      * 当前查询条件下：一共多少条数据
