@@ -2,6 +2,7 @@ package com.vartime.easy.commons.base.model;
 
 import com.github.pagehelper.Page;
 import com.vartime.easy.commons.base.BaseObject;
+import com.vartime.easy.commons.base.bean.BeanConverter;
 
 import java.util.List;
 
@@ -45,5 +46,11 @@ public class PageInfo<T> extends BaseObject {
 
     public static PageInfo valueOf(Page page) {
         return new PageInfo(page.getPageNum(), page.getPageSize(), page.getTotal(), page);
+    }
+
+    public static PageInfo valueOf(Page page, Class<?> clazz) {
+        PageInfo pageInfo = valueOf(page);
+        pageInfo.list = BeanConverter.convert(clazz, page);
+        return pageInfo;
     }
 }
