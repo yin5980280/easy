@@ -1,4 +1,4 @@
-package com.vartime.easy.spring.boot.tk.mybatis.web.json;
+package com.vartime.easy.commons.json;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;

@@ -3,7 +3,7 @@ package com.vartime.easy.spring.boot.tk.mybatis.core.entity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.vartime.easy.commons.base.BaseObject;
-import com.vartime.easy.spring.boot.tk.mybatis.web.json.JsonDateSerialize;
+import com.vartime.easy.commons.json.JsonDateSerialize;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -14,13 +14,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.OrderBy;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-import tk.mybatis.mapper.annotation.Order;
 
 /**
  * @author : yinlin
@@ -42,7 +42,7 @@ public class BaseLogicEntity extends BaseObject {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", columnDefinition = "bigint(20) COMMENT '主键ID,自动生成'")
     @ApiModelProperty(value = "主键编号", example = "1")
-    @Order(value = "DESC")
+    @OrderBy(value = "DESC")
     private Long id;
 
     /**
