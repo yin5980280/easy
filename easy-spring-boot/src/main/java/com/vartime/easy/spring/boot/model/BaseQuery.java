@@ -1,4 +1,4 @@
-package com.vartime.easy.spring.boot.tk.mybatis.web.model;
+package com.vartime.easy.spring.boot.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.github.pagehelper.PageHelper;
