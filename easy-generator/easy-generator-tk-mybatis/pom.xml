@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>easy-generator</artifactId>
+        <groupId>com.vartime.easy</groupId>
+        <version>${revision}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>easy-generator-tk-mybatis</artifactId>
+
+    <properties>
+        <mybatis-generator-extension.version>0.0.4</mybatis-generator-extension.version>
+        <mybatis-generator.version>1.3.6</mybatis-generator.version>
+        <mapper.version>4.0.4</mapper.version>
+        <mysql-connector.version>5.1.47</mysql-connector.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.vartime.easy</groupId>
+            <artifactId>easy-spring-boot-tk-mybatis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis.generator</groupId>
+            <artifactId>mybatis-generator-core</artifactId>
+            <version>${mybatis-generator.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.drtrang</groupId>
+            <artifactId>mybatis-generator-extension</artifactId>
+            <version>${mybatis-generator-extension.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper</artifactId>
+            <version>${mapper.version}</version>
+        </dependency>
+    </dependencies>
+</project>

@@ -75,6 +75,17 @@
                 <artifactId>easy-framework</artifactId>
                 <version>${revision}</version>
             </dependency>
+            <dependency>
+                <groupId>com.vartime.easy</groupId>
+                <artifactId>easy-generator</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.vartime.easy</groupId>
+                <artifactId>easy-generator-tk-mybatis</artifactId>
+                <version>${revision}</version>
+            </dependency>
 
             <dependency>
                 <groupId>com.vartime.easy</groupId>
