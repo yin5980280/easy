@@ -23,7 +23,7 @@
         <commons-collections4.version>4.0</commons-collections4.version>
         <commons.io.version>2.6</commons.io.version>
         <commons-beanutils.version>1.9.2</commons-beanutils.version>
-        <lombok.version>1.18.4</lombok.version>
+        <lombok.version>1.18.6</lombok.version>
         <modelmapper.version>2.3.2</modelmapper.version>
         <bitwalker.version>1.19</bitwalker.version>
         <tk.mybatis.version>2.1.2</tk.mybatis.version>
@@ -217,7 +217,7 @@
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>
-                <version>27.0-jre</version>
+                <version>27.0.1-jre</version>
             </dependency>
 
             <dependency>
