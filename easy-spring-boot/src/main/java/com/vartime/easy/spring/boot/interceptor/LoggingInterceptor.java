@@ -1,5 +1,7 @@
 package com.vartime.easy.spring.boot.interceptor;
 
+import com.vartime.easy.spring.boot.utils.MDCUtils;
+
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import java.util.Map;
@@ -28,6 +30,7 @@ public class LoggingInterceptor extends HandlerInterceptorAdapter {
             HttpServletRequest request,
             HttpServletResponse response,
             Object handler) throws Exception {
+        MDCUtils.init(request);
         startTime.set(System.currentTimeMillis());
         Map parameterMap = request.getParameterMap();
         log.info("请求URI [{}], 请求参数类型Content-Type [{}], 请求method类型 [{}], 请求处理方法 [{}]", request.getRequestURI(), request.getContentType(), request.getMethod(), handler.toString());
@@ -43,7 +46,13 @@ public class LoggingInterceptor extends HandlerInterceptorAdapter {
                     handler.toString(),
                     response.getStatus(),
                     System.currentTimeMillis() - startTime.get());
-            startTime.remove();
         }
+        removeData();
+    }
+
+    private void removeData() {
+        startTime.remove();
+        MDCUtils.removeMsgId();
+        MDCUtils.removeUrL();
     }
 }

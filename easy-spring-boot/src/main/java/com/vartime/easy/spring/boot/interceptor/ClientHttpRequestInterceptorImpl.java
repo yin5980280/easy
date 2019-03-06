@@ -5,8 +5,6 @@ package com.vartime.easy.spring.boot.interceptor;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpRequest;
 import org.springframework.http.MediaType;
@@ -17,18 +15,16 @@ import org.springframework.http.client.ClientHttpResponse;
 import java.io.IOException;
 import java.text.MessageFormat;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * resttemplate 请求响应信息拦截器
  */
-public class ClientHttpRequestInterceptorImpl implements
-        ClientHttpRequestInterceptor {
-
-	/** 日志 */
-	private Log LOG = LogFactory.getLog("integration");
+@Slf4j
+public class ClientHttpRequestInterceptorImpl implements ClientHttpRequestInterceptor {
 
 	/** aplication/json;charset=UTF-8 */
-	private final MediaType application_json_utf8 = MediaType
-			.parseMediaType("application/json;charset=UTF-8");
+	private final MediaType application_json_utf8 = MediaType.parseMediaType("application/json;charset=UTF-8");
 
 	/*
 	 * (non-Javadoc)
@@ -39,26 +35,25 @@ public class ClientHttpRequestInterceptorImpl implements
 	 * org.springframework.http.client.ClientHttpRequestExecution)
 	 */
 	@Override
-	public ClientHttpResponse intercept(HttpRequest request, byte[] body,
-			ClientHttpRequestExecution execution) throws IOException {
-
+	public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution) throws IOException {
 		HttpHeaders headers = request.getHeaders();
-
 		long start = System.currentTimeMillis();
-		EnhancerClientHttpResponse resp = null;
+		EnhancerClientHttpResponse response = null;
 		try {
-			resp = new EnhancerClientHttpResponse(execution.execute(request, body));
+			response = new EnhancerClientHttpResponse(execution.execute(request, body));
 		} finally {
-
-			String respText = resp == null ? "" : resp.responseText();
-
-			LOG.info(MessageFormat.format(
-					"请求地址: {0}, 头信息：{4}, 请求参数: {1} => 返回结果: {2}。 [{3}]ms。 ", request
-							.getURI().toString(), new String(body), respText,
-					System.currentTimeMillis() - start, new ObjectMapper().writeValueAsString(headers.entrySet())));
+			String respText = response == null ? "" : response.responseText();
+			int status = response == null ? 400 : response.getRawStatusCode();
+			log.info(MessageFormat.format(
+					"请求地址: [{0}], 请求头信息: [{1}], 请求参数: [{2}] => 请求状态: [{3}], 返回结果: [{4}] 请求花费: [{5}]ms.",
+					request.getURI().toString(),
+					new ObjectMapper().writeValueAsString(headers.entrySet())),
+					new String(body),
+					status,
+					respText,
+					System.currentTimeMillis() - start);
 		}
-
-		return resp;
+		return response;
 	}
 
 }
