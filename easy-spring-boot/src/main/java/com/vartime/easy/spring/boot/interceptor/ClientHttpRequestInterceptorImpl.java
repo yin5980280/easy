@@ -13,7 +13,6 @@ import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.ClientHttpResponse;
 
 import java.io.IOException;
-import java.text.MessageFormat;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -44,10 +43,9 @@ public class ClientHttpRequestInterceptorImpl implements ClientHttpRequestInterc
 		} finally {
 			String respText = response == null ? "" : response.responseText();
 			int status = response == null ? 400 : response.getRawStatusCode();
-			log.info(MessageFormat.format(
-					"请求地址: [{0}], 请求头信息: [{1}], 请求参数: [{2}] => 请求状态: [{3}], 返回结果: [{4}] 请求花费: [{5}]ms.",
+			log.info("请求地址: [{}], 请求头信息: [{}], 请求参数: [{}] => 请求状态: [{}], 返回结果: [{}]. 请求花费: [{}]毫秒.",
 					request.getURI().toString(),
-					new ObjectMapper().writeValueAsString(headers.entrySet())),
+					new ObjectMapper().writeValueAsString(headers.entrySet()),
 					new String(body),
 					status,
 					respText,
