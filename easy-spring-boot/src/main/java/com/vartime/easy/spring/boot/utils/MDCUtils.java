@@ -23,17 +23,23 @@ public class MDCUtils {
 
     private static String MSG_ID_PREFIX = "easy_";
 
+    /**
+     * 服务器ip地址
+     */
     private static String ip;
 
-    private static String shotIp;
+    /**
+     * 服务器短IP
+     */
+    private static String shortIp;
 
     static {
         ip = getLocalIp();
         String[] sip = ip.split("\\.");
         if (sip.length >= 4) {
-            shotIp = sip[2] + "." + sip[3];
+            shortIp = sip[2] + "." + sip[3];
         } else {
-            shotIp = ip;
+            shortIp = ip;
         }
     }
 
@@ -64,8 +70,8 @@ public class MDCUtils {
         MDC.remove(KEY_IP);
     }
 
-    public static String getShotIp() {
-        return shotIp;
+    public static String getShortIp() {
+        return shortIp;
     }
 
     public static void setUrL(String url) {
@@ -99,7 +105,7 @@ public class MDCUtils {
      */
     public static String generateId() {
         StringBuilder sb = new StringBuilder(22);
-        sb.append(MSG_ID_PREFIX).append(shotIp);
+        sb.append(MSG_ID_PREFIX).append(shortIp);
         sb.append("_").append(System.currentTimeMillis());
         return sb.toString();
     }
