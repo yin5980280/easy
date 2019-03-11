@@ -1,8 +1,10 @@
 package com.vartime.easy.spring.boot.configuration;
 
 
-import com.vartime.easy.spring.boot.interceptor.LoggingInterceptor;
+import com.vartime.easy.spring.boot.filters.RequestContextFilter;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
@@ -10,6 +12,9 @@ import org.springframework.format.datetime.DateFormatter;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * 通用配置
@@ -29,8 +34,25 @@ public class ResourcesConfiguration implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoggingInterceptor());
+        //将日志记录替换为Filter记录
+        //registry.addInterceptor(new LoggingInterceptor());
     }
+
+    @Bean
+    @ConditionalOnMissingBean
+    public FilterRegistrationBean requestFilter() {
+        RequestContextFilter filter = new RequestContextFilter();
+        Set<String> set = new HashSet<>();
+        set.add("*.icon");
+        set.add("*.html");
+        set.add("/swagger*");
+        filter.setExcludeUris(set);
+        FilterRegistrationBean registrationBean = new FilterRegistrationBean(filter);
+        registrationBean.addUrlPatterns("/*");
+        registrationBean.setName("requestFilter");
+        return registrationBean;
+    }
+
     @Override
     public void addFormatters(final FormatterRegistry registry) {
         registry.addFormatter(dateFormatter());
