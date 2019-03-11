@@ -2,6 +2,7 @@ package com.vartime.easy.spring.boot.configuration;
 
 
 import com.vartime.easy.spring.boot.filters.RequestContextFilter;
+import com.vartime.easy.spring.boot.interceptor.LoggingInterceptor;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -35,7 +36,7 @@ public class ResourcesConfiguration implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         //将日志记录替换为Filter记录
-        //registry.addInterceptor(new LoggingInterceptor());
+        registry.addInterceptor(new LoggingInterceptor());
     }
 
     @Bean
@@ -44,6 +45,7 @@ public class ResourcesConfiguration implements WebMvcConfigurer {
         RequestContextFilter filter = new RequestContextFilter();
         Set<String> set = new HashSet<>();
         set.add("*.icon");
+        set.add("*.ico");
         set.add("*.html");
         set.add("/swagger*");
         filter.setExcludeUris(set);
