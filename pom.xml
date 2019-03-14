@@ -18,6 +18,7 @@
         <module>easy-spring-boot</module>
         <module>easy-spring-cloud-feign</module>
         <module>easy-generator</module>
+        <module>easy-spring-boot-distributed-lock</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
