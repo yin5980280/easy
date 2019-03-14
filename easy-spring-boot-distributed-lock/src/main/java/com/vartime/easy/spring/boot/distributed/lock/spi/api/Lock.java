@@ -1,4 +1,4 @@
-package com.vartime.easy.spring.boot.distributed.lock.spi;
+package com.vartime.easy.spring.boot.distributed.lock.spi.api;
 
 /**
  * 锁操作定义
