@@ -1,7 +1,9 @@
-package com.vartime.easy.spring.boot.distributed.lock.core.provider;
+package com.vartime.easy.spring.boot.distributed.lock.core.provider.impl;
 
 import com.vartime.easy.spring.boot.distributed.lock.annotation.DLock;
 import com.vartime.easy.spring.boot.distributed.lock.core.config.DLockConfig;
+import com.vartime.easy.spring.boot.distributed.lock.core.provider.api.BusinessKeyProvider;
+import com.vartime.easy.spring.boot.distributed.lock.core.provider.api.LockInfoProvider;
 import com.vartime.easy.spring.boot.distributed.lock.model.LockInfo;
 import com.vartime.easy.spring.boot.distributed.lock.model.LockType;
 
@@ -12,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 /**
  * Created by panda on 2017/12/29.
  */
-public class LockInfoProvider {
+public class DefaultLockInfoProvider implements LockInfoProvider {
 
     public static final String LOCK_NAME_PREFIX = "lock";
 
@@ -24,6 +26,7 @@ public class LockInfoProvider {
     @Autowired
     private BusinessKeyProvider businessKeyProvider;
 
+    @Override
     public LockInfo get(ProceedingJoinPoint joinPoint, DLock lock) {
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         LockType type = lock.lockType();
@@ -31,7 +34,7 @@ public class LockInfoProvider {
         String lockName = LOCK_NAME_PREFIX + LOCK_NAME_SEPARATOR + getName(lock.name(), signature)+businessKeyName;
         long waitTime = getWaitTime(lock);
         long leaseTime = getLeaseTime(lock);
-        return new LockInfo(type, lock.tried(), lockName, waitTime, leaseTime);
+        return new LockInfo(type, lock.tried(), lock.required(), lockName, waitTime, leaseTime);
     }
 
     private String getName(String annotationName, MethodSignature signature) {

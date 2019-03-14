@@ -1,6 +1,7 @@
 package com.vartime.easy.spring.boot.distributed.lock.spi.redisson;
 
 import com.vartime.easy.framework.utils.SpringApplicationUtils;
+import com.vartime.easy.spring.boot.distributed.lock.core.exception.DLockRequiredException;
 import com.vartime.easy.spring.boot.distributed.lock.model.LockInfo;
 import com.vartime.easy.spring.boot.distributed.lock.spi.api.Lock;
 
@@ -29,5 +30,16 @@ public abstract class AbstractRedissonLock implements Lock {
 
     protected LockInfo getLockInfo() {
         return this.lockInfo;
+    }
+
+    /**
+     * 是否必须上锁
+     * @return
+     */
+    protected boolean required() {
+        if (!lockInfo.isRequired()) {
+            return false;
+        }
+        throw new DLockRequiredException("当前执行业务被中断,分布式锁[" + lockInfo.getName() + "]是必须的，当前线程未获取到锁");
     }
 }

@@ -92,6 +92,13 @@
                 <artifactId>easy-spring-boot-distributed-lock</artifactId>
                 <version>${revision}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.vartime.easy</groupId>
+                <artifactId>easy-dlock-spring-boot-starter</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
             <dependency>
                 <groupId>com.vartime.easy</groupId>
                 <artifactId>easy-spring-boot-starters</artifactId>

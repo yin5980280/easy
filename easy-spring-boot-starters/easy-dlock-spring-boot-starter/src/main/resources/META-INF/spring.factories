@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.vartime.easy.spring.boot.distributed.lock.autoconfigure.DLockAutoConfiguration

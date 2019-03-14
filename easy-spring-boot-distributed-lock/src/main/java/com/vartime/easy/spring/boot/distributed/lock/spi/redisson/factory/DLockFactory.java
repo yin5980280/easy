@@ -2,7 +2,7 @@ package com.vartime.easy.spring.boot.distributed.lock.spi.redisson.factory;
 
 import com.vartime.easy.framework.utils.SpringApplicationUtils;
 import com.vartime.easy.spring.boot.distributed.lock.annotation.DLock;
-import com.vartime.easy.spring.boot.distributed.lock.core.provider.LockInfoProvider;
+import com.vartime.easy.spring.boot.distributed.lock.core.provider.api.LockInfoProvider;
 import com.vartime.easy.spring.boot.distributed.lock.model.LockInfo;
 import com.vartime.easy.spring.boot.distributed.lock.spi.api.Lock;
 import com.vartime.easy.spring.boot.distributed.lock.spi.redisson.impl.DFairLock;

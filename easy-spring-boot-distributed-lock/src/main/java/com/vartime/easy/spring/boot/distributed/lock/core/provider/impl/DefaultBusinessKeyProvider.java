@@ -1,7 +1,8 @@
-package com.vartime.easy.spring.boot.distributed.lock.core.provider;
+package com.vartime.easy.spring.boot.distributed.lock.core.provider.impl;
 
 import com.vartime.easy.spring.boot.distributed.lock.annotation.DLock;
 import com.vartime.easy.spring.boot.distributed.lock.annotation.DLockKey;
+import com.vartime.easy.spring.boot.distributed.lock.core.provider.api.BusinessKeyProvider;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
@@ -26,12 +27,13 @@ import lombok.extern.slf4j.Slf4j;
  * Content :获取用户定义业务key
  */
 @Slf4j
-public class BusinessKeyProvider {
+public class DefaultBusinessKeyProvider implements BusinessKeyProvider {
 
     private ParameterNameDiscoverer nameDiscoverer = new DefaultParameterNameDiscoverer();
 
     private ExpressionParser parser = new SpelExpressionParser();
 
+    @Override
     public String getKeyName(ProceedingJoinPoint joinPoint, DLock lock) {
 
         Method method = getMethod(joinPoint);

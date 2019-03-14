@@ -7,6 +7,9 @@ import org.redisson.api.RReadWriteLock;
 
 import java.util.concurrent.TimeUnit;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class DReadLock extends AbstractRedissonLock {
 
     private static volatile RReadWriteLock rLock;
@@ -20,9 +23,13 @@ public class DReadLock extends AbstractRedissonLock {
         try {
             LockInfo lockInfo = getLockInfo();
             rLock = getRedissonClient().getReadWriteLock(lockInfo.getName());
-            return rLock.readLock().tryLock(lockInfo.getWaitTime(), lockInfo.getLeaseTime(), TimeUnit.SECONDS);
+            if (lockInfo.isTried() ? rLock.readLock().tryLock(lockInfo.getWaitTime(), lockInfo.getLeaseTime(), TimeUnit.SECONDS) : rLock.readLock().tryLock()) {
+                return true;
+            }
+            return super.required();
         } catch (InterruptedException e) {
-            return false;
+            log.warn(e.getMessage(), e);
+            return super.required();
         }
     }
 

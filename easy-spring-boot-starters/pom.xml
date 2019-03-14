@@ -15,6 +15,7 @@
         <module>easy-swagger-spring-boot-starter</module>
         <module>easy-spring-boot-starter-web</module>
         <module>easy-spring-cloud-starter-feign</module>
+        <module>easy-dlock-spring-boot-starter</module>
     </modules>
     <artifactId>easy-spring-boot-starters</artifactId>
 

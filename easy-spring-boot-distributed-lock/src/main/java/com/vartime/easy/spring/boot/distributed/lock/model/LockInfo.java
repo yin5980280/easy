@@ -25,6 +25,11 @@ public class LockInfo extends BaseObject {
     private boolean tried;
 
     /**
+     * 是否必须上锁成功才继续执行业务 默认为false即不管上锁成功与否都执行，标志为true，上锁不成功会抛出异常
+     */
+    private boolean required;
+
+    /**
      * 名字
      */
     private String name;

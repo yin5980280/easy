@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 public class DLockConfig {
 
-    public static final String PREFIX = "easy.redisson.dlock";
+    public static final String PREFIX = "easy.dlock";
     /**
      * 等待时间
      */

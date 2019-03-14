@@ -35,6 +35,12 @@ public @interface DLock {
     boolean tried() default true;
 
     /**
+     * 是否必须上锁成功才继续执行业务 默认为false即不管上锁成功与否都执行，标志为true，上锁不成功会抛出异常
+     * @return
+     */
+    boolean required() default false;
+
+    /**
      * 尝试加锁，最多等待时间
      * @return
      */
