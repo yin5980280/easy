@@ -40,4 +40,4 @@
 该模块是实现之前代码中easy-spring-boot中提供了对接口的统一返回，原计划是在该模块中自动解包，实现异常传递等功能，该模块功能会在后续中补充
 
 ### easy-spring-boot-distributed-lock
-该模块是基于redisson(redis的儿子这名字取得好奇怪)提供的RLock实现的基于注解形式的分布式锁(懒人必备)，模块大部分思路和实现来自于开源工程klock，github[https://github.com/kekingcn/spring-boot-klock-starter] 该大师好久没维护了，我拿过来扩展了些功能，之后将介绍
+该模块是基于redisson(redis的儿子这名字取得好奇怪)提供的RLock实现的基于注解形式的分布式锁(懒人必备)DLock，模块大部分思路和实现来自于开源工程klock，github[https://github.com/kekingcn/spring-boot-klock-starter] 该大师好久没维护了，我拿过来扩展了些功能，之后将介绍具体用法。
