@@ -14,8 +14,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
+            <groupId>com.vartime.easy</groupId>
+            <artifactId>easy-framework</artifactId>
         </dependency>
         <dependency>
             <groupId>org.redisson</groupId>

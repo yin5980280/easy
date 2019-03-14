@@ -26,7 +26,7 @@ public @interface DLock {
      * 锁类型，默认可重入锁
      * @return
      */
-    LockType lockType() default LockType.Reentrant;
+    LockType lockType() default LockType.REENTRANT;
 
     /**
      * 是否等待到必须执行为止默认为true, false将抛出异常。

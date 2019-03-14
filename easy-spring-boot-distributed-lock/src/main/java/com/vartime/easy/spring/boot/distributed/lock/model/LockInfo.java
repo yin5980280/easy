@@ -1,5 +1,7 @@
 package com.vartime.easy.spring.boot.distributed.lock.model;
 
+import com.vartime.easy.commons.base.BaseObject;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class LockInfo {
+public class LockInfo extends BaseObject {
 
     /**
      * 锁类型

@@ -5,22 +5,26 @@ package com.vartime.easy.spring.boot.distributed.lock.model;
  * Content :锁类型
  */
 public enum LockType {
+
     /**
      * 可重入锁
      */
-    Reentrant,
+    REENTRANT,
+
     /**
      * 公平锁
      */
-    Fair,
+    FAIR,
+
     /**
      * 读锁
      */
-    Read,
+    READ,
+
     /**
      * 写锁
      */
-    Write;
+    WRITE;
 
     LockType() {
     }
