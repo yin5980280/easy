@@ -31,7 +31,7 @@ public @interface DLock {
      * 是否等待到必须执行为止默认为true, false将抛出异常。
      * @return
      */
-    boolean isTry() default true;
+    boolean tried() default true;
 
     /**
      * 尝试加锁，最多等待时间

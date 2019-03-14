@@ -20,7 +20,7 @@ public class LockInfo {
     /**
      * 是否等待 默认 true 如果是true将一直等待到超时为止，否则直接返回抛出异常
      */
-    private boolean isTry;
+    private boolean tried;
 
     /**
      * 名字
