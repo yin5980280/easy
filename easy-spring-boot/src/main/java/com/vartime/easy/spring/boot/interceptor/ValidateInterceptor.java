@@ -35,7 +35,7 @@ public class ValidateInterceptor {
      * @throws Throwable
      */
     @Before("validateControllerAspect(validate)")
-    public  void validateRequest(JoinPoint joinPoint, Validate validate) throws Throwable {
+    public void validateRequest(JoinPoint joinPoint, Validate validate) throws Throwable {
         Object[] args = joinPoint.getArgs();
         if(args.length == 0){
             return;
