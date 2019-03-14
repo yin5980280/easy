@@ -9,6 +9,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
+ * DLock Distributed Lock 分布式锁注解
  * 加锁注解
  */
 @Target(value = {ElementType.METHOD})
@@ -46,7 +47,7 @@ public @interface DLock {
     long leaseTime() default Long.MIN_VALUE;
 
     /**
-     * 自定义业务key
+     * 自定义业务key，支持表达式
      * @return
      */
      String [] keys() default {};
