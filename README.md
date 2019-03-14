@@ -1,10 +1,12 @@
 # Spring-boot 开发脚手架
 
 ## 项目介绍
-提供快速的搭建spring，spring boot项目，提供spring boot阔展等，希望通过大家一起学习人人都可以堆各种组件当架构尸吓尿面试官，迎娶白富美（HRBP）,该项目中大多数总结来自于抄袭一些开源项目，比如pom依赖管理就是抄袭的
+提供快速的搭建spring，spring boot项目，提供spring boot阔展等，希望通过大家一起学习人人都可以堆各种组件当架构尸吓尿面试官，迎娶白富美（HRBP），该项目中大多数总结来自于抄袭一些优秀开源项目，比如pom依赖管理就是抄袭的
 spring boot的项目管理方式。
+
 ## 功能介绍
-集成tk-mybatis，并扩展了BaseService 和 LogicService(带逻辑删除)。
+集成tk-mybatis，并扩展了BaseService 和 LogicService(带逻辑删除)，提供日志记录，线程内MDC日志Id，统一的restful返回标准，基于tk-mybatis的逆向代码生成工具，提供基于redisson的注解式分布式锁DLock，提供自己扩展的
+spring boot starter，提供springcloud统一数据解析和异常传递。
 
 ## 模块介绍
 
