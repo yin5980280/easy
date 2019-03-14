@@ -232,6 +232,12 @@
                 <version>${pagehelper.boot.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>net.coobird</groupId>
+                <artifactId>thumbnailator</artifactId>
+                <version>0.4.8</version>
+            </dependency>
+
             <!-- swagger2-->
             <dependency>
                 <groupId>io.springfox</groupId>
