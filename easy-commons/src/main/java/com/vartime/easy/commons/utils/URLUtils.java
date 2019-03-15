@@ -8,7 +8,7 @@ import java.util.Map;
  * @date : 2019-01-10 00:28
  * @Description :
  * @Copyright : Copyright (c) 2018
- * @Company : KeRuYun Technology(Beijing) Chengdu Co. Ltd.
+ * @Company : EasySite Technology Chengdu Co. Ltd.
  * @link : com.platform.payment.core.utils.URLUtils
  */
 public class URLUtils {

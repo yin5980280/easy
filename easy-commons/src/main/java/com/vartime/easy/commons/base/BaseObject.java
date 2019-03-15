@@ -13,7 +13,7 @@ import java.io.Serializable;
  * @date : 2019-01-23 11:08
  * @Description :
  * @Copyright : Copyright (c) 2018
- * @Company : KeRuYun Technology(Beijing) Chengdu Co. Ltd.
+ * @Company : EasySite Technology Chengdu Co. Ltd.
  * @link : com.varttime.easy.commons.base.BaseObject
  */
 public abstract class BaseObject implements Serializable {

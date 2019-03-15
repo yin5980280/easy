@@ -25,7 +25,7 @@ public class BaseConstants {
     public static final String KEY_TIMESTAMP = "timestamp";
 
     public static final String PACKAGE_JAVA_LANG = "java.lang";
-    public static final String PACKAGE_COM_KERUYUN = "com.vartime";
+    public static final String PACKAGE_COM_EASY_SITE = "com.vartime";
 
     public static final String WEB_DEFAULT_DEVICEID = "00-00-00-00-00-00";
 
