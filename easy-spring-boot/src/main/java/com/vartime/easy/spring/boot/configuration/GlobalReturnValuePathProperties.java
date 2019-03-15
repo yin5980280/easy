@@ -11,7 +11,7 @@ import lombok.Data;
  * @date : 2019-01-30 19:06
  * @Description :
  * @Copyright : Copyright (c) 2018
- * @Company : KeRuYun Technology(Beijing) Chengdu Co. Ltd.
+ * @Company : EasySite Technology Chengdu Co. Ltd.
  * @link : com.vartime.easy.spring.boot.configuration.IgnoredGlobalReturnValuePath
  */
 @Configuration

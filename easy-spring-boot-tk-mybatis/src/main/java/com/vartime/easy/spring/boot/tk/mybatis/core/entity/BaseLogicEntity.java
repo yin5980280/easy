@@ -28,7 +28,7 @@ import lombok.Data;
  * @date : 2019-01-28 11:10
  * @Description :
  * @Copyright : Copyright (c) 2018
- * @Company : KeRuYun Technology(Beijing) Chengdu Co. Ltd.
+ * @Company : EasySite Technology Chengdu Co. Ltd.
  * @link : com.vartime.easy.spring.boot.tk.mybatis.core.entity.BaseLogicEntity
  */
 @Data

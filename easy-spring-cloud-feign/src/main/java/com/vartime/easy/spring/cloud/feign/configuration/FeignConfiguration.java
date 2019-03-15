@@ -12,7 +12,7 @@ import feign.codec.Decoder;
  * @date : 2019-02-08 17:18
  * @Description :
  * @Copyright : Copyright (c) 2018
- * @Company : KeRuYun Technology(Beijing) Chengdu Co. Ltd.
+ * @Company : EasySite Technology Chengdu Co. Ltd.
  * @link : com.vartime.easy.spring.cloud.feign.configuration.FeignConfiguration
  */
 @Configuration

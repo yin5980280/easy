@@ -8,7 +8,7 @@ import com.vartime.easy.framework.exception.BaseException;
  * @date : 2019-03-14 23:13
  * @Description :
  * @Copyright : Copyright (c) 2018
- * @Company : KeRuYun Technology(Beijing) Chengdu Co. Ltd.
+ * @Company : EasySite Technology Chengdu Co. Ltd.
  * @link : com.vartime.easy.spring.boot.distributed.lock.core.exception.DLockRequiredException
  */
 public class DLockRequiredException extends BaseException {

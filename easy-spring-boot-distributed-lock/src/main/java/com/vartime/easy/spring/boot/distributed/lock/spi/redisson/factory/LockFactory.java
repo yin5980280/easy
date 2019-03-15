@@ -11,7 +11,7 @@ import org.aspectj.lang.ProceedingJoinPoint;
  * @date : 2019-03-14 20:52
  * @Description :
  * @Copyright : Copyright (c) 2018
- * @Company : KeRuYun Technology(Beijing) Chengdu Co. Ltd.
+ * @Company : EasySite Technology Chengdu Co. Ltd.
  * @link : com.vartime.easy.spring.boot.distributed.lock.spi.redisson.factory.LockFactory
  */
 public interface LockFactory {

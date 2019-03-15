@@ -13,7 +13,7 @@ import org.redisson.api.RedissonClient;
  * @date : 2019-03-14 19:42
  * @Description :
  * @Copyright : Copyright (c) 2018
- * @Company : KeRuYun Technology(Beijing) Chengdu Co. Ltd.
+ * @Company : EasySite Technology Chengdu Co. Ltd.
  * @link : com.vartime.easy.spring.boot.distributed.lock.spi.redisson.AbstractRedissonLock
  */
 public abstract class AbstractRedissonLock implements Lock {

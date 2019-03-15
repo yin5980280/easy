@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
  * @date : 2019-02-12 09:32
  * @Description :
  * @Copyright : Copyright (c) 2018
- * @Company : KeRuYun Technology(Beijing) Chengdu Co. Ltd.
+ * @Company : EasySite Technology Chengdu Co. Ltd.
  * @link : com.runshang.apps.cloudgame.commons.base.model.PageInfo
  */
 @Data

@@ -22,7 +22,7 @@ import springfox.documentation.spring.web.json.Json;
  * @date : 2019-01-30 16:29
  * @Description :
  * @Copyright : Copyright (c) 2018
- * @Company : KeRuYun Technology(Beijing) Chengdu Co. Ltd.
+ * @Company : EasySite Technology Chengdu Co. Ltd.
  * @link : com.vartime.easy.spring.boot.interceptor.DefaultHandlerMethodReturnValueHandler
  */
 @Slf4j

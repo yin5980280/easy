@@ -16,7 +16,7 @@ import lombok.extern.slf4j.Slf4j;
  * @date : 2019-01-29 10:17
  * @Description :
  * @Copyright : Copyright (c) 2018
- * @Company : KeRuYun Technology(Beijing) Chengdu Co. Ltd.
+ * @Company : EasySite Technology Chengdu Co. Ltd.
  * @link : com.vartime.easy.spring.boot.tk.mybatis.core.service.impl.AbstractBaseLogicService
  */
 @Slf4j

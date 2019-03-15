@@ -23,7 +23,7 @@ import static org.apache.commons.lang3.math.NumberUtils.INTEGER_ONE;
  * @date : 2019-01-28 10:58
  * @Description :
  * @Copyright : Copyright (c) 2018
- * @Company : KeRuYun Technology(Beijing) Chengdu Co. Ltd.
+ * @Company : EasySite Technology Chengdu Co. Ltd.
  * @link : com.vartime.easy.spring.boot.tk.mybatis.web.model.BaseQuery
  */
 @Data
