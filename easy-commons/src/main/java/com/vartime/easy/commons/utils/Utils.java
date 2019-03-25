@@ -39,7 +39,7 @@ public class Utils {
      * @return
      */
     public static String getMsgId(String json) {
-        return getJsonValue(json,msgIdPattern);
+        return getJsonValue(json, msgIdPattern);
     }
 
     /**
@@ -49,7 +49,7 @@ public class Utils {
      * @return
      */
     public static String getMessageId(String json) {
-        return getJsonValue(json,messageIdPattern);
+        return getJsonValue(json, messageIdPattern);
     }
 
     /**
