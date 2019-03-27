@@ -80,7 +80,7 @@
         <!-- 生成 Mapper.xml 文件的 BaseColumns -->
         <plugin type="com.github.trang.mybatis.generator.plugins.MapperSqlMapConfigPlugin"/>
         <!-- 生成 Service 类 -->
-        <plugin type="com.easy.site.generator.mybatis.service.plugin.ServicePlugin">
+        <plugin type="cn.org.easysite.generator.mybatis.service.plugin.ServicePlugin">
             <property name="baseService" value="${base.service}"/>
             <property name="baseServiceImpl" value="${base.service.impl}"/>
             <property name="targetProject" value="${target.project.service}"/>

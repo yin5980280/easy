@@ -1,6 +1,6 @@
-package com.easy.site.test.entity;
+package cn.org.easysite.test.entity;
 
-import com.easy.site.spring.boot.tk.mybatis.core.entity.BaseLogicEntity;
+import cn.org.easysite.spring.boot.tk.mybatis.core.entity.BaseLogicEntity;
 import javax.persistence.*;
 import lombok.*;
 

@@ -1,7 +1,7 @@
-package com.easy.site.test.service;
+package cn.org.easysite.test.service;
 
-import com.easy.site.spring.boot.tk.mybatis.core.service.BaseLogicService;
-import com.easy.site.test.entity.User;
+import cn.org.easysite.spring.boot.tk.mybatis.core.service.BaseLogicService;
+import cn.org.easysite.test.entity.User;
 
 public interface UserService extends BaseLogicService<User> {
 }

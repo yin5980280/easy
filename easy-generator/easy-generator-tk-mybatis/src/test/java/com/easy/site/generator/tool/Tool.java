@@ -1,6 +1,6 @@
-package com.easy.site.generator.tool;
+package cn.org.easysite.generator.tool;
 
-import com.easy.site.generator.mybatis.tool.GeneratorTools;
+import cn.org.easysite.generator.mybatis.tool.GeneratorTools;
 
 import java.io.File;
 

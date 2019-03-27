@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.easy.site.spring.cloud.feign.configuration.FeignConfiguration
+cn.org.easysite.spring.cloud.feign.configuration.FeignConfiguration

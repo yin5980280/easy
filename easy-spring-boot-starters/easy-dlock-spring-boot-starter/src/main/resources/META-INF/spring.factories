@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.easy.site.spring.boot.distributed.lock.autoconfigure.DLockAutoConfiguration
+cn.org.easysite.spring.boot.distributed.lock.autoconfigure.DLockAutoConfiguration

@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>easy-parent</artifactId>
-        <groupId>com.easy.site</groupId>
+        <groupId>cn.org.easysite</groupId>
         <version>${revision}</version>
         <relativePath>../easy-parent</relativePath>
     </parent>

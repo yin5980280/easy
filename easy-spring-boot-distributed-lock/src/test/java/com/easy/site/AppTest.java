@@ -1,4 +1,4 @@
-package com.easy.site;
+package cn.org.easysite;
 
 /**
  * Unit test for simple App.

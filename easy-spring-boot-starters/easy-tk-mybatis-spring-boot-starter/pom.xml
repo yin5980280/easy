@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>easy-spring-boot-starters</artifactId>
-        <groupId>com.easy.site</groupId>
+        <groupId>cn.org.easysite</groupId>
         <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -13,7 +13,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.easy.site</groupId>
+            <groupId>cn.org.easysite</groupId>
             <artifactId>easy-spring-boot-tk-mybatis</artifactId>
         </dependency>
     </dependencies>
