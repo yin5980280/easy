@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>easy</artifactId>
-        <groupId>com.vartime.easy</groupId>
+        <groupId>com.easy.site</groupId>
         <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -66,83 +66,83 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.vartime.easy</groupId>
+                <groupId>com.easy.site</groupId>
                 <artifactId>easy-commons</artifactId>
                 <version>${revision}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.vartime.easy</groupId>
+                <groupId>com.easy.site</groupId>
                 <artifactId>easy-framework</artifactId>
                 <version>${revision}</version>
             </dependency>
             <dependency>
-                <groupId>com.vartime.easy</groupId>
+                <groupId>com.easy.site</groupId>
                 <artifactId>easy-generator</artifactId>
                 <version>${revision}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.vartime.easy</groupId>
+                <groupId>com.easy.site</groupId>
                 <artifactId>easy-generator-tk-mybatis</artifactId>
                 <version>${revision}</version>
             </dependency>
             <dependency>
-                <groupId>com.vartime.easy</groupId>
+                <groupId>com.easy.site</groupId>
                 <artifactId>easy-spring-boot-distributed-lock</artifactId>
                 <version>${revision}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.vartime.easy</groupId>
+                <groupId>com.easy.site</groupId>
                 <artifactId>easy-dlock-spring-boot-starter</artifactId>
                 <version>${revision}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.vartime.easy</groupId>
+                <groupId>com.easy.site</groupId>
                 <artifactId>easy-spring-boot-starters</artifactId>
                 <version>${revision}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.vartime.easy</groupId>
+                <groupId>com.easy.site</groupId>
                 <artifactId>easy-spring-boot-starter-web</artifactId>
                 <version>${revision}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.vartime.easy</groupId>
+                <groupId>com.easy.site</groupId>
                 <artifactId>easy-spring-boot-tk-mybatis</artifactId>
                 <version>${revision}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.vartime.easy</groupId>
+                <groupId>com.easy.site</groupId>
                 <artifactId>easy-tk-mybatis-spring-boot-starter</artifactId>
                 <version>${revision}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.vartime.easy</groupId>
+                <groupId>com.easy.site</groupId>
                 <artifactId>easy-swagger-spring-boot-starter</artifactId>
                 <version>${revision}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.vartime.easy</groupId>
+                <groupId>com.easy.site</groupId>
                 <artifactId>easy-spring-boot</artifactId>
                 <version>${revision}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.vartime.easy</groupId>
+                <groupId>com.easy.site</groupId>
                 <artifactId>easy-spring-cloud-feign</artifactId>
                 <version>${revision}</version>
             </dependency>
 
             <dependency>
-                <groupId>com.vartime.easy</groupId>
+                <groupId>com.easy.site</groupId>
                 <artifactId>easy-spring-cloud-starter-feign</artifactId>
                 <version>${revision}</version>
             </dependency>

@@ -18,7 +18,7 @@ spring boot starter，提供springcloud统一数据解析和异常传递。
 ```
   <parent>
         <artifactId>easy-parent</artifactId>
-        <groupId>com.vartime.easy</groupId>
+        <groupId>com.easy.site</groupId>
         <version>${VERSION}</version>
    </parent>
 ```

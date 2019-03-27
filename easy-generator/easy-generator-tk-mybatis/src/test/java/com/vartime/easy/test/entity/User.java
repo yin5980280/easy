@@ -1,6 +1,6 @@
-package com.vartime.easy.test.entity;
+package com.easy.site.test.entity;
 
-import com.vartime.easy.spring.boot.tk.mybatis.core.entity.BaseLogicEntity;
+import com.easy.site.spring.boot.tk.mybatis.core.entity.BaseLogicEntity;
 import javax.persistence.*;
 import lombok.*;
 

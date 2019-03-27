@@ -1,7 +1,7 @@
-package com.vartime.easy.test.service;
+package com.easy.site.test.service;
 
-import com.vartime.easy.spring.boot.tk.mybatis.core.service.BaseLogicService;
-import com.vartime.easy.test.entity.User;
+import com.easy.site.spring.boot.tk.mybatis.core.service.BaseLogicService;
+import com.easy.site.test.entity.User;
 
 public interface UserService extends BaseLogicService<User> {
 }

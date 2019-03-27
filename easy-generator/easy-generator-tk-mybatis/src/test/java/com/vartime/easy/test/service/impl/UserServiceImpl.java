@@ -1,8 +1,8 @@
-package com.vartime.easy.test.service.impl;
+package com.easy.site.test.service.impl;
 
-import com.vartime.easy.spring.boot.tk.mybatis.core.service.impl.AbstractBaseLogicServiceImpl;
-import com.vartime.easy.test.entity.User;
-import com.vartime.easy.test.service.UserService;
+import com.easy.site.spring.boot.tk.mybatis.core.service.impl.AbstractBaseLogicServiceImpl;
+import com.easy.site.test.entity.User;
+import com.easy.site.test.service.UserService;
 import org.springframework.stereotype.Service;
 
 @Service("userService")

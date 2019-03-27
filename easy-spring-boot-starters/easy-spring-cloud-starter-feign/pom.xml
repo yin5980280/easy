@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>easy-spring-boot-starters</artifactId>
-        <groupId>com.vartime.easy</groupId>
+        <groupId>com.easy.site</groupId>
         <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -13,7 +13,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.vartime.easy</groupId>
+            <groupId>com.easy.site</groupId>
             <artifactId>easy-spring-cloud-feign</artifactId>
         </dependency>
     </dependencies>

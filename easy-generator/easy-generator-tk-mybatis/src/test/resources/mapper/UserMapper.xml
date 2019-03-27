@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.vartime.easy.test.dao.mapper.UserMapper">
-  <resultMap id="BaseResultMap" type="com.vartime.easy.test.entity.User">
+<mapper namespace="com.easy.site.test.dao.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.easy.site.test.entity.User">
     <!-- WARNING - @mbg.generated -->
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="user_age" jdbcType="INTEGER" property="userAge" />
@@ -11,10 +11,10 @@
     <result column="server_create_time" jdbcType="TIMESTAMP" property="serverCreateTime" />
     <result column="server_update_time" jdbcType="TIMESTAMP" property="serverUpdateTime" />
   </resultMap>
-  
+
   <sql id="BaseColumns">
     <!-- WARNING - @mbg.generated -->
     id, user_age, user_name, operating, usable, server_create_time, server_update_time
   </sql>
-  
+
 </mapper>

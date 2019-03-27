@@ -1,6 +1,6 @@
-package com.vartime.easy.generator.tool;
+package com.easy.site.generator.tool;
 
-import com.vartime.easy.generator.mybatis.tool.GeneratorTools;
+import com.easy.site.generator.mybatis.tool.GeneratorTools;
 
 import java.io.File;
 

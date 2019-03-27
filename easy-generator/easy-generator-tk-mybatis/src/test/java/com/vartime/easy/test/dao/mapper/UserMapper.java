@@ -1,7 +1,7 @@
-package com.vartime.easy.test.dao.mapper;
+package com.easy.site.test.dao.mapper;
 
-import com.vartime.easy.spring.boot.tk.mybatis.core.mapper.CommonMapper;
-import com.vartime.easy.test.entity.User;
+import com.easy.site.spring.boot.tk.mybatis.core.mapper.CommonMapper;
+import com.easy.site.test.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
