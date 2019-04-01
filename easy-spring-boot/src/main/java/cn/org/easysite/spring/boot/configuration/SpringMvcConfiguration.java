@@ -1,14 +1,6 @@
 package cn.org.easysite.spring.boot.configuration;
 
 
-import cn.org.easysite.framework.utils.SpringApplicationUtils;
-import cn.org.easysite.spring.boot.interceptor.ClientHttpRequestInterceptorImpl;
-import cn.org.easysite.spring.boot.converter.GlobalMessageConverter;
-import cn.org.easysite.spring.boot.converter.TextPlainMappingJackson2HttpMessageConverter;
-import cn.org.easysite.spring.boot.interceptor.DefaultExceptionHandler;
-import cn.org.easysite.spring.boot.interceptor.ResponseBodyWrapFactoryBean;
-import cn.org.easysite.spring.boot.interceptor.ValidateInterceptor;
-
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
@@ -19,11 +11,21 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
+import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+
+import cn.org.easysite.framework.utils.SpringApplicationUtils;
+import cn.org.easysite.spring.boot.converter.GlobalMessageConverter;
+import cn.org.easysite.spring.boot.converter.TextPlainMappingJackson2HttpMessageConverter;
+import cn.org.easysite.spring.boot.interceptor.ClientHttpRequestInterceptorImpl;
+import cn.org.easysite.spring.boot.interceptor.DefaultExceptionHandler;
+import cn.org.easysite.spring.boot.interceptor.ResponseBodyWrapFactoryBean;
+import cn.org.easysite.spring.boot.interceptor.ValidateInterceptor;
 
 /**
  * Spring MVC 配置
@@ -48,6 +50,7 @@ public class SpringMvcConfiguration {
     @Bean
     RestTemplate restTemplate(ClientHttpRequestFactory clientHttpRequestFactory) {
         RestTemplate restTemplate = new RestTemplate(clientHttpRequestFactory);
+        restTemplate.getMessageConverters().set(1, new StringHttpMessageConverter(StandardCharsets.UTF_8));
         restTemplate.getMessageConverters().add(new TextPlainMappingJackson2HttpMessageConverter());
         List<ClientHttpRequestInterceptor> interceptors=new ArrayList<>();
         interceptors.add(new ClientHttpRequestInterceptorImpl());
