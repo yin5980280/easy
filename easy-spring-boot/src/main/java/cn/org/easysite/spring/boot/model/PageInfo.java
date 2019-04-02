@@ -1,11 +1,11 @@
 package cn.org.easysite.spring.boot.model;
 
 import com.github.pagehelper.Page;
-import cn.org.easysite.commons.base.BaseObject;
-import cn.org.easysite.commons.base.bean.BeanConverter;
 
 import java.util.List;
 
+import cn.org.easysite.commons.base.BaseObject;
+import cn.org.easysite.commons.base.bean.BeanConverter;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -46,6 +46,22 @@ public class PageInfo<T> extends BaseObject {
 
     public static PageInfo valueOf(Page page) {
         return new PageInfo(page.getPageNum(), page.getPageSize(), page.getTotal(), page);
+    }
+
+    public static PageInfo valueOf(List list) {
+        if (list instanceof Page) {
+            return valueOf((Page) list);
+        } else {
+            return new PageInfo(1, list.size(), Long.valueOf(list.size()), list);
+        }
+    }
+
+    public static PageInfo valueOf(List list, Class<?> clazz) {
+        if (list instanceof Page) {
+            return valueOf((Page)list, clazz);
+        } else {
+            return new PageInfo(1, list.size(), Long.valueOf(list.size()), BeanConverter.convert(clazz, list));
+        }
     }
 
     public static PageInfo valueOf(Page page, Class<?> clazz) {
