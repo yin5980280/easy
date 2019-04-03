@@ -1,10 +1,6 @@
 package cn.org.easysite.spring.boot.interceptor;
 
 import com.alibaba.fastjson.JSON;
-import cn.org.easysite.commons.base.Response;
-import cn.org.easysite.framework.utils.SpringApplicationUtils;
-import cn.org.easysite.spring.boot.configuration.GlobalReturnValuePathProperties;
-
 import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.context.request.NativeWebRequest;
@@ -13,6 +9,9 @@ import org.springframework.web.method.support.ModelAndViewContainer;
 
 import javax.servlet.http.HttpServletRequest;
 
+import cn.org.easysite.framework.utils.SpringApplicationUtils;
+import cn.org.easysite.spring.boot.configuration.GlobalReturnValuePathProperties;
+import cn.org.easysite.spring.boot.model.Response;
 import lombok.extern.slf4j.Slf4j;
 import springfox.documentation.spring.web.json.Json;
 

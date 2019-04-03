@@ -1,10 +1,12 @@
-package cn.org.easysite.commons.base;
+package cn.org.easysite.spring.boot.model;
 
+import cn.org.easysite.commons.base.BaseObject;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import static cn.org.easysite.commons.base.Response.Status.FAILURE;
-import static cn.org.easysite.commons.base.Response.Status.SUCCESS;
+import static cn.org.easysite.spring.boot.model.Response.Status.FAILURE;
+import static cn.org.easysite.spring.boot.model.Response.Status.SUCCESS;
+
 
 /**
  * Created by Panda on 2016/9/27.

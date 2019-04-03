@@ -1,7 +1,6 @@
 package cn.org.easysite.spring.cloud.feign.interceptor;
 
 import com.alibaba.fastjson.JSON;
-import cn.org.easysite.framework.exception.BaseException;
 
 import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +11,7 @@ import org.springframework.cloud.openfeign.support.SpringDecoder;
 import java.io.IOException;
 import java.lang.reflect.Type;
 
+import cn.org.easysite.framework.exception.BaseException;
 import feign.FeignException;
 import feign.Response;
 import feign.Util;
@@ -38,7 +38,7 @@ public class FeignResponseInterceptor extends Decoder.Default implements Decoder
             return Util.toByteArray(response.body().asInputStream());
         }
         String json = Util.toString(response.body().asReader());
-        cn.org.easysite.commons.base.Response res = JSON.parseObject(json, cn.org.easysite.commons.base.Response.class);
+        cn.org.easysite.spring.boot.model.Response res = JSON.parseObject(json, cn.org.easysite.spring.boot.model.Response.class);
         if (!res.isSuccess()) {
             throw new BaseException(1015, res.getMsg());
         }

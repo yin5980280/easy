@@ -1,14 +1,12 @@
 package cn.org.easysite.spring.boot.interceptor;
 
-
-import cn.org.easysite.commons.base.Response;
-import cn.org.easysite.framework.exception.BaseException;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import cn.org.easysite.framework.exception.BaseException;
+import cn.org.easysite.spring.boot.model.Response;
 import lombok.extern.slf4j.Slf4j;
 
 /**
