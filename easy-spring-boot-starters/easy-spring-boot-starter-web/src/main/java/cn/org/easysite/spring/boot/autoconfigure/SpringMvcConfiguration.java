@@ -1,4 +1,4 @@
-package cn.org.easysite.spring.boot.configuration;
+package cn.org.easysite.spring.boot.autoconfigure;
 
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -20,6 +20,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.org.easysite.framework.utils.SpringApplicationUtils;
+import cn.org.easysite.spring.boot.configuration.GlobalReturnValuePathProperties;
+import cn.org.easysite.spring.boot.configuration.HttpConnectionProperties;
 import cn.org.easysite.spring.boot.converter.GlobalMessageConverter;
 import cn.org.easysite.spring.boot.converter.TextPlainMappingJackson2HttpMessageConverter;
 import cn.org.easysite.spring.boot.interceptor.ClientHttpRequestInterceptorImpl;

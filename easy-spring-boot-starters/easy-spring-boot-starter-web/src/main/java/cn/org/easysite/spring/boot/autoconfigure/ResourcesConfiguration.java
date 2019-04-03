@@ -1,7 +1,5 @@
-package cn.org.easysite.spring.boot.configuration;
+package cn.org.easysite.spring.boot.autoconfigure;
 
-
-import cn.org.easysite.spring.boot.filters.RequestContextFilter;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -15,6 +13,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.HashSet;
 import java.util.Set;
+
+import cn.org.easysite.spring.boot.filters.RequestContextFilter;
 
 /**
  * 通用配置

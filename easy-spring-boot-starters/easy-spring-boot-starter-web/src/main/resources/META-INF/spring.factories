@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+cn.org.easysite.spring.boot.autoconfigure.ResourcesConfiguration,\
+cn.org.easysite.spring.boot.autoconfigure.SpringMvcConfiguration
