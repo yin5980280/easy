@@ -1,13 +1,13 @@
 package cn.org.easysite.spring.boot.tk.mybatis.core.service.impl;
 
-import cn.org.easysite.spring.boot.tk.mybatis.core.entity.BaseLogicEntity;
 import com.github.pagehelper.PageInfo;
-import cn.org.easysite.spring.boot.tk.mybatis.core.service.BaseLogicService;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
+import cn.org.easysite.spring.boot.tk.mybatis.core.entity.BaseLogicEntity;
+import cn.org.easysite.spring.boot.tk.mybatis.core.service.BaseLogicService;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -40,6 +40,19 @@ public abstract class AbstractBaseLogicServiceImpl<T extends BaseLogicEntity> ex
     }
 
     @Override
+    public int insert(T record) {
+        record.setServerCreateTime(null);
+        record.setServerUpdateTime(null);
+        return super.insert(record);
+    }
+
+    @Override
+    public int update(T record) {
+        record.setServerUpdateTime(null);
+        return super.update(record);
+    }
+
+    @Override
     public List<T> select(T param) {
         if (param != null) {
             param.setUsable(true);
@@ -50,7 +63,7 @@ public abstract class AbstractBaseLogicServiceImpl<T extends BaseLogicEntity> ex
     @Override
     public int delete(T param) {
         param.setUsable(false);
-        return super.update(param);
+        return update(param);
     }
 
     @Override
