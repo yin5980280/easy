@@ -23,8 +23,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <revision>1.0.0-SNAPSHOT</revision>
-        <nexus.release.url>http://nexus.shishike.com/nexus/content/repositories/releases/</nexus.release.url>
-        <nexus.snapshot.url>http://nexus.shishike.com/nexus/content/repositories/snapshots/</nexus.snapshot.url>
+        <nexus.release.url>https://oss.sonatype.org/service/local/staging/deploy/maven2</nexus.release.url>
+        <nexus.snapshot.url>https://oss.sonatype.org/content/repositories/snapshots</nexus.snapshot.url>
     </properties>
 
     <profiles>
@@ -43,12 +43,12 @@
     </profiles>
     <distributionManagement>
         <repository>
-            <id>releases</id>
+            <id>sonatype-releases</id>
             <url>${nexus.release.url}</url>
             <layout>default</layout>
         </repository>
         <snapshotRepository>
-            <id>nexussnapshots</id>
+            <id>sonatype-snapshots</id>
             <url>${nexus.snapshot.url}</url>
             <layout>default</layout>
         </snapshotRepository>

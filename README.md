@@ -1,7 +1,7 @@
 # Spring-boot 开发脚手架
 
 ## 特别说明
-项目脚手架用了maven新版本插件，不能向下兼容，maven版本在3.5以下${reversion}不能被正确替换，将maven升级即可
+项目脚手架用了maven新版本插件，不能向下兼容，maven版本在3.5以下${reversion}不能被正确替换，将maven升级即可，项目快照版本已传到中央仓库中，稳定版等功能再完善后再发布，现在大家可以先用到快照版本，1.0.0-SNAPSHOT，当然也推荐大家传到自己公司的nexus中
 
 ## 项目介绍
 提供快速的搭建spring，spring boot项目，提供spring boot阔展等，希望通过大家一起学习人人都可以堆各种组件当架构尸吓尿面试官，迎娶白富美（HRBP），该项目中大多数总结来自于抄袭一些优秀开源项目，比如pom依赖管理就是抄袭的
@@ -22,7 +22,7 @@ spring boot starter，提供springcloud统一数据解析和异常传递。
   <parent>
         <artifactId>easy-parent</artifactId>
         <groupId>cn.org.easysite</groupId>
-        <version>${VERSION}</version>
+        <version>1.0.0-SNAPSHOT</version>
    </parent>
 ```
 
