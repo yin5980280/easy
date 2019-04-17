@@ -148,6 +148,12 @@
             </dependency>
 
             <dependency>
+                <groupId>cn.org.easysite</groupId>
+                <artifactId>easy-maven-plugins</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>

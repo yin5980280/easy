@@ -13,12 +13,13 @@
         <module>easy-parent</module>
         <module>easy-framework</module>
         <module>easy-commons</module>
+        <module>easy-generator</module>
+        <module>easy-spring-boot</module>
         <module>easy-spring-boot-starters</module>
         <module>easy-spring-boot-tk-mybatis</module>
-        <module>easy-spring-boot</module>
-        <module>easy-spring-cloud-feign</module>
-        <module>easy-generator</module>
         <module>easy-spring-boot-distributed-lock</module>
+        <module>easy-spring-cloud-feign</module>
+        <module>easy-maven-plugins</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
