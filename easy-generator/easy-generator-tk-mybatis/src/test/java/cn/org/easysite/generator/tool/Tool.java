@@ -1,8 +1,8 @@
 package cn.org.easysite.generator.tool;
 
-import cn.org.easysite.generator.mybatis.tool.GeneratorTools;
-
 import java.io.File;
+
+import cn.org.easysite.generator.mybatis.tool.GeneratorTools;
 
 /**
  * Hello world!
