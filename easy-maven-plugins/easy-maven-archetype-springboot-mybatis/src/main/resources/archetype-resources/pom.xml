@@ -5,14 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>${groupId}</groupId>
-    <artifactId>${artifactId}</artifactId>
+    <artifactId>${rootArtifactId}</artifactId>
     <packaging>pom</packaging>
     <version>${version}</version>
     <modules>
-        <module>${artifactId}-boot</module>
-        <module>${artifactId}-core</module>
-        <module>${artifactId}-web</module>
-        <module>${artifactId}-generator</module>
+        <module>${rootArtifactId}-boot</module>
+        <module>${rootArtifactId}-core</module>
+        <module>${rootArtifactId}-web</module>
+        <module>${rootArtifactId}-generator</module>
     </modules>
 
     <parent>
@@ -25,22 +25,22 @@
         <dependencies>
             <dependency>
                 <groupId>${groupId}</groupId>
-                <artifactId>${artifactId}-core</artifactId>
+                <artifactId>${rootArtifactId}-core</artifactId>
                 <version>${version}</version>
             </dependency>
             <dependency>
                 <groupId>${groupId}</groupId>
-                <artifactId>${artifactId}-generator</artifactId>
+                <artifactId>${rootArtifactId}-generator</artifactId>
                 <version>${version}</version>
             </dependency>
             <dependency>
                 <groupId>${groupId}</groupId>
-                <artifactId>${artifactId}-web</artifactId>
+                <artifactId>${rootArtifactId}-web</artifactId>
                 <version>${version}</version>
             </dependency>
             <dependency>
                 <groupId>${groupId}</groupId>
-                <artifactId>${artifactId}-boot</artifactId>
+                <artifactId>${rootArtifactId}-boot</artifactId>
                 <version>${version}</version>
             </dependency>
         </dependencies>

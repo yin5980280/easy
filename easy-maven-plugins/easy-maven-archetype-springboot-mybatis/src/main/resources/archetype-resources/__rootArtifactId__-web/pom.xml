@@ -4,17 +4,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>${groupId}</artifactId>
-        <groupId>${artifactId}</groupId>
+        <groupId>${rootArtifactId}</groupId>
         <version>${version}</version>
+        <relativePath>../</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>${artifactId}-web</artifactId>
+    <artifactId>${rootArtifactId}-web</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>${groupId}</groupId>
-            <artifactId>${artifactId}-core</artifactId>
+            <artifactId>${rootArtifactId}-core</artifactId>
         </dependency>
     </dependencies>
 
