@@ -1,6 +1,4 @@
-package ${package}.configuration;
-
-import org.springframework.context.annotation.Bean;
+package $ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
@@ -12,6 +10,8 @@ import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
+
+{package}.configuration;
 
 /**
  * @author : yinlin
