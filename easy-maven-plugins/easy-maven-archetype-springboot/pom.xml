@@ -5,7 +5,7 @@
     <parent>
         <artifactId>easy-maven-plugins</artifactId>
         <groupId>cn.org.easysite</groupId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
