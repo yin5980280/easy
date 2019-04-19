@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>${groupId}</groupId>
+    <artifactId>${artifactId}</artifactId>
+    <packaging>pom</packaging>
+    <version>${version}</version>
+    <modules>
+        <module>${artifactId}-boot</module>
+        <module>${artifactId}-core</module>
+        <module>${artifactId}-web</module>
+        <module>${artifactId}-generator</module>
+    </modules>
+
+    <parent>
+        <groupId>cn.org.easysite</groupId>
+        <artifactId>easy-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.keyo.easy</groupId>
+                <artifactId>panda-core</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.keyo.easy</groupId>
+                <artifactId>panda-generator</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.keyo.easy</groupId>
+                <artifactId>panda-web</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.keyo.easy</groupId>
+                <artifactId>panda-boot</artifactId>
+                <version>${version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>aliyun-repos</id>
+            <url>https://maven.aliyun.com/repository/public</url>
+            <releases><enabled>true</enabled></releases>
+            <snapshots><enabled>false</enabled></snapshots>
+        </repository>
+        <repository>
+            <id>sonatype-repos-s</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases><enabled>false</enabled></releases>
+            <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+    </repositories>
+</project>

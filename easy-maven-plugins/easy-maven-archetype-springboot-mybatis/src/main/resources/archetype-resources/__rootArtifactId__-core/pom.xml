@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>${groupId}</artifactId>
+        <groupId>${artifactId}</groupId>
+        <version>${version}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>${artifactId}-core</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>cn.org.easysite</groupId>
+            <artifactId>easy-tk-mybatis-spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.org.easysite</groupId>
+            <artifactId>easy-spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.org.easysite</groupId>
+            <artifactId>easy-swagger-spring-boot-starter</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
