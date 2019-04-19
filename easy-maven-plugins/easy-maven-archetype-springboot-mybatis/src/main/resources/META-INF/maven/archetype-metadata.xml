@@ -26,28 +26,11 @@
             <directory/>
             <includes>
                 <include>README.md</include>
-            </includes>
-        </fileSet>
-        <fileSet encoding="UTF-8">
-            <directory/>
-            <includes>
                 <include>.gitignore</include>
                 <include>Changelog.md</include>
                 <include>TODO.md</include>
-                <include>start.sh.md</include>
+                <include>start.sh</include>
             </includes>
-        </fileSet>
-        <fileSet filtered="true" packaged="true" encoding="UTF-8">
-            <directory>src/main/java</directory>
-        </fileSet>
-        <fileSet filtered="true" encoding="UTF-8">
-            <directory>src/main/resources</directory>
-        </fileSet>
-        <fileSet filtered="true" packaged="true" encoding="UTF-8">
-            <directory>src/test/java</directory>
-        </fileSet>
-        <fileSet filtered="true" encoding="UTF-8">
-            <directory>src/test/resources</directory>
         </fileSet>
     </fileSets>
 
