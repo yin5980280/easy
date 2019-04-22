@@ -1,4 +1,4 @@
-package {package};
+package ${package};
 
 import com.github.xiaoymin.swaggerbootstrapui.annotations.EnableSwaggerBootstrapUI;
 
