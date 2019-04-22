@@ -7,4 +7,4 @@
  * @Company : EasySite Technology Chengdu Co. Ltd.
  * @link : com.snb.package-info
  */
-package ${rootArtifactId};
+package ${package};

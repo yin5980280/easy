@@ -1,8 +1,8 @@
-package ${rootArtifactId}.tool;
-
-import java.io.File;
+package $ import java.io.File;
 
 import cn.org.easysite.generator.mybatis.tool.GeneratorTools;
+
+{package}.tool;
 
 /**
  * Hello world!

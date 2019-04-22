@@ -17,7 +17,7 @@
             <defaultValue>1.0.0-SNAPSHOT</defaultValue>
         </requiredProperty>
         <requiredProperty key="package">
-            <defaultValue>com.easy.demo</defaultValue>
+            <defaultValue>${groupId}</defaultValue>
         </requiredProperty>
     </requiredProperties>
 
