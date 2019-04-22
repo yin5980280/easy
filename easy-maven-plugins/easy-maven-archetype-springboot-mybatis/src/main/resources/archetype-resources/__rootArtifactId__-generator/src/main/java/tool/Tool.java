@@ -1,4 +1,4 @@
-package ${package}.generator.tool;
+package ${rootArtifactId}.tool;
 
 import java.io.File;
 

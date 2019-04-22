@@ -1,4 +1,4 @@
-package ${package};
+package {rootArtifactId};
 
 import com.github.xiaoymin.swaggerbootstrapui.annotations.EnableSwaggerBootstrapUI;
 
