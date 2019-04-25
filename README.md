@@ -48,3 +48,6 @@ spring boot starter，提供springcloud统一数据解析和异常传递。
 
 ### easy-spring-boot-distributed-lock
 该模块是基于redisson(redis的儿子这名字取得好奇怪)提供的RLock实现的基于注解形式的分布式锁(懒人必备)DLock，模块大部分思路和实现来自于开源工程klock，github[https://github.com/kekingcn/spring-boot-klock-starter] 该大师好久没维护了，我拿过来扩展了些功能，之后将介绍具体用法。
+
+### easy-maven-plugins
+该模块是基于maven模版自动生成项目工程代码，使用方法先将该模版install到本地，可以使用命令模式，也可以借助于idea，在新建项目时选择maven，添加模版，添加一次即可。
