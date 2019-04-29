@@ -52,5 +52,5 @@ spring boot starter，提供springcloud统一数据解析和异常传递。
 ### easy-maven-plugins
 该模块是基于maven模版自动生成项目工程代码，使用方法先将该模版install到本地，可以使用命令模式，也可以借助于idea，在新建项目时选择maven，添加模版，添加一次即可。
 
-### data
+### doc
 该模块中包含为easycode插件提供的模版，easycode插件使用教程[https://gitee.com/makejava/EasyCode/wikis]
