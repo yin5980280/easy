@@ -1,4 +1,4 @@
-package cn.org.easysite.spring.boot.jpa.entiy;
+package cn.org.easysite.spring.boot.jpa.entity;
 
 import java.util.Date;
 
@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import javax.persistence.OrderBy;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -32,6 +33,7 @@ public class BaseEntity extends BaseObject {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", columnDefinition = "bigint(20) COMMENT '主键ID,自动生成'")
+    @OrderBy("DESC")
     private Long id;
 
     /**
