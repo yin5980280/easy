@@ -1,6 +1,7 @@
 package cn.org.easysite.spring.boot.data.jpa.autoconfigure;
 
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
+import org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
@@ -16,7 +17,7 @@ import cn.org.easysite.spring.boot.jpa.factory.bean.LogicJpaRepositoryFactoryBea
  * @link : cn.org.easysite.spring.boot.data.jpa.autoconfigure.LogicSpringDataJpaAutoConfiguration
  */
 @Configuration
-@ConditionalOnProperty(prefix = "spring.data.jpa.logic.repositories", name = "enabled", havingValue = "true", matchIfMissing = true)
+@AutoConfigureAfter(JpaRepositoriesAutoConfiguration.class)
 @EnableJpaRepositories(repositoryBaseClass = LogicJpaRepositoryFactoryBean.class)
 public class LogicSpringDataJpaAutoConfiguration {
 }

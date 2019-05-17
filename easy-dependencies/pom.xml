@@ -101,6 +101,12 @@
 
             <dependency>
                 <groupId>cn.org.easysite</groupId>
+                <artifactId>easy-spring-boot-starter-data-jpa</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.org.easysite</groupId>
                 <artifactId>easy-dlock-spring-boot-starter</artifactId>
                 <version>${revision}</version>
             </dependency>
