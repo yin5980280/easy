@@ -25,7 +25,10 @@ public class RSA {
     public static final String KEY_ALGORITHM = "RSA";
     public static final String SIGNATURE_RSA1 = "SHA1WithRSA";
     public static final String SIGNATURE_RSA2 = "SHA256WithRSA";
-    public static final int RSA_KEY_SIZE = 1024;//RSA加密长度（值越大，强度越高，速度越慢）
+    /**
+     * RSA加密长度（值越大，强度越高，速度越慢）
+     */
+    public static final int RSA_KEY_SIZE = 1024;
     private static final String PUBLIC_KEY = "RSAPublicKey";
     private static final String PRIVATE_KEY = "RSAPrivateKey";
 
