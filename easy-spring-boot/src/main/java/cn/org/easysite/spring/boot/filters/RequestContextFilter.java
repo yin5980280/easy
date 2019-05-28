@@ -1,8 +1,5 @@
 package cn.org.easysite.spring.boot.filters;
 
-import cn.org.easysite.commons.utils.Utils;
-import cn.org.easysite.spring.boot.utils.MDCUtils;
-
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
@@ -20,7 +17,11 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cn.org.easysite.commons.utils.Utils;
+import cn.org.easysite.spring.boot.utils.MDCUtils;
 import lombok.extern.slf4j.Slf4j;
+
+import static cn.org.easysite.spring.boot.utils.IpUtils.getIpAddr;
 
 /**
  * @date 2018/3/29 16:28.
@@ -70,6 +71,7 @@ public class RequestContextFilter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
         MDCUtils.init(req);
         StringBuilder logBuffer = new StringBuilder("请求:请求方法[").append(req.getMethod()).append("]");
+        logBuffer.append("请求IP地址[").append(getIpAddr(req)).append("]");
         //静态资源不拦截
         if (this.isExclusionRequest(req)) {
             log.info(logBuffer.toString());
