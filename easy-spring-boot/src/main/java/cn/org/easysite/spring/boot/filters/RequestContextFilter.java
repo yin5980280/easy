@@ -71,14 +71,13 @@ public class RequestContextFilter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
         MDCUtils.init(req);
         StringBuilder logBuffer = new StringBuilder("请求:请求方法[").append(req.getMethod()).append("]");
-        logBuffer.append("请求IP地址[").append(getIpAddr(req)).append("]");
         //静态资源不拦截
         if (this.isExclusionRequest(req)) {
             log.info(logBuffer.toString());
             chain.doFilter(request, response);
             return;
         }
-
+        logBuffer.append(" 客户端请求IP地址:[").append(getIpAddr(req)).append("]");
         long start = System.currentTimeMillis();
 
         this.logRequestParameters(logBuffer, req);
