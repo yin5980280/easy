@@ -20,7 +20,7 @@ import lombok.Data;
  * @date : 2018/9/26 下午6:01
  * @Description :
  * @Copyright : Copyright (c) 2018
- * @Company : KeRuYun Technology(Beijing) Chengdu Co. Ltd.
+ * @Company : easysite Chengdu Co. Ltd.
  * @link : com.mycloud.framework.entity.BaseEntity
  */
 @Data
