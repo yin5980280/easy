@@ -1,7 +1,5 @@
 package cn.org.easysite.commons.utils;
 
-import cn.org.easysite.commons.constants.BaseConstants;
-
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 
@@ -10,6 +8,8 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import cn.org.easysite.commons.constants.BaseConstants;
 
 
 /**
@@ -23,7 +23,7 @@ public class Utils {
 
     private static final Pattern messageIdPattern = Pattern.compile("[{,]\\s?\"messageId\"\\s?:\\s?\"\\S+\"\\s?[,}]");
 
-    public static final String PACKAGE_PREFIX_KRY = "com.vartime";
+    public static final String PACKAGE_PREFIX_EASY_SITE = "cn.org.easysite";
 
     public static final String PACKAGE_EXCLUDE_COMMON = "common";
 
@@ -80,7 +80,7 @@ public class Utils {
      * @return
      */
     public static String getExceptionInfo(Throwable e) {
-        return getExceptionInfo(e, PACKAGE_PREFIX_KRY, PACKAGE_EXCLUDE_COMMON);
+        return getExceptionInfo(e, PACKAGE_PREFIX_EASY_SITE, PACKAGE_EXCLUDE_COMMON);
     }
 
     /**
@@ -223,9 +223,4 @@ public class Utils {
         return false;
     }
 
-
-    public static void main(String[] args) {
-        String s = "{\"brandId\":4881,\"shopId\":810003333,\"tradeId\":\"38404835\",\"operation\":16,\"msgId\":\"906e36d6-d1a2-4f71-9245-ffc5568e6dbf\"}";
-        System.out.println(getMsgId(s));
-    }
 }
