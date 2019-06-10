@@ -26,10 +26,8 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * <p>Title: BeanUtil</p> <p>Description: com.wqb.test</p> <p>Copyright: Copyright (c) 2016</p>
- * <p>Company: 客如云</p>
- *
- * @author dongt
- * @date 2016年3月21日
+ * <p>Company: easysite</p>
+ * @author panda
  */
 @Slf4j
 public final class BeanUtil {
