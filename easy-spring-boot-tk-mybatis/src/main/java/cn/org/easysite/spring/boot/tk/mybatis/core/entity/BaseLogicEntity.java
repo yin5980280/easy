@@ -2,8 +2,6 @@ package cn.org.easysite.spring.boot.tk.mybatis.core.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import cn.org.easysite.commons.base.BaseObject;
-import cn.org.easysite.commons.json.JsonDateSerialize;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -18,6 +16,8 @@ import javax.persistence.OrderBy;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import cn.org.easysite.commons.base.BaseObject;
+import cn.org.easysite.commons.json.JsonDateSerialize;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -77,7 +77,7 @@ public class BaseLogicEntity extends BaseObject {
     /**
      * 是否是可用数据
      */
-    @Column(name = "usable", columnDefinition = "TINYINT(1) NOT NULL DEFAULT true COMMENT '是否可用'")
-    @ApiModelProperty(value = "是否可用", example = "true")
-    private Boolean usable = true;
+    @Column(name = "deleted", columnDefinition = "TINYINT(1) NOT NULL DEFAULT false COMMENT '是否删除'")
+    @ApiModelProperty(value = "是否可用", example = "false")
+    private Boolean deleted = false;
 }

@@ -59,6 +59,6 @@ public class BaseEntity extends BaseObject {
     /**
      * 是否删除
      */
-    @Column(name = "usable", columnDefinition = "TINYINT(1) NOT NULL DEFAULT true COMMENT '是否可用'")
-    private Boolean usable = true;
+    @Column(name = "deleted", columnDefinition = "TINYINT(1) NOT NULL DEFAULT false COMMENT '是否可用'")
+    private Boolean deleted = true;
 }

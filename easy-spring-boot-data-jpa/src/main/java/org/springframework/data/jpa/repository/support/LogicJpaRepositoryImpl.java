@@ -43,14 +43,14 @@ public class LogicJpaRepositoryImpl<T extends BaseEntity, ID extends Serializabl
     /**
      * 逻辑删除字段名.
      */
-    public final static String USABLE_FIELD = "usable";
+    public final static String DELETED_FIELD = "deleted";
 
 
-    public static final String COUNT_QUERY_STRING = "select count(%s) from %s x where x.usable = true";
+    public static final String COUNT_QUERY_STRING = "select count(%s) from %s x where x.deleted = false";
 
-    public static final String EXISTS_QUERY_STRING = "select count(%s) from %s x where x.%s = :id and x.usable = true";
+    public static final String EXISTS_QUERY_STRING = "select count(%s) from %s x where x.%s = :id and x.deleted = false";
 
-    public static final String DELETE_ALL_QUERY_STRING = "update %s x set s.usable = false";
+    public static final String DELETE_ALL_QUERY_STRING = "update %s x set s.deleted = true";
 
     private final JpaEntityInformation<T, ?> entityInformation;
 
@@ -153,7 +153,7 @@ public class LogicJpaRepositoryImpl<T extends BaseEntity, ID extends Serializabl
 
         Root<U> root = query.from(domainClass);
         CriteriaBuilder builder = em.getCriteriaBuilder();
-        Path<Boolean> deletedPath = root.get(USABLE_FIELD);
+        Path<Boolean> deletedPath = root.get(DELETED_FIELD);
         Predicate deletedPredicate = builder.isTrue(deletedPath);
         if (spec == null) {
             query.where(deletedPath);
@@ -184,7 +184,7 @@ public class LogicJpaRepositoryImpl<T extends BaseEntity, ID extends Serializabl
     @Override
     public void delete(T entity) {
         Assert.notNull(entity, "The entity must not be null!");
-        entity.setUsable(false);
+        entity.setDeleted(true);
         em.persist(entity);
     }
 
@@ -223,6 +223,6 @@ public class LogicJpaRepositoryImpl<T extends BaseEntity, ID extends Serializabl
     @Override
     public T getOne(ID id) {
         T t = super.getOne(id);
-        return t.getUsable() ? t : null;
+        return !t.getDeleted() ? t : null;
     }
 }
