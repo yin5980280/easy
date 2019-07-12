@@ -17,8 +17,8 @@
         <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
         <spring-boot-admin.version>2.1.6</spring-boot-admin.version>
         <spring-cloud.version>Finchley.SR1</spring-cloud.version>
-        <druid-spring-boot-starter-version>1.1.14</druid-spring-boot-starter-version>
-        <redisson-spring-boot-starter-version>3.10.4</redisson-spring-boot-starter-version>
+        <druid-spring-boot-starter-version>1.1.18</druid-spring-boot-starter-version>
+        <redisson-spring-boot-starter-version>3.11.1</redisson-spring-boot-starter-version>
         <commons-lang3.version>3.4</commons-lang3.version>
         <commons-compress.version>1.18</commons-compress.version>
         <commons-collections4.version>4.0</commons-collections4.version>
