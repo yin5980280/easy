@@ -467,7 +467,7 @@
                         <configuration>
                             <updatePomFile>false</updatePomFile>
                             <outputDirectory>${project.build.directory}/effective-pom</outputDirectory>
-                            <flattenedPomFilename>mycloud-dependencies.xml</flattenedPomFilename>
+                            <flattenedPomFilename>easy-dependencies.xml</flattenedPomFilename>
                             <flattenMode>oss</flattenMode>
                             <pomElements>
                                 <dependencyManagement>expand</dependencyManagement>
