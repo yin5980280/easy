@@ -309,6 +309,13 @@
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
                     <version>${spring-boot.version}</version>
+                    <executions>
+                        <execution>
+                          <goals>
+                           <goal>repackage</goal>
+                          </goals>
+                        </execution>
+                     </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -573,7 +580,7 @@
                         <configuration>
                             <artifacts>
                                 <artifact>
-                                    <file>${project.build.directory}/effective-pom/mycloud-dependencies.xml
+                                    <file>${project.build.directory}/effective-pom/easy-dependencies.xml
                                     </file>
                                     <type>effective-pom</type>
                                 </artifact>
