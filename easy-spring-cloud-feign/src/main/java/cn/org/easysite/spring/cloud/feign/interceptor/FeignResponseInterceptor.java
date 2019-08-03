@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
 import org.springframework.cloud.openfeign.support.ResponseEntityDecoder;
 import org.springframework.cloud.openfeign.support.SpringDecoder;
+import org.springframework.http.HttpStatus;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -28,7 +29,7 @@ public class FeignResponseInterceptor extends Decoder.Default implements Decoder
 
     @Override
     public Object decode(Response response, Type type) throws IOException, FeignException {
-        if (response.status() == 404) {
+        if (response.status() == HttpStatus.NOT_FOUND.value()) {
             return Util.emptyValueOf(type);
         }
         if (response.body() == null) {

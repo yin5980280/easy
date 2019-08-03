@@ -14,10 +14,14 @@ public class BaseConstants {
     public static final TimeZone TIME_ZONE = TimeZone.getTimeZone("GMT+8");
 
     public static final Integer INTEGER_ZERO = Integer.valueOf(0);
+
     public static final Integer INTEGER_ONE = Integer.valueOf(1);
+
     public static final Long LONG_ZERO = Long.valueOf(0);
+
     public static final Long LONG_ONE = Long.valueOf(1);
-    public static final BigDecimal BigDecimal_HUNDRED = BigDecimal.valueOf(100);
+
+    public static final BigDecimal BIG_DECIMAL_HUNDRED = BigDecimal.valueOf(100);
 
     //签名字段
     public static final String KEY_SIGN = "sign";
@@ -25,7 +29,7 @@ public class BaseConstants {
     public static final String KEY_TIMESTAMP = "timestamp";
 
     public static final String PACKAGE_JAVA_LANG = "java.lang";
-    public static final String PACKAGE_COM_EASY_SITE = "com.vartime";
+    public static final String PACKAGE_COM_EASY_SITE = "cn.org.easysite";
 
     public static final String WEB_DEFAULT_DEVICEID = "00-00-00-00-00-00";
 
