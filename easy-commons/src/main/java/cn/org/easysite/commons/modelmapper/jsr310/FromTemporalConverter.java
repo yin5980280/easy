@@ -60,16 +60,17 @@ public class FromTemporalConverter implements ConditionalConverter<Temporal, Obj
     @Override
     public Object convert(MappingContext<Temporal, Object> mappingContext) {
         Class<?> sourceType = mappingContext.getSourceType();
-        if (LocalDateTime.class.equals(sourceType))
+        if (LocalDateTime.class.equals(sourceType)) {
             return localDateTimeConverter.convert(mappingContext);
-        else if (LocalDate.class.equals(sourceType))
+        } else if (LocalDate.class.equals(sourceType)) {
             return localDateConverter.convert(mappingContext);
-        else if (Instant.class.equals(sourceType))
+        } else if (Instant.class.equals(sourceType)) {
             return instantConverter.convert(mappingContext);
-        else
+        } else {
             throw new Errors().addMessage("Unsupported mapping types[%s->%s]",
                     LocalDateTime.class.getName(), mappingContext.getDestinationType().getName())
                     .toMappingException();
+        }
     }
 
     private class LocalDateTimeConverter implements Converter<Temporal, Object> {
@@ -87,10 +88,10 @@ public class FromTemporalConverter implements ConditionalConverter<Temporal, Obj
         public Object convert(MappingContext<Temporal, Object> mappingContext) {
             LocalDate source = (LocalDate) mappingContext.getSource();
             Class<?> destinationType = mappingContext.getDestinationType();
-            if (destinationType.equals(String.class))
+            if (destinationType.equals(String.class)) {
                 return DateTimeFormatter.ofPattern(config.getDatePattern())
                         .format(source);
-
+            }
             LocalDateTime localDateTime = source.atStartOfDay();
             return convertLocalDateTime(localDateTime, mappingContext);
         }
@@ -107,34 +108,36 @@ public class FromTemporalConverter implements ConditionalConverter<Temporal, Obj
 
     private Object convertLocalDateTime(LocalDateTime source, MappingContext<?, ?> mappingContext) {
         Class<?> destinationType = mappingContext.getDestinationType();
-        if (destinationType.equals(String.class))
+        if (destinationType.equals(String.class)) {
             return DateTimeFormatter.ofPattern(config.getDateTimePattern())
                     .format(source);
-
+        }
         Instant instant = source.atZone(config.getZoneId()).toInstant();
         return convertInstant(instant, mappingContext);
     }
 
     private Object convertInstant(Instant source, MappingContext<?, ?> mappingContext) {
         Class<?> destinationType = mappingContext.getDestinationType();
-        if (destinationType.equals(String.class))
+        if (destinationType.equals(String.class)) {
             return DateTimeFormatter.ofPattern(config.getDateTimePattern())
                     .withZone(config.getZoneId())
                     .format(source);
-        else if (Date.class.isAssignableFrom(destinationType))
+        } else if (Date.class.isAssignableFrom(destinationType)) {
             return new Date(epochMilliOf(source));
-        else if (Calendar.class.isAssignableFrom(destinationType))
+        }
+        else if (Calendar.class.isAssignableFrom(destinationType)) {
             return calendarOf(source);
-        else if (Long.class.equals(destinationType) || Long.TYPE.equals(destinationType))
+        } else if (Long.class.equals(destinationType) || Long.TYPE.equals(destinationType)) {
             return epochMilliOf(source);
-        else if (BigDecimal.class.equals(destinationType))
+        } else if (BigDecimal.class.equals(destinationType)) {
             return new BigDecimal(epochMilliOf(source));
-        else if (BigInteger.class.equals(destinationType))
+        } else if (BigInteger.class.equals(destinationType)) {
             return BigInteger.valueOf(epochMilliOf(source));
-        else
+        } else {
             throw new Errors().addMessage("Unsupported mapping types[%s->%s]",
                     mappingContext.getSourceType().getName(), destinationType.getName())
                     .toMappingException();
+        }
     }
 
     private long epochMilliOf(Instant instant) {

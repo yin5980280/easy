@@ -58,16 +58,19 @@ public class ToTemporalConverter implements ConditionalConverter<Object, Tempora
     @Override
     public Temporal convert(MappingContext<Object, Temporal> mappingContext) {
         Class<?> destinationType = mappingContext.getDestinationType();
-        if (LocalDateTime.class.equals(destinationType))
+        if (LocalDateTime.class.equals(destinationType)) {
             return localDateTimeConverter.convert(mappingContext);
-        else if (LocalDate.class.equals(destinationType))
+        }
+        else if (LocalDate.class.equals(destinationType)) {
             return localDateConverter.convert(mappingContext);
-        else if (Instant.class.equals(destinationType))
+        }
+        else if (Instant.class.equals(destinationType)) {
             return instantConverter.convert(mappingContext);
-        else
+        } else {
             throw new Errors().addMessage("Unsupported mapping types[%s->%s]",
                     mappingContext.getSourceType().getName(), destinationType.getName())
                     .toMappingException();
+        }
     }
 
     private class LocalDateTimeConverter implements Converter<Object, Temporal> {
@@ -97,37 +100,40 @@ public class ToTemporalConverter implements ConditionalConverter<Object, Tempora
     private LocalDate convertLocalDate(MappingContext<?, ?> mappingContext) {
         Object source = mappingContext.getSource();
         Class<?> sourceType = source.getClass();
-        if (sourceType.equals(String.class))
+        if (sourceType.equals(String.class)) {
             return LocalDate.parse((String) source,
                     DateTimeFormatter.ofPattern(config.getDatePattern()));
+        }
         return convertInstant(mappingContext).atZone(config.getZoneId()).toLocalDate();
     }
 
     private LocalDateTime convertLocalDateTime(MappingContext<?, ?> mappingContext) {
         Object source = mappingContext.getSource();
         Class<?> sourceType = source.getClass();
-        if (sourceType.equals(String.class))
+        if (sourceType.equals(String.class)) {
             return LocalDateTime.parse((String) source,
                     DateTimeFormatter.ofPattern(config.getDateTimePattern()));
+        }
         return convertInstant(mappingContext).atZone(config.getZoneId()).toLocalDateTime();
     }
 
     private Instant convertInstant(MappingContext<?, ?> mappingContext) {
         Object source = mappingContext.getSource();
         Class<?> sourceType = source.getClass();
-        if (sourceType.equals(String.class))
+        if (sourceType.equals(String.class)) {
             return LocalDateTime.parse((String) source,
                     DateTimeFormatter.ofPattern(config.getDateTimePattern()))
                     .atZone(config.getZoneId()).toInstant();
-        else if (Date.class.isAssignableFrom(sourceType))
+        } else if (Date.class.isAssignableFrom(sourceType)) {
             return Instant.ofEpochMilli(((Date) source).getTime());
-        else if (Calendar.class.isAssignableFrom(sourceType))
+        } else if (Calendar.class.isAssignableFrom(sourceType)) {
             return Instant.ofEpochMilli(((Calendar) source).getTime().getTime());
-        else if (Number.class.isAssignableFrom(sourceType))
+        } else if (Number.class.isAssignableFrom(sourceType)) {
             return Instant.ofEpochMilli(((Number) source).longValue());
-        else
+        } else {
             throw new Errors().addMessage("Unsupported mapping types[%s->%s]",
                     sourceType.getName(), mappingContext.getDestinationType().getName())
                     .toMappingException();
+        }
     }
 }
