@@ -13,6 +13,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.text.ParseException;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
@@ -23,6 +24,8 @@ import java.util.Map;
 import java.util.Set;
 
 import lombok.extern.slf4j.Slf4j;
+
+import static cn.org.easysite.commons.utils.DateUtils.LONG_DATE_FORMAT;
 
 /**
  * <p>Title: BeanUtil</p> <p>Description: com.wqb.test</p> <p>Copyright: Copyright (c) 2016</p>
@@ -43,11 +46,7 @@ public final class BeanUtil {
         if (null == targetObj || null == sourceObj) {
             return targetObj;
         }
-//        try {
-        BeanUtils.copyProperties(sourceObj,targetObj, getNullPropertyNames(sourceObj));
-//        } catch (Exception e) {
-//            log.error("Bean CopyProperties Exception", e);
-//        }
+        BeanUtils.copyProperties(sourceObj, targetObj, getNullPropertyNames(sourceObj));
         return targetObj;
     }
 
@@ -293,85 +292,147 @@ public final class BeanUtil {
         if (clazz.isAssignableFrom(value.getClass())) {
             return value;
         }
-        String s;
-        if (value.getClass() == String.class) {
-            s = (String) value;
-        } else {
-            s = "" + value;
+        return BaseTypeHandlerFactory.getBaseTypeHandler(clazz.getTypeName()).handler(String.valueOf(value));
+    }
+    /**
+     * 处理基础类型factory
+     */
+    private static class BaseTypeHandlerFactory {
+
+        /**
+         * TypeHandler缓存
+         */
+        private static final Map<Class<?>, BaseTypeHandler> BASE_HANDLER_CACHE;
+
+        static {
+            BASE_HANDLER_CACHE = new HashMap<>();
+            //注册int
+            BASE_HANDLER_CACHE.put(int.class, new AbstractNumberBaseTypeHandler<Integer>() {
+                @Override
+                protected Integer handle(Number value) {
+                    return value.intValue();
+                }
+            });
+            BASE_HANDLER_CACHE.put(Integer.class, BASE_HANDLER_CACHE.get(int.class));
+
+            //注册long
+            BASE_HANDLER_CACHE.put(long.class, new AbstractNumberBaseTypeHandler<Long>() {
+                @Override
+                protected Long handle(Number value) {
+                    return value.longValue();
+                }
+            });
+            BASE_HANDLER_CACHE.put(Long.class, BASE_HANDLER_CACHE.get(long.class));
+
+            //float
+            BASE_HANDLER_CACHE.put(float.class, new AbstractNumberBaseTypeHandler<Float>() {
+                @Override
+                protected Float handle(Number value) {
+                    return value.floatValue();
+                }
+            });
+            BASE_HANDLER_CACHE.put(Float.class, BASE_HANDLER_CACHE.get(float.class));
+
+            //注册double
+            BASE_HANDLER_CACHE.put(double.class, new AbstractNumberBaseTypeHandler<Double>() {
+                @Override
+                protected Double handle(Number value) {
+                    return value.doubleValue();
+                }
+            });
+            BASE_HANDLER_CACHE.put(Short.class, BASE_HANDLER_CACHE.get(float.class));
+
+            //注册double
+            BASE_HANDLER_CACHE.put(short.class, new AbstractNumberBaseTypeHandler<Short>() {
+                @Override
+                protected Short handle(Number value) {
+                    return value.shortValue();
+                }
+            });
+            BASE_HANDLER_CACHE.put(Short.class, BASE_HANDLER_CACHE.get(short.class));
+
+            //注册byte
+            BASE_HANDLER_CACHE.put(byte.class, Byte::valueOf);
+            BASE_HANDLER_CACHE.put(Byte.class, BASE_HANDLER_CACHE.get(byte.class));
+
+            //注册char
+            BASE_HANDLER_CACHE.put(char.class, value -> value.charAt(0));
+            BASE_HANDLER_CACHE.put(Character.class, BASE_HANDLER_CACHE.get(char.class));
+
+            //注册boolean
+            BASE_HANDLER_CACHE.put(boolean.class, Boolean::valueOf);
+            BASE_HANDLER_CACHE.put(Boolean.class, BASE_HANDLER_CACHE.get(boolean.class));
+
+            //注册BigDecimal
+            BASE_HANDLER_CACHE.put(BigDecimal.class, BigDecimal::new);
+
+            //注册timestamp
+            BASE_HANDLER_CACHE.put(Timestamp.class, value -> {
+                if (NumberUtils.isCreatable(value)) {
+                    return new Timestamp(NumberUtils.createLong(value));
+                }
+                try {
+                    return LONG_DATE_FORMAT.get().parse(value);
+                } catch (ParseException pe) {
+                    log.error("反序列化[" + value + "]为Timestamp类型时出错");
+                }
+                return null;
+            });
+
+            //注册Date
+            BASE_HANDLER_CACHE.put(Date.class, BASE_HANDLER_CACHE.get(Timestamp.class));
         }
-        if (StringUtils.isEmpty(s)) {
-            return null;
+
+        /**
+         * 基础类型处理Handler
+         */
+        private interface BaseTypeHandler<T> {
+            /**
+             * 返回基本类型
+             *
+             * @param value 字符串值
+             * @return 值对象
+             */
+            T handler(String value);
         }
-        if (int.class == clazz || Integer.class == clazz) {
-            if (NumberUtils.isNumber(s)) {
-                return NumberUtils.createInteger(s);
+
+        /**
+         * 数值实现类
+         */
+        private abstract static class AbstractNumberBaseTypeHandler<T extends Number> implements BaseTypeHandler {
+            @Override
+            public Number handler(String value) {
+                if (!NumberUtils.isCreatable(value)) {
+                    return 0;
+                }
+                Number number = NumberUtils.createNumber(value);
+                return handle(number);
             }
-            log.warn(s + " 不能转换为Integer");
-            return null;
+
+            /**
+             * 实现类处理
+             */
+            protected abstract T handle(Number value);
         }
-        if (long.class == clazz || Long.class == clazz) {
-            if (NumberUtils.isNumber(s)) {
-                return NumberUtils.createLong(s);
+
+        private static BaseTypeHandler getBaseTypeHandler(String typeName) {
+            for (Class clazz : BASE_HANDLER_CACHE.keySet()) {
+                if (isClassName(typeName, clazz)) {
+                    return BASE_HANDLER_CACHE.get(clazz);
+                }
             }
-            log.warn(s + " 不能转换为Long");
-            return null;
+            return value -> value;
         }
-        if (BigDecimal.class == clazz) {
-            return new BigDecimal(s);
-        }
-        if (Date.class == clazz) {
-            long ms = parserTimeStrToMs(s);
-            if (0 == ms) {
-                log.warn(s + " 不能转换为Date");
-            }
-            return new Date(ms);
-        }
-        if (Timestamp.class == clazz) {
-            long ms = parserTimeStrToMs(s);
-            if (0 == ms) {
-                log.warn(s + " 不能转换为Timestamp");
-            }
-            return new Timestamp(ms);
-        }
-        if (float.class == clazz || Float.class == clazz) {
-            if (NumberUtils.isNumber(s)) {
-                return NumberUtils.createFloat(s);
-            }
-            log.warn(s + " 不能转换为Float");
-            return null;
-        }
-        if (double.class == clazz || Double.class == clazz) {
-            if (NumberUtils.isNumber(s)) {
-                return NumberUtils.createDouble(s);
-            }
-            log.warn(s + " 不能转换为Double");
-            return null;
-        }
-        if (byte.class == clazz || Byte.class == clazz) {
-            if (1 == s.length()) {
-                return NumberUtils.toByte(s);
-            }
-            log.warn(s + " 不能转换为Byte");
-            return null;
-        }
-        if (short.class == clazz || Short.class == clazz) {
-            if (NumberUtils.isNumber(s)) {
-                return NumberUtils.toShort(s);
-            }
-            log.warn(s + " 不能转换为Short");
-            return null;
-        }
-        if (char.class == clazz || Character.class == clazz) {
-            if (1 == s.length()) {
-                return s.charAt(0);
-            }
-            log.warn(s + " 不能转换为Character");
-            return null;
-        }
-        if (boolean.class == clazz || Boolean.class == clazz) {
-            return Boolean.valueOf(s);
-        }
-        return value;
+    }
+
+    /**
+     * 判断class名字是否与被判断的值相等
+     * @param name
+     * @param clazz
+     * @return
+     */
+    public static boolean isClassName(String name, Class clazz) {
+        return name.equalsIgnoreCase(clazz.getSimpleName()) || name.equalsIgnoreCase(clazz.getName());
     }
 
     /**
@@ -384,7 +445,7 @@ public final class BeanUtil {
         if (StringUtils.isBlank(s)) {
             return 0;
         }
-        if (NumberUtils.isNumber(s)) {
+        if (NumberUtils.isCreatable(s)) {
             return Long.parseLong(s);
         }
         return FormatUtils.parseDate(s, FormatUtils.LONG_DATE_FORMAT_STR).getTime();

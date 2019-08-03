@@ -19,7 +19,7 @@
         <spring-cloud.version>Finchley.SR1</spring-cloud.version>
         <druid-spring-boot-starter-version>1.1.18</druid-spring-boot-starter-version>
         <redisson-spring-boot-starter-version>3.11.1</redisson-spring-boot-starter-version>
-        <commons-lang3.version>3.4</commons-lang3.version>
+        <commons-lang3.version>3.9</commons-lang3.version>
         <commons-compress.version>1.18</commons-compress.version>
         <commons-collections4.version>4.4</commons-collections4.version>
         <commons.io.version>2.6</commons.io.version>

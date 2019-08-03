@@ -17,6 +17,19 @@ import java.util.TimeZone;
  */
 public final class DateUtils {
 
+    public static final String LONG_DATE_FORMAT_STR = "yyyy-MM-dd HH:mm:ss";
+
+    public static final TimeZone TIME_ZONE = TimeZone.getTimeZone("GMT+8");
+
+    /**
+     * 	SimpleDateFormat 的parse, format不是线程安全的。
+     */
+    public static final ThreadLocal<SimpleDateFormat> LONG_DATE_FORMAT = ThreadLocal.withInitial(() -> {
+        SimpleDateFormat dateFormat = new SimpleDateFormat(LONG_DATE_FORMAT_STR);
+        dateFormat.setTimeZone(TIME_ZONE);
+        return dateFormat;
+    });
+
     /**
      * 获取默认时间格式: yyyy-MM-dd HH:mm:ss
      */
@@ -98,7 +111,7 @@ public final class DateUtils {
      * @return
      */
     public static long getZeroMillis() {
-        return System.currentTimeMillis()/(1000*3600*24)*(1000*3600*24) - TimeZone.getDefault().getRawOffset();
+        return System.currentTimeMillis() / (1000*3600*24)*(1000*3600*24) - TimeZone.getDefault().getRawOffset();
     }
 
     public static LocalDateTime minusDay(int day) {
