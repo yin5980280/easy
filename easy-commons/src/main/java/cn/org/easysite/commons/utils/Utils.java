@@ -110,6 +110,10 @@ public class Utils {
                 }
             }
         }
+       return getExceptionInfo(e, errInfo);
+    }
+
+    private static String getExceptionInfo(Throwable e, String errInfo) {
         StringBuilder sb = new StringBuilder(e.getClass().getSimpleName());
         String message = e.getMessage();
         if (null != message) {
@@ -146,15 +150,7 @@ public class Utils {
                 }
             }
         }
-        StringBuilder sb = new StringBuilder(e.getClass().getSimpleName());
-        String message = e.getMessage();
-        if (null != message) {
-            sb.append(':').append(message);
-        }
-        if (null != errInfo) {
-            sb.append(':').append(errInfo);
-        }
-        return sb.toString();
+        return getExceptionInfo(e, errInfo);
     }
 
     /**

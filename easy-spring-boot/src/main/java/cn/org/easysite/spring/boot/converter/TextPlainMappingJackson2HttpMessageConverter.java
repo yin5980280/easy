@@ -6,6 +6,10 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 针对返回类型是text/plain类型的结果返回是json增加解析
+ * @author yinlin
+ */
 public class TextPlainMappingJackson2HttpMessageConverter extends MappingJackson2HttpMessageConverter {
 
     public TextPlainMappingJackson2HttpMessageConverter() {

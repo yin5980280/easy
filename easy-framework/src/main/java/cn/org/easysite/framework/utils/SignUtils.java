@@ -12,16 +12,19 @@ import lombok.extern.slf4j.Slf4j;
 import static cn.org.easysite.framework.utils.ExceptionTool.createBaseException;
 
 /**
- * @author liangb
+ * @author panda
  * @version 1.0
- * @date 16/7/7 下午2:15
+ * @date 19/7/7 下午2:15
  */
 @Slf4j
 public class SignUtils {
     private static final String SIGN_SHA1 = "SHA1";
     private static final String SIGN_MD5 = "MD5";
     private static final char hexDigits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
-    private static final String KEY_STR = "&key=";//SHA1签名拼接的字符串
+    /**
+     * SHA1签名拼接的字符串
+     */
+    private static final String KEY_STR = "&key=";
 
     /**
      * RSA签名
