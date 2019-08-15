@@ -69,12 +69,6 @@
     <logger name="com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver" level="WARN"/>
     <logger name="org.apache.activemq.transport.failover.FailoverTransport" level="WARN"/>
     <logger name="org.apache" level="INFO"/>
-    <logger name="com.lottery.game.core.modules.mapper" level="DEBUG">
-        <appender-ref ref="Console"/>
-    </logger>
-    <logger name="com.lottery.game.runner" level="DEBUG">
-        <appender-ref ref="LogGameFile"/>
-    </logger>
     <root level="INFO">
         <appender-ref ref="Console"/>
         <appender-ref ref="LogFile"/>
