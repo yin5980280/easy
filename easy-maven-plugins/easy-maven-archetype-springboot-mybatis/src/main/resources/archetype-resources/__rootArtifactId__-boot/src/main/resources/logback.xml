@@ -32,22 +32,6 @@
             <maxFileSize>20MB</maxFileSize>
         </rollingPolicy>
     </appender>
-
-    <appender name="LogGameFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <File>${LOG_PATH}/game.log</File>
-        <Append>true</Append>
-        <encoder>
-            <pattern>${LOG_PATTERN}</pattern>
-            <charset>utf8</charset>
-        </encoder>
-        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-            <level>DEBUG</level>
-        </filter>
-        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_PATH}/game.%d{yyyyMMdd}.%i.log</fileNamePattern>
-            <maxFileSize>20MB</maxFileSize>
-        </rollingPolicy>
-    </appender>
     <appender name="ErrorFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <File>${LOG_PATH}/${LOG_ERROR_FILE}</File>
         <encoder>
