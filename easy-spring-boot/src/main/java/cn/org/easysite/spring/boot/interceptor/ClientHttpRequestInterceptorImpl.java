@@ -18,6 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * resttemplate 请求响应信息拦截器
+ * @author yinlin
  */
 @Slf4j
 public class ClientHttpRequestInterceptorImpl implements ClientHttpRequestInterceptor {

@@ -12,10 +12,19 @@ import javax.servlet.http.HttpServletRequest;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * @author : yinlin
+ * @version : 1.0
+ * @date : 2019-09-27 10:47
+ * @Description :
+ * @Copyright : Copyright (c) 2019
+ * @Company : EasySite Technology Chengdu Co. Ltd.
+ * @link : cn.org.easysite.spring.boot.utils.MDCUtils
+ */
 @Slf4j
 public class MDCUtils {
 
-    private static final String KEY_MSG_ID = "_EASY_GLOBAL_MSG_ID";
+    public static final String KEY_MSG_ID = "_EASY_GLOBAL_MSG_ID";
 
     private static final String KEY_IP = "IP";
 
@@ -124,6 +133,11 @@ public class MDCUtils {
         return msgId;
     }
 
+    /**
+     * 获取或者创建messgaeId
+     * @param request
+     * @return
+     */
     public static String getOrGenMsgId(HttpServletRequest request) {
         String msgId = getMsgId();
         if (StringUtils.isNotBlank(msgId)) {
@@ -148,6 +162,10 @@ public class MDCUtils {
         return msgId;
     }
 
+    /**
+     * 获取本地IP地址
+     * @return
+     */
     public static String getLocalIp() {
         InetAddress ip, localIp = null;
         try {

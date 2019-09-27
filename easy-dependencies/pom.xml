@@ -62,6 +62,8 @@
         <versions-maven-plugin.version>2.3</versions-maven-plugin.version>
         <xml-maven-plugin.version>1.0.1</xml-maven-plugin.version>
         <flatten-maven-plugin.version>1.0.0</flatten-maven-plugin.version>
+        <xstream.version>1.4.11</xstream.version>
+        <dom4j.version>2.1.1</dom4j.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -289,6 +291,17 @@
                 <groupId>com.github.xiaoymin</groupId>
                 <artifactId>swagger-bootstrap-ui</artifactId>
                 <version>${swagger.bootstrap.ui.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.thoughtworks.xstream</groupId>
+                <artifactId>xstream</artifactId>
+                <version>${xstream.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.dom4j</groupId>
+                <artifactId>dom4j</artifactId>
+                <version>${dom4j.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

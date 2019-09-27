@@ -1,6 +1,7 @@
 package cn.org.easysite.spring.boot.autoconfigure;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
@@ -24,6 +25,7 @@ import cn.org.easysite.spring.boot.configuration.GlobalReturnValuePathProperties
 import cn.org.easysite.spring.boot.configuration.HttpConnectionProperties;
 import cn.org.easysite.spring.boot.converter.GlobalMessageConverter;
 import cn.org.easysite.spring.boot.converter.TextPlainMappingJackson2HttpMessageConverter;
+import cn.org.easysite.spring.boot.http.HttpRequestTemplate;
 import cn.org.easysite.spring.boot.interceptor.ClientHttpRequestInterceptorImpl;
 import cn.org.easysite.spring.boot.interceptor.DefaultExceptionHandler;
 import cn.org.easysite.spring.boot.interceptor.ResponseBodyWrapFactoryBean;
@@ -58,6 +60,12 @@ public class SpringMvcConfiguration {
         interceptors.add(new ClientHttpRequestInterceptorImpl());
         restTemplate.setInterceptors(interceptors);
         return restTemplate;
+    }
+
+    @Bean
+    @ConditionalOnMissingBean
+    HttpRequestTemplate httpRequestTemplate(@Autowired RestTemplate restTemplate) {
+        return new HttpRequestTemplate(restTemplate);
     }
 
     @Bean
