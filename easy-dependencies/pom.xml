@@ -20,7 +20,7 @@
         <druid-spring-boot-starter-version>1.1.18</druid-spring-boot-starter-version>
         <redisson-spring-boot-starter-version>3.11.1</redisson-spring-boot-starter-version>
         <commons-lang3.version>3.9</commons-lang3.version>
-        <commons-compress.version>1.18</commons-compress.version>
+        <commons-compress.version>1.19</commons-compress.version>
         <commons-collections4.version>4.4</commons-collections4.version>
         <commons.io.version>2.6</commons.io.version>
         <commons-beanutils.version>1.9.3</commons-beanutils.version>
