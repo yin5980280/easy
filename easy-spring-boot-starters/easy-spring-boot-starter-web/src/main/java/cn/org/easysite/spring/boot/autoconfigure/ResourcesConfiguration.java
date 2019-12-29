@@ -1,7 +1,6 @@
 package cn.org.easysite.spring.boot.autoconfigure;
 
 
-import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -39,7 +38,6 @@ public class ResourcesConfiguration implements WebMvcConfigurer {
     }
 
     @Bean
-    @ConditionalOnMissingBean
     public FilterRegistrationBean requestFilter() {
         RequestContextFilter filter = new RequestContextFilter();
         Set<String> set = new HashSet<>();

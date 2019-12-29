@@ -1,11 +1,13 @@
 package cn.org.easysite.spring.boot.autoconfigure;
 
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
@@ -18,18 +20,27 @@ import org.springframework.web.client.RestTemplate;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import javax.servlet.DispatcherType;
 
 import cn.org.easysite.framework.utils.SpringApplicationUtils;
 import cn.org.easysite.spring.boot.configuration.GlobalReturnValuePathProperties;
 import cn.org.easysite.spring.boot.configuration.HttpConnectionProperties;
+import cn.org.easysite.spring.boot.configuration.XssFilterProperties;
 import cn.org.easysite.spring.boot.converter.GlobalMessageConverter;
 import cn.org.easysite.spring.boot.converter.TextPlainMappingJackson2HttpMessageConverter;
+import cn.org.easysite.spring.boot.filters.xss.XssFilter;
 import cn.org.easysite.spring.boot.http.HttpRequestTemplate;
 import cn.org.easysite.spring.boot.interceptor.ClientHttpRequestInterceptorImpl;
 import cn.org.easysite.spring.boot.interceptor.DefaultExceptionHandler;
 import cn.org.easysite.spring.boot.interceptor.ResponseBodyWrapFactoryBean;
 import cn.org.easysite.spring.boot.interceptor.ValidateInterceptor;
+
+import static cn.org.easysite.spring.boot.filters.xss.XssFilter.XSS_FILTER_ENABLED;
+import static cn.org.easysite.spring.boot.filters.xss.XssFilter.XSS_FILTER_URL_EXCLUDES;
 
 /**
  * Spring MVC 配置
@@ -38,7 +49,7 @@ import cn.org.easysite.spring.boot.interceptor.ValidateInterceptor;
  */
 @Configuration
 @EnableAspectJAutoProxy
-@EnableConfigurationProperties({GlobalReturnValuePathProperties.class, HttpConnectionProperties.class})
+@EnableConfigurationProperties({GlobalReturnValuePathProperties.class, HttpConnectionProperties.class, XssFilterProperties.class})
 public class SpringMvcConfiguration {
 
     @ConditionalOnMissingBean
@@ -89,6 +100,21 @@ public class SpringMvcConfiguration {
     @Bean
     public DefaultExceptionHandler defaultExceptionHandler() {
         return new DefaultExceptionHandler();
+    }
+
+    @Bean
+    public FilterRegistrationBean xssFilter(XssFilterProperties properties) {
+        FilterRegistrationBean registration = new FilterRegistrationBean();
+        registration.setDispatcherTypes(DispatcherType.REQUEST);
+        registration.setFilter(new XssFilter());
+        registration.addUrlPatterns(StringUtils.split(properties.getUrlPatterns(), ","));
+        registration.setName("xssFilter");
+        registration.setOrder(Integer.MAX_VALUE);
+        Map<String, String> initParameters = new HashMap<String, String>();
+        initParameters.put(XSS_FILTER_URL_EXCLUDES, properties.getUrlExcludes());
+        initParameters.put(XSS_FILTER_ENABLED, properties.getEnabled());
+        registration.setInitParameters(initParameters);
+        return registration;
     }
 
     @Bean
