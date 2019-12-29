@@ -19,7 +19,10 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface Validate {
-    //需要校验的对象在目标方法参数列表中的序号，从0开始
+
+    /**
+     *  需要校验的对象在目标方法参数列表中的序号，从0开始
+     */
     int reqParamIndex() default 0;
 
     Class<?>[] groups() default {};

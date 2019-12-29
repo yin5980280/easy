@@ -17,9 +17,8 @@ import lombok.Data;
 @Data
 public class GlobalReturnValuePathProperties {
 
-    private String[] ignored;
-
-    private String[] notStartWith;
-
-    private String[] startWith;
+    /**
+     * 过滤掉的url
+     */
+    private String[] excludes;
 }
