@@ -1,4 +1,4 @@
-package cn.org.easysite.spring.boot.tk.mybatis.core.service.impl;
+package cn.org.easysite.spring.boot.tk.mybatis.core.repository.impl;
 
 import com.github.pagehelper.PageInfo;
 
@@ -7,7 +7,7 @@ import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 import cn.org.easysite.spring.boot.tk.mybatis.core.entity.BaseLogicEntity;
-import cn.org.easysite.spring.boot.tk.mybatis.core.service.BaseLogicService;
+import cn.org.easysite.spring.boot.tk.mybatis.core.repository.BaseRepository;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -20,7 +20,7 @@ import lombok.extern.slf4j.Slf4j;
  * @link : cn.org.easysite.spring.boot.tk.mybatis.core.service.impl.AbstractBaseLogicService
  */
 @Slf4j
-public abstract class AbstractBaseLogicServiceImpl<T extends BaseLogicEntity> extends AbstractBaseServiceImpl<T> implements BaseLogicService<T> {
+public abstract class AbstractBaseLogicRepositoryImpl<T extends BaseLogicEntity> extends AbstractBaseRepositoryImpl<T> implements BaseRepository<T> {
 
     /**
      * 创建一个Class的对象来获取泛型的class

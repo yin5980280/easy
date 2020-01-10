@@ -1,4 +1,4 @@
-package cn.org.easysite.spring.boot.tk.mybatis.core.service;
+package cn.org.easysite.spring.boot.tk.mybatis.core.repository;
 
 
 import com.github.pagehelper.PageInfo;
@@ -13,7 +13,7 @@ import tk.mybatis.mapper.entity.Example;
  *
  * @author panda
  */
-public interface BaseService<T> {
+public interface BaseRepository<T> {
 
     // ------ C ------ //
 

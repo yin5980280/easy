@@ -1,4 +1,4 @@
-package cn.org.easysite.spring.boot.tk.mybatis.core.service.impl;
+package cn.org.easysite.spring.boot.tk.mybatis.core.repository.impl;
 
 
 import com.google.common.base.Joiner;
@@ -6,8 +6,6 @@ import com.google.common.base.Preconditions;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import cn.org.easysite.spring.boot.tk.mybatis.core.mapper.CommonMapper;
-import cn.org.easysite.spring.boot.tk.mybatis.core.service.BaseService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,6 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
 import java.io.Serializable;
 import java.util.List;
 
+import cn.org.easysite.spring.boot.tk.mybatis.core.mapper.CommonMapper;
+import cn.org.easysite.spring.boot.tk.mybatis.core.repository.BaseRepository;
 import tk.mybatis.mapper.entity.Example;
 
 /**
@@ -22,7 +22,7 @@ import tk.mybatis.mapper.entity.Example;
  *
  * @author Panda
  */
-public abstract class AbstractBaseServiceImpl<T> implements BaseService<T> {
+public abstract class AbstractBaseRepositoryImpl<T> implements BaseRepository<T> {
 
     @Autowired
     private CommonMapper<T> mapper;
