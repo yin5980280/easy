@@ -10,7 +10,7 @@
 spring boot的项目管理方式。
 
 ## 功能介绍
-集成tk-mybatis，并扩展了BaseService 和 LogicService(带逻辑删除)，提供日志记录，线程内MDC日志Id，统一的restful返回标准，基于tk-mybatis的逆向代码生成工具，提供基于redisson的注解式分布式锁DLock，提供自己扩展的
+集成tk-mybatis，并扩展了BaseService(改名为BaseRepository) 和 LogicService(带逻辑删除-该接口已删除-依然可以继承AbstractLogicRepositoryImpl完成逻辑资源操作)，提供日志记录，线程内MDC日志Id，统一的restful返回标准，基于tk-mybatis的逆向代码生成工具，提供基于redisson的注解式分布式锁DLock，提供自己扩展的
 spring boot starter，提供springcloud统一数据解析和异常传递。
 
 ## 模块介绍
