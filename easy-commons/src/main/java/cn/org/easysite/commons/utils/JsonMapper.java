@@ -20,9 +20,14 @@ import java.util.Map;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * @author yinlin
+ */
 @Slf4j
 public class JsonMapper {
+
     public static ObjectMapper MAPPER = nonNullMapper();
+
     private static TypeFactory typeFactory = MAPPER.getTypeFactory();
 
     public static ObjectMapper getMapper(JsonInclude.Include include) {
@@ -36,7 +41,7 @@ public class JsonMapper {
         //增加转义符支持
         mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_CONTROL_CHARS, true);
         //日期类型转换为时间戳
-        SimpleModule module = new SimpleModule("DatesModule", new Version(0, 1, 0, "alpha", "com.keruyun", "kds"));
+        SimpleModule module = new SimpleModule("DatesModule", new Version(0, 1, 0, "alpha", "cn.org.easysite", "kds"));
         module.addSerializer(Date.class, new DateTimeSerializer());
         mapper.registerModule(module);
         return mapper;
