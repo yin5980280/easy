@@ -5,12 +5,16 @@ import java.nio.charset.Charset;
 import java.util.TimeZone;
 
 /**
+ * @author yinlin
  * @version 1.0
  * @date 2017/6/5 11:31
  */
 public class BaseConstants {
+
     public static final String DEFAULT_CHARSET = "UTF-8";
+
     public static final Charset DEFAULT_CHARSET_OBJ = Charset.forName(DEFAULT_CHARSET);
+
     public static final TimeZone TIME_ZONE = TimeZone.getTimeZone("GMT+8");
 
     public static final Integer INTEGER_ZERO = Integer.valueOf(0);

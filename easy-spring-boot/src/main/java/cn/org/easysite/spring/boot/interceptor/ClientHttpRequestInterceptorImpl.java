@@ -17,20 +17,19 @@ import java.io.IOException;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * resttemplate 请求响应信息拦截器
+ * restTemplate 请求响应信息拦截器
  * @author yinlin
  */
 @Slf4j
 public class ClientHttpRequestInterceptorImpl implements ClientHttpRequestInterceptor {
 
-	/** aplication/json;charset=UTF-8 */
-	private final MediaType application_json_utf8 = MediaType.parseMediaType("application/json;charset=UTF-8");
+	/** application/json;charset=UTF-8 */
+	private final MediaType APPLICATION_JSON_UTF8 = MediaType.parseMediaType("application/json;charset=UTF-8");
 
-	/*
+	/**
 	 * (non-Javadoc)
 	 *
-	 * @see
-	 * org.springframework.http.client.ClientHttpRequestInterceptor#intercept
+	 * @see org.springframework.http.client.ClientHttpRequestInterceptor#intercept
 	 * (org.springframework.http.HttpRequest, byte[],
 	 * org.springframework.http.client.ClientHttpRequestExecution)
 	 */

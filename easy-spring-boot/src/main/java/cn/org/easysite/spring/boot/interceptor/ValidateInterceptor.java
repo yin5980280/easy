@@ -1,9 +1,6 @@
 package cn.org.easysite.spring.boot.interceptor;
 
 
-import cn.org.easysite.spring.boot.validator.Validator;
-import cn.org.easysite.spring.boot.validator.annotation.Validate;
-
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -12,10 +9,12 @@ import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
 
+import cn.org.easysite.spring.boot.validator.Validator;
+import cn.org.easysite.spring.boot.validator.annotation.Validate;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author shuw
+ * @author panda
  * @version 1.0
  * @date 2017/6/5 10:37
  */
@@ -24,7 +23,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class ValidateInterceptor {
 
-    //接口请求参数校验器切面 Validate
+    /**
+     *  接口请求参数校验器切面 Validate
+     */
     @Pointcut("@annotation(cn.org.easysite.spring.boot.validator.annotation.Validate) && @annotation(validate)")
     public void validateControllerAspect(Validate validate) {
     }

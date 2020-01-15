@@ -10,8 +10,8 @@ import java.io.InputStream;
 
 /**
  * client response 代理
- * created by crush 2018-08-17
  *
+ * @author yinlin
  */
 public class EnhancerClientHttpResponse implements ClientHttpResponse {
 

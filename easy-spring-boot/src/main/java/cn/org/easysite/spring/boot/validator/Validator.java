@@ -1,19 +1,22 @@
 package cn.org.easysite.spring.boot.validator;
 
-import cn.org.easysite.framework.exception.BaseException;
-
 import java.util.Set;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 
+import cn.org.easysite.framework.exception.BaseException;
+
 /**
  * 基于hibernate validator的参数校验
+ * @author yinlin
  * @date
  */
 public class Validator {
   private static final javax.validation.Validator vf = Validation.buildDefaultValidatorFactory().getValidator();
-  // 连接多个错误信息的分隔符
+  /**
+   * 连接多个错误信息的分隔符
+    */
   private static final char ERROR_INFO_LINK = ';';
   private static final char KEY_PREFIX = '[';
   private static final char KEY_SUFFIX = ']';

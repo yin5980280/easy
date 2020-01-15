@@ -3,6 +3,9 @@ package cn.org.easysite.spring.boot.filters;
 
 import java.io.PrintWriter;
 
+/**
+ * @author yinlin
+ */
 public class TeePrintWriter extends PrintWriter {
 
     PrintWriter branch;

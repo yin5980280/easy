@@ -25,7 +25,7 @@ import javax.servlet.http.HttpServletResponse;
  * @Description : Xss过滤器
  * @Copyright : Copyright (c) 2019
  * @Company : EasySite Technology Chengdu Co. Ltd.
- * @link : com.keruyun.wallet.framework.web.filter.xss.XssFilter
+ * @link : cn.org.easysite.spring.boot.filters.xss.XssFilter
  */
 public class XssFilter implements Filter {
 

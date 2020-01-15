@@ -24,6 +24,7 @@ import lombok.extern.slf4j.Slf4j;
 import static cn.org.easysite.spring.boot.utils.IpUtils.getIpAddr;
 
 /**
+ * @author yinlin
  * @date 2018/3/29 16:28.
  */
 @Slf4j

@@ -10,6 +10,9 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestResponseBody
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author yinlin
+ */
 public class ResponseBodyWrapFactoryBean implements InitializingBean {
 
     @Autowired

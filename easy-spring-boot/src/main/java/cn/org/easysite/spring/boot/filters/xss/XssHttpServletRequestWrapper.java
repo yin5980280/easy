@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletRequestWrapper;
  * @Description : Xss过滤器-RequestWrapper
  * @Copyright : Copyright (c) 2019
  * @Company : EasySite Technology Chengdu Co. Ltd.
- * @link : com.keruyun.wallet.framework.web.filter.xss.XssHttpServletRequestWrapper
+ * @link : cn.org.easysite.spring.boot.filters.xss.XssHttpServletRequestWrapper
  */
 public class XssHttpServletRequestWrapper extends HttpServletRequestWrapper {
 

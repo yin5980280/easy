@@ -25,13 +25,18 @@ import static cn.org.easysite.commons.constants.BaseConstants.HTTP_CONTENT_TYPE_
 
 
 /**
+ * @author yinlin
  * @version 1.0
  * @date 2016/10/20 10:48
  */
 public class ResponseWrapper extends HttpServletResponseWrapper {
+
     private final ByteArrayOutputStream bos = new ByteArrayOutputStream();
+
     private PrintWriter writer = new PrintWriter(new OutputStreamWriter(bos, DEFAULT_CHARSET_OBJ));
+
     private ServletOutputStream teeServletOutputStream;
+
     private String responseText;
 
     private ResponseWrapper(HttpServletResponse response) {
