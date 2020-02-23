@@ -18,8 +18,8 @@ public interface ErrorCode {
     String getErrorCode();
 
     /**
-     *
+     * 获得错误消息
      * @return
      */
-    String getErrorMessage();
+    String getMessage();
 }

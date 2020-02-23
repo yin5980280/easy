@@ -13,7 +13,10 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public final class SpringApplicationUtils implements BeanFactoryPostProcessor {
-    /** Spring应用上下文环境 */
+
+    /**
+     * Spring应用上下文环境
+     */
     private static ConfigurableListableBeanFactory beanFactory;
 
     @Override

@@ -1,9 +1,8 @@
 package cn.org.easysite.framework.exception;
 
-import cn.org.easysite.framework.utils.MessageUtils;
-
 import org.apache.commons.lang3.StringUtils;
 
+import cn.org.easysite.framework.utils.MessageUtils;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -48,6 +47,10 @@ public class BaseException extends RuntimeException {
      * 错误消息
      */
     private String defaultMessage;
+
+    public BaseException(ErrorCode errorCode) {
+        this(errorCode.getErrorCode(), errorCode.getMessage());
+    }
 
     public BaseException(int code, String message) {
         this(null, null, 500, null, message);
