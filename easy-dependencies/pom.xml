@@ -29,7 +29,7 @@
         <bitwalker.version>1.21</bitwalker.version>
         <tk.mybatis.version>2.1.5</tk.mybatis.version>
         <swagger.version>2.9.2</swagger.version>
-        <swagger.bootstrap.ui.version>1.9.4</swagger.bootstrap.ui.version>
+        <swagger.bootstrap.ui.version>2.0.1</swagger.bootstrap.ui.version>
         <kaptcha.version>2.3.2</kaptcha.version>
         <pagehelper.boot.version>1.2.10</pagehelper.boot.version>
         <fastjson.version>1.2.56</fastjson.version>
@@ -289,7 +289,7 @@
             </dependency>
             <dependency>
                 <groupId>com.github.xiaoymin</groupId>
-                <artifactId>swagger-bootstrap-ui</artifactId>
+                <artifactId>knife4j-spring-ui</artifactId>
                 <version>${swagger.bootstrap.ui.version}</version>
             </dependency>
 
