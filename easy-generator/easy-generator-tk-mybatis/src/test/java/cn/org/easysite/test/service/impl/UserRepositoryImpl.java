@@ -4,8 +4,8 @@ import org.springframework.stereotype.Service;
 
 import cn.org.easysite.spring.boot.tk.mybatis.core.repository.impl.AbstractBaseLogicRepositoryImpl;
 import cn.org.easysite.test.entity.User;
-import cn.org.easysite.test.service.UserService;
+import cn.org.easysite.test.service.UserRepository;
 
 @Service("userService")
-public class UserRepositoryImpl extends AbstractBaseLogicRepositoryImpl<User> implements UserService {
+public class UserRepositoryImpl extends AbstractBaseLogicRepositoryImpl<User> implements UserRepository {
 }

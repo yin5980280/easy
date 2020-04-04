@@ -1,8 +1,15 @@
 package cn.org.easysite.test.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Table;
+
 import cn.org.easysite.spring.boot.tk.mybatis.core.entity.BaseLogicEntity;
-import javax.persistence.*;
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
