@@ -11,14 +11,15 @@ import java.util.regex.Pattern;
 
 import cn.org.easysite.commons.constants.BaseConstants;
 
-
 /**
  * @version 1.0
  * @date 2016/10/19 16:29
  */
 public class Utils {
 
-    //获取msgId的正则表达式
+    /**
+     *  获取msgId的正则表达式
+     */
     private static final Pattern msgIdPattern = Pattern.compile("[{,]\\s?\"msgId\"\\s?:\\s?\"\\S+\"\\s?[,}]");
 
     private static final Pattern messageIdPattern = Pattern.compile("[{,]\\s?\"messageId\"\\s?:\\s?\"\\S+\"\\s?[,}]");

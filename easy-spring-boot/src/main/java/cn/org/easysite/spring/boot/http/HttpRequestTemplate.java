@@ -61,7 +61,7 @@ public class HttpRequestTemplate {
         if (responseType == String.class) {
             return (T) this.postJson(url, request);
         }
-        return this.postJson(url, request, JsonMapper.contructType(responseType));
+        return this.postJson(url, request, JsonMapper.constructType(responseType));
     }
 
     public <T> T postJson(String url, Object request, JavaType responseType) throws RestClientException {
@@ -94,7 +94,7 @@ public class HttpRequestTemplate {
         if (responseType == String.class) {
             return (T) this.postJsonForm(url, request);
         }
-        return this.postJsonForm(url, request, JsonMapper.contructType(responseType));
+        return this.postJsonForm(url, request, JsonMapper.constructType(responseType));
     }
 
     public <T> T postJsonForm(String url, Object request, JavaType responseType) throws RestClientException {

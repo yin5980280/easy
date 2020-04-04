@@ -17,6 +17,8 @@ public class BaseConstants {
 
     public static final TimeZone TIME_ZONE = TimeZone.getTimeZone("GMT+8");
 
+    public static final String LONG_DATE_FORMAT_STR = "yyyy-MM-dd HH:mm:ss";
+
     public static final Integer INTEGER_ZERO = Integer.valueOf(0);
 
     public static final Integer INTEGER_ONE = Integer.valueOf(1);
@@ -48,9 +50,13 @@ public class BaseConstants {
     public static final String HTTP_CONTENT_TYPE_XML = "xml";
     public static final String HTTP_CONTENT_TYPE_JS = "javascript";
 
-    public static final String HTTP_HEADER_CONTENT_DISPOSITON = "Content-disposition";
+    public static final String HTTP_HEADER_CONTENT_DISPOSITION = "Content-disposition";
+
     public static final String HEADER_SESSION_ID = "sessionId";
+
     public static final String HEADER_X_FORWARDED_FOR = "x-forwarded-for";
+
     public static final String HEADER_PROXY_CLIENT_IP = "Proxy-Client-IP";
+
     public static final String HEADER_WL_PROXY_CLIENT_IP = "WL-Proxy-Client-IP";
 }

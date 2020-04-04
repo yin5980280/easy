@@ -1,15 +1,16 @@
 package cn.org.easysite.spring.boot.distributed.lock.annotation;
 
 
-import cn.org.easysite.spring.boot.distributed.lock.model.LockType;
-
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import cn.org.easysite.spring.boot.distributed.lock.model.LockType;
+
 /**
  * DLock Distributed Lock 分布式锁注解
+ * @author yinlin
  * 加锁注解
  */
 @Target(value = {ElementType.METHOD})

@@ -438,16 +438,16 @@ public final class BeanUtil {
     /**
      * 解析时间字符串为毫秒数
      *
-     * @param s
+     * @param dateTime
      * @return
      */
-    public static long parserTimeStrToMs(String s) {
-        if (StringUtils.isBlank(s)) {
+    public static long parserTimeStr2ms(String dateTime) throws ParseException {
+        if (StringUtils.isBlank(dateTime)) {
             return 0;
         }
-        if (NumberUtils.isCreatable(s)) {
-            return Long.parseLong(s);
+        if (NumberUtils.isCreatable(dateTime)) {
+            return Long.parseLong(dateTime);
         }
-        return FormatUtils.parseDate(s, FormatUtils.LONG_DATE_FORMAT_STR).getTime();
+        return org.apache.commons.lang3.time.DateUtils.parseDate(dateTime, FormatUtils.LONG_DATE_FORMAT_STR).getTime();
     }
 }

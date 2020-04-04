@@ -1,9 +1,5 @@
 package cn.org.easysite.spring.boot.distributed.lock.core.provider.impl;
 
-import cn.org.easysite.spring.boot.distributed.lock.annotation.DLock;
-import cn.org.easysite.spring.boot.distributed.lock.annotation.DLockKey;
-import cn.org.easysite.spring.boot.distributed.lock.core.provider.api.BusinessKeyProvider;
-
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.context.expression.MethodBasedEvaluationContext;
@@ -20,6 +16,9 @@ import java.lang.reflect.Parameter;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.org.easysite.spring.boot.distributed.lock.annotation.DLock;
+import cn.org.easysite.spring.boot.distributed.lock.annotation.DLockKey;
+import cn.org.easysite.spring.boot.distributed.lock.core.provider.api.BusinessKeyProvider;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -35,7 +34,6 @@ public class DefaultBusinessKeyProvider implements BusinessKeyProvider {
 
     @Override
     public String getKeyName(ProceedingJoinPoint joinPoint, DLock lock) {
-
         Method method = getMethod(joinPoint);
         List<String> definitionKeys = getSpelDefinitionKey(lock.keys(), method, joinPoint.getArgs());
         List<String> keyList = new ArrayList<>(definitionKeys);

@@ -2,6 +2,10 @@ package cn.org.easysite.commons.utils;
 
 import java.security.MessageDigest;
 
+/**
+ * @author panda
+ * MD5
+ */
 public class MD5Util {
 
    public static String MD532(String plainText) {

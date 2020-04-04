@@ -10,8 +10,12 @@ import org.apache.commons.lang3.time.DateFormatUtils;
 import java.io.IOException;
 import java.util.Date;
 
-import static cn.org.easysite.commons.utils.FormatUtils.LONG_DATE_FORMAT_STR;
+import static cn.org.easysite.commons.constants.BaseConstants.LONG_DATE_FORMAT_STR;
 
+/**
+ * @author yinlin
+ * 该类转换Date 返回JSON为字符串形式 yyyy-MM-dd HH:mm:ss
+ */
 public class JsonDateSerialize extends JsonSerializer<Date> {
 
     @Override

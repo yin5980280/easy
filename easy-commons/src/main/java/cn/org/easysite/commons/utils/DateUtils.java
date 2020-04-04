@@ -9,6 +9,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
 
+import static cn.org.easysite.commons.constants.BaseConstants.LONG_DATE_FORMAT_STR;
+
 
 /**
  * 日期/时间工具类
@@ -16,8 +18,6 @@ import java.util.TimeZone;
  * @author trang
  */
 public final class DateUtils {
-
-    public static final String LONG_DATE_FORMAT_STR = "yyyy-MM-dd HH:mm:ss";
 
     public static final TimeZone TIME_ZONE = TimeZone.getTimeZone("GMT+8");
 
@@ -110,7 +110,7 @@ public final class DateUtils {
      * 获取当天0点时间戳
      * @return
      */
-    public static long getZeroMillis() {
+    public static long getCurrentDateZeroMillis() {
         return System.currentTimeMillis() / (1000*3600*24)*(1000*3600*24) - TimeZone.getDefault().getRawOffset();
     }
 
@@ -122,8 +122,8 @@ public final class DateUtils {
      * 获取当天0点的秒
      * @return
      */
-    public static int getZeroSecond() {
-        return (int) (getZeroMillis()/1000);
+    public static int getCurrentZeroSeconds() {
+        return (int) (getCurrentDateZeroMillis() / 1000);
     }
 
     /**
@@ -152,10 +152,10 @@ public final class DateUtils {
         /**
          * 长时间格式 带毫秒
          */
-        LONG_DATE_PATTERN_WITH_MILSEC_LINE("yyyy-MM-dd HH:mm:ss.SSS"),
-        LONG_DATE_PATTERN_WITH_MILSEC_SLASH("yyyy/MM/dd HH:mm:ss.SSS"),
-        LONG_DATE_PATTERN_WITH_MILSEC_DOUBLE_SLASH("yyyy\\MM\\dd HH:mm:ss.SSS"),
-        LONG_DATE_PATTERN_WITH_MILSEC_NONE("yyyyMMddHHmmssSSS");
+        LONG_DATE_PATTERN_WITH_MILLIS_LINE("yyyy-MM-dd HH:mm:ss.SSS"),
+        LONG_DATE_PATTERN_WITH_MILLIS_SLASH("yyyy/MM/dd HH:mm:ss.SSS"),
+        LONG_DATE_PATTERN_WITH_MILLIS_DOUBLE_SLASH("yyyy\\MM\\dd HH:mm:ss.SSS"),
+        LONG_DATE_PATTERN_WITH_MILLIS_NONE("yyyyMMddHHmmssSSS");
 
         private transient DateTimeFormatter formatter;
 

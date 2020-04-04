@@ -1,16 +1,11 @@
 package cn.org.easysite.commons.base.bean;
 
 
-import cn.org.easysite.commons.modelmapper.jdk8.Jdk8Module;
-import cn.org.easysite.commons.modelmapper.jsr310.Jsr310Module;
-import cn.org.easysite.commons.modelmapper.jsr310.Jsr310ModuleConfig;
-
 import org.apache.commons.collections4.CollectionUtils;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.cglib.beans.BeanMap;
 import org.springframework.objenesis.instantiator.util.ClassUtils;
-
 
 import java.time.ZoneOffset;
 import java.util.ArrayList;
@@ -20,6 +15,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import cn.org.easysite.commons.modelmapper.jdk8.Jdk8Module;
+import cn.org.easysite.commons.modelmapper.jsr310.Jsr310Module;
+import cn.org.easysite.commons.modelmapper.jsr310.Jsr310ModuleConfig;
+
+/**
+ * @panda
+ * 对象转换器
+ */
 public class BeanConverter {
 
     private static final ModelMapper modelMapper;
