@@ -54,3 +54,6 @@ spring boot starter，提供springcloud统一数据解析和异常传递。
 
 ### doc
 该模块中包含为easycode插件提供的模版，easycode插件使用教程[https://gitee.com/makejava/EasyCode/wikis]
+
+## 升级日志
+升级日志 [.doc/update-log.md]
