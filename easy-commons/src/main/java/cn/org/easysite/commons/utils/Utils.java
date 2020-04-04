@@ -20,14 +20,18 @@ public class Utils {
     /**
      *  获取msgId的正则表达式
      */
-    private static final Pattern msgIdPattern = Pattern.compile("[{,]\\s?\"msgId\"\\s?:\\s?\"\\S+\"\\s?[,}]");
+    private static final Pattern MSG_ID_PATTERN = Pattern.compile("[{,]\\s?\"msgId\"\\s?:\\s?\"\\S+\"\\s?[,}]");
 
-    private static final Pattern messageIdPattern = Pattern.compile("[{,]\\s?\"messageId\"\\s?:\\s?\"\\S+\"\\s?[,}]");
+    private static final Pattern MESSAGE_ID_PATTERN = Pattern.compile("[{,]\\s?\"messageId\"\\s?:\\s?\"\\S+\"\\s?[,}]");
 
     public static final String PACKAGE_PREFIX_EASY_SITE = "cn.org.easysite";
 
     public static final String PACKAGE_EXCLUDE_COMMON = "common";
 
+    /**
+     * 获取UUID
+     * @return
+     */
     public static String getUUID() {
         UUID uuid = UUID.randomUUID();
         return uuid.toString().replace("-", "");
@@ -40,7 +44,7 @@ public class Utils {
      * @return
      */
     public static String getMsgId(String json) {
-        return getJsonValue(json, msgIdPattern);
+        return getJsonValue(json, MSG_ID_PATTERN);
     }
 
     /**
@@ -50,7 +54,7 @@ public class Utils {
      * @return
      */
     public static String getMessageId(String json) {
-        return getJsonValue(json, messageIdPattern);
+        return getJsonValue(json, MESSAGE_ID_PATTERN);
     }
 
     /**

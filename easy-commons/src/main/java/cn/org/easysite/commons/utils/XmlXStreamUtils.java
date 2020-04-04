@@ -33,7 +33,7 @@ import static cn.org.easysite.commons.constants.BaseConstants.DEFAULT_CHARSET;
  * @author panda
  */
 @Slf4j
-public class XmlUtils {
+public class XmlXStreamUtils {
 
     private static final String PREFIX_CDATA = "<![CDATA[";
 
@@ -84,7 +84,7 @@ public class XmlUtils {
         InputSource source = new InputSource(new ByteArrayInputStream(xmlBytes));
         source.setEncoding(charset);
         Document doc = reader.read(source);
-        Map<String, String> params = XmlUtils.toMap(doc.getRootElement());
+        Map<String, String> params = XmlXStreamUtils.toMap(doc.getRootElement());
         return params;
     }
     /**
@@ -97,7 +97,7 @@ public class XmlUtils {
         InputSource source = new InputSource(new ByteArrayInputStream(xmlBytes));
         source.setEncoding(charset);
         Document doc = reader.read(source);
-        TreeMap<String, String> params = XmlUtils.toTreeMap(doc.getRootElement());
+        TreeMap<String, String> params = XmlXStreamUtils.toTreeMap(doc.getRootElement());
         return params;
     }
 

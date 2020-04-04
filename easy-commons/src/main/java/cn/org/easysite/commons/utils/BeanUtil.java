@@ -25,6 +25,7 @@ import java.util.Set;
 
 import lombok.extern.slf4j.Slf4j;
 
+import static cn.org.easysite.commons.constants.BaseConstants.LONG_DATE_FORMAT_STR;
 import static cn.org.easysite.commons.utils.DateUtils.LONG_DATE_FORMAT;
 
 /**
@@ -441,13 +442,13 @@ public final class BeanUtil {
      * @param dateTime
      * @return
      */
-    public static long parserTimeStr2ms(String dateTime) throws ParseException {
+    public static long parseTimeStr2ms(String dateTime) throws ParseException {
         if (StringUtils.isBlank(dateTime)) {
             return 0;
         }
         if (NumberUtils.isCreatable(dateTime)) {
             return Long.parseLong(dateTime);
         }
-        return org.apache.commons.lang3.time.DateUtils.parseDate(dateTime, FormatUtils.LONG_DATE_FORMAT_STR).getTime();
+        return org.apache.commons.lang3.time.DateUtils.parseDate(dateTime, LONG_DATE_FORMAT_STR).getTime();
     }
 }

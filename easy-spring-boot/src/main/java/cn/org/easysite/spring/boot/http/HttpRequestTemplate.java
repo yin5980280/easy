@@ -20,7 +20,7 @@ import java.util.Map;
 
 import cn.org.easysite.commons.utils.JsonMapper;
 import cn.org.easysite.commons.utils.MapUtils;
-import cn.org.easysite.commons.utils.XmlUtils;
+import cn.org.easysite.commons.utils.XmlXStreamUtils;
 import cn.org.easysite.spring.boot.utils.MDCUtils;
 import lombok.extern.slf4j.Slf4j;
 
@@ -173,7 +173,7 @@ public class HttpRequestTemplate {
      */
     public <T> T postXml(String url, Object request, Class<T> clazz) {
         String res = this.postXml(url, request);
-        return XmlUtils.xml2Object(res, clazz);
+        return XmlXStreamUtils.xml2Object(res, clazz);
     }
 
     public String postXml(String url, Object request) {
@@ -181,7 +181,7 @@ public class HttpRequestTemplate {
         if (request instanceof String) {
             xml = (String) request;
         } else {
-            xml = XmlUtils.object2Xml(request);
+            xml = XmlXStreamUtils.object2Xml(request);
         }
         HttpHeaders headers = this.getHeaders(MEDIA_TYPE_XML);
         HttpEntity<String> httpEntity = new HttpEntity<>(xml, headers);
