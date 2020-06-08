@@ -19,6 +19,7 @@
         <module>easy-spring-boot-tk-mybatis</module>
         <module>easy-spring-boot-distributed-lock</module>
         <module>easy-spring-boot-data-jpa</module>
+        <module>easy-spring-boot-wr-separation</module>
         <module>easy-spring-cloud-feign</module>
         <module>easy-maven-plugins</module>
     </modules>
