@@ -10,32 +10,56 @@
     <version>${version}</version>
     <modules>
         <module>${rootArtifactId}-boot</module>
-        <module>${rootArtifactId}-core</module>
-        <module>${rootArtifactId}-web</module>
-        <module>${rootArtifactId}-generator</module>
+        <module>${rootArtifactId}-common</module>
+        <module>${rootArtifactId}-core-service</module>
+        <module>${rootArtifactId}-core-model</module>
+        <module>${rootArtifactId}-core-repository</module>
+        <module>${rootArtifactId}-facade</module>
+        <module>${rootArtifactId}-config</module>
+        <module>${rootArtifactId}-remote-integration</module>
     </modules>
 
     <parent>
         <groupId>cn.org.easysite</groupId>
         <artifactId>easy-parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.0.1-SNAPSHOT</version>
     </parent>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>${groupId}</groupId>
-                <artifactId>${rootArtifactId}-core</artifactId>
+                <artifactId>${rootArtifactId}-core-model</artifactId>
                 <version>${version}</version>
             </dependency>
             <dependency>
                 <groupId>${groupId}</groupId>
-                <artifactId>${rootArtifactId}-generator</artifactId>
+                <artifactId>${rootArtifactId}-core-repository</artifactId>
                 <version>${version}</version>
             </dependency>
             <dependency>
                 <groupId>${groupId}</groupId>
-                <artifactId>${rootArtifactId}-web</artifactId>
+                <artifactId>${rootArtifactId}-common</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${rootArtifactId}-core-service</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${rootArtifactId}-config</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${rootArtifactId}-facade</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${groupId}</groupId>
+                <artifactId>${rootArtifactId}-remote-integration</artifactId>
                 <version>${version}</version>
             </dependency>
             <dependency>
