@@ -15,7 +15,7 @@
         <module>${rootArtifactId}-core-model</module>
         <module>${rootArtifactId}-core-repository</module>
         <module>${rootArtifactId}-internet</module>
-        <module>${rootArtifactId}-config</module>
+        <module>${rootArtifactId}-configuration</module>
         <module>${rootArtifactId}-remote-integration</module>
     </modules>
 
@@ -81,14 +81,22 @@
         <repository>
             <id>aliyun-repos</id>
             <url>https://maven.aliyun.com/repository/public</url>
-            <releases><enabled>true</enabled></releases>
-            <snapshots><enabled>false</enabled></snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
         </repository>
         <repository>
             <id>sonatype-repos-s</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <releases><enabled>false</enabled></releases>
-            <snapshots><enabled>true</enabled></snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
     </repositories>
 

@@ -10,7 +10,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>${rootArtifactId}-core-repostiory</artifactId>
+    <artifactId>${rootArtifactId}-core-repository</artifactId>
 
     <dependencies>
         <dependency>
