@@ -1,10 +1,6 @@
 package cn.org.easysite.spring.cloud.feign.configuration;
 
-import cn.org.easysite.spring.cloud.feign.interceptor.FeignResponseInterceptor;
-
 import org.springframework.context.annotation.Configuration;
-
-import feign.codec.Decoder;
 
 /**
  * @author : yinlin
@@ -18,8 +14,8 @@ import feign.codec.Decoder;
 @Configuration
 public class FeignConfiguration {
     //@Bean
-    public Decoder getFeignResponseInterceptor() {
-        return new FeignResponseInterceptor();
-    }
+    //public Decoder getFeignResponseInterceptor() {
+    //    return new FeignResponseInterceptor();
+    //}
 
 }
