@@ -5,8 +5,8 @@
     <parent>
         <artifactId>${rootArtifactId}</artifactId>
         <groupId>${groupId}</groupId>
-        <version>${version}</version>
-        <relativePath>../</relativePath>
+        <version>${revision}</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -15,11 +15,11 @@
     <dependencies>
         <dependency>
             <groupId>${groupId}</groupId>
-            <artifactId>${rootArtifactId}-facade</artifactId>
+            <artifactId>${rootArtifactId}-internet</artifactId>
         </dependency>
         <dependency>
             <groupId>${groupId}</groupId>
-            <artifactId>${rootArtifactId}-config</artifactId>
+            <artifactId>${rootArtifactId}-configuration</artifactId>
         </dependency>
     </dependencies>
 
