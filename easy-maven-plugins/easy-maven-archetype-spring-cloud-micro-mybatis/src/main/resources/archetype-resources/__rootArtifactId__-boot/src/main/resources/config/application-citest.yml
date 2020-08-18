@@ -1,0 +1,48 @@
+server:
+  port: 8080
+
+debug: false
+
+spring:
+  datasource:
+    url: jdbc:h2:file:./samples
+    username: root
+    password: 123456
+    schema: classpath:import.sql
+    druid:
+      initial-size: 1
+      min-idle: 1
+      max-active: 10
+      validation-query: SELECT 1
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      use-global-data-source-stat: true
+      stat:
+        log-slow-sql: true
+        slow-sql-millis: 1000
+        merge-sql: true
+      slf4j:
+        enabled: true
+        data-source-log-enabled: true
+        connection-log-enabled: false
+        connection-log-error-enabled: true
+        statement-log-enabled: false
+        statement-log-error-enabled: true
+        statement-sql-pretty-format: false
+        statement-parameter-set-log-enabled: false
+        statement-prepare-after-log-enabled: false
+        statement-close-after-log-enabled: false
+        statement-executable-sql-log-enable: true
+        result-set-log-enabled: false
+        result-set-log-error-enabled: true
+      wall:
+        enabled: true
+        log-violation: true
+        throw-exception: false
+  cache:
+    type: none
+#  redisson:
+#    type: single
+#    single:
+#      address: redis://127.0.0.1:6379

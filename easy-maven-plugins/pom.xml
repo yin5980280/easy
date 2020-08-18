@@ -15,5 +15,6 @@
     <modules>
         <module>easy-maven-archetype-springboot</module>
         <module>easy-maven-archetype-springboot-mybatis</module>
+        <module>easy-maven-archetype-spring-cloud-micro-mybatis</module>
     </modules>
 </project>
