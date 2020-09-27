@@ -46,6 +46,10 @@ public class DynamicRoutingDataSource extends AbstractRoutingDataSource {
 
     @Override
     protected Object determineCurrentLookupKey() {
-        return DATASOURCE_CONTEXT_HOLDER.get();
+         String jdbcType = getJdbcType();
+         if (jdbcType == null) {
+             return JdbcDatasourceType.WRITE.name();
+         }
+         return jdbcType;
     }
 }
