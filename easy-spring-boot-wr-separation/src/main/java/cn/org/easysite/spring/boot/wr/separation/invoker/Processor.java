@@ -12,11 +12,12 @@ package cn.org.easysite.spring.boot.wr.separation.invoker;
  */
 @FunctionalInterface
 public interface Processor<In> {
+
     /**
-     * Applies this function to the given argument.
-     *
-     * @param in the function argument
-     * @return the function result
+     * 代理方法执行器
+     * @param in
+     * @return 执行结果
+     * @throws Throwable
      */
     Object invoke(In in) throws Throwable;
 }
