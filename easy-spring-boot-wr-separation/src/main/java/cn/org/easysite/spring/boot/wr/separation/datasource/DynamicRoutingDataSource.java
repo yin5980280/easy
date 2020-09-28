@@ -12,8 +12,54 @@ import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
  * @link : cn.org.easysite.spring.boot.wr.separation.datasource.DynamicRoutingDataSource
  */
 public class DynamicRoutingDataSource extends AbstractRoutingDataSource {
+
+    private static final ThreadLocal<String> DATASOURCE_CONTEXT_HOLDER = new ThreadLocal<>();
+
+    public enum JdbcDatasourceType {
+        /**
+         * 读或写
+         */
+        READONLY("slaverDataSource"),
+
+        WRITE("masterDataSource");
+
+        private String name;
+
+        public String getName() {
+            return name;
+        }
+
+        JdbcDatasourceType(String name) {
+            this.name = name;
+        }
+    }
+
+    public static void setJdbcType(String jdbcType) {
+        DATASOURCE_CONTEXT_HOLDER.set(jdbcType);
+    }
+
+    public static void setReadOnly() {
+        DATASOURCE_CONTEXT_HOLDER.set(JdbcDatasourceType.READONLY.getName());
+    }
+
+    public static void setWriteRead() {
+        DATASOURCE_CONTEXT_HOLDER.set(JdbcDatasourceType.WRITE.getName());
+    }
+
+    public static void reset() {
+        DATASOURCE_CONTEXT_HOLDER.set(JdbcDatasourceType.WRITE.getName());
+    }
+
+    public static String getJdbcType() {
+        return DATASOURCE_CONTEXT_HOLDER.get();
+    }
+
     @Override
     protected Object determineCurrentLookupKey() {
-        return null;
+         String jdbcType = getJdbcType();
+         if (jdbcType == null) {
+             return JdbcDatasourceType.WRITE.getName();
+         }
+         return jdbcType;
     }
 }
