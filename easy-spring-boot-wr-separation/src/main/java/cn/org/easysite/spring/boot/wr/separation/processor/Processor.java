@@ -2,13 +2,13 @@
  *  @Copyright : Copyright (c) 2020
  *  @Company : EasySite Technology 阿富汗 Co. Ltd.
  */
-package cn.org.easysite.spring.boot.wr.separation.invoker;
+package cn.org.easysite.spring.boot.wr.separation.processor;
 
 /**
  * @author : 潘多拉
  * @version : 1.0
  * @date : 2020/9/27 8:15 下午
- * @link : cn.org.easysite.spring.boot.wr.separation.invoker.Processor
+ * @link : cn.org.easysite.spring.boot.wr.separation.processor.Processor
  */
 @FunctionalInterface
 public interface Processor<In> {

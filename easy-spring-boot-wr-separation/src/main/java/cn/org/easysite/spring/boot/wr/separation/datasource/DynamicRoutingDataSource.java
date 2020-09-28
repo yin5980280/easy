@@ -19,9 +19,19 @@ public class DynamicRoutingDataSource extends AbstractRoutingDataSource {
         /**
          * 读或写
          */
-        READONLY,
+        READONLY("slaverDataSource"),
 
-        WRITE;
+        WRITE("masterDataSource");
+
+        private String name;
+
+        public String getName() {
+            return name;
+        }
+
+        JdbcDatasourceType(String name) {
+            this.name = name;
+        }
     }
 
     public static void setJdbcType(String jdbcType) {
@@ -29,15 +39,15 @@ public class DynamicRoutingDataSource extends AbstractRoutingDataSource {
     }
 
     public static void setReadOnly() {
-        DATASOURCE_CONTEXT_HOLDER.set(JdbcDatasourceType.READONLY.name());
+        DATASOURCE_CONTEXT_HOLDER.set(JdbcDatasourceType.READONLY.getName());
     }
 
     public static void setWriteRead() {
-        DATASOURCE_CONTEXT_HOLDER.set(JdbcDatasourceType.WRITE.name());
+        DATASOURCE_CONTEXT_HOLDER.set(JdbcDatasourceType.WRITE.getName());
     }
 
     public static void reset() {
-        DATASOURCE_CONTEXT_HOLDER.set(JdbcDatasourceType.WRITE.name());
+        DATASOURCE_CONTEXT_HOLDER.set(JdbcDatasourceType.WRITE.getName());
     }
 
     public static String getJdbcType() {
@@ -48,7 +58,7 @@ public class DynamicRoutingDataSource extends AbstractRoutingDataSource {
     protected Object determineCurrentLookupKey() {
          String jdbcType = getJdbcType();
          if (jdbcType == null) {
-             return JdbcDatasourceType.WRITE.name();
+             return JdbcDatasourceType.WRITE.getName();
          }
          return jdbcType;
     }

@@ -7,6 +7,7 @@ package cn.org.easysite.spring.boot.wr.separation.invoker;
 import org.springframework.transaction.annotation.Transactional;
 
 import cn.org.easysite.spring.boot.wr.separation.datasource.DynamicRoutingDataSource;
+import cn.org.easysite.spring.boot.wr.separation.processor.Processor;
 import lombok.extern.slf4j.Slf4j;
 
 /**
