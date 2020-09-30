@@ -2,7 +2,7 @@
  *  @Copyright : Copyright (c) 2020
  *  @Company : EasySite Technology 阿富汗 Co. Ltd.
  */
-package cn.org.easysite.spring.boot.wr.separation.invoker;
+package cn.org.easysite.spring.boot.wr.separation.aop;
 
 import org.aopalliance.intercept.Joinpoint;
 import org.aopalliance.intercept.MethodInterceptor;
@@ -15,7 +15,7 @@ import static cn.org.easysite.spring.boot.wr.separation.invoker.TransactionalInv
  * @author : 潘多拉
  * @version : 1.0
  * @date : 2020/9/28 8:40 上午
- * @link : cn.org.easysite.spring.boot.wr.separation.invoker.TransactionalMethodInterceptor
+ * @link : cn.org.easysite.spring.boot.wr.separation.aop.TransactionalMethodInterceptor
  */
 public class TransactionalMethodInterceptor implements MethodInterceptor {
 
