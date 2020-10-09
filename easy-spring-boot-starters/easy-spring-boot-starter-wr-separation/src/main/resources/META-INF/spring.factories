@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+cn.org.easysite.spring.boot.wr.separation.autoconfigure.DataSourceSeparationAutoConfiguration

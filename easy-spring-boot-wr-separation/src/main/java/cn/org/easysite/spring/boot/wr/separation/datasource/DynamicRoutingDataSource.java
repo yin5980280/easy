@@ -19,9 +19,9 @@ public class DynamicRoutingDataSource extends AbstractRoutingDataSource {
         /**
          * 读或写
          */
-        READONLY("slaverDataSource"),
+        READONLY("readDataSource"),
 
-        WRITE("masterDataSource");
+        WRITE("writeDataSource");
 
         private String name;
 

@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * 锁基本信息
+ * @author 潘多拉
  */
 @Data
 @AllArgsConstructor

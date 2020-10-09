@@ -2,6 +2,7 @@ package cn.org.easysite.spring.boot.distributed.lock.spi.api;
 
 /**
  * 锁操作定义
+ * @author 潘多拉
  */
 public interface Lock {
 
