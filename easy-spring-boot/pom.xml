@@ -23,7 +23,7 @@
         </dependency>
         <dependency>
             <groupId>cn.org.easysite</groupId>
-            <artifactId>easy-swagger-spring-boot-starter</artifactId>
+            <artifactId>easy-spring-boot-starter-swagger</artifactId>
         </dependency>
         <dependency>
             <groupId>org.aspectj</groupId>

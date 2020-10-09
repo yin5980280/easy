@@ -17,6 +17,7 @@
         <module>easy-spring-cloud-starter-feign</module>
         <module>easy-spring-boot-starter-dlock</module>
         <module>easy-spring-boot-starter-data-jpa</module>
+        <module>easy-spring-boot-starter-wr-separation</module>
     </modules>
     <artifactId>easy-spring-boot-starters</artifactId>
 
