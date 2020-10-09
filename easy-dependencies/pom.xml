@@ -97,6 +97,12 @@
 
             <dependency>
                 <groupId>cn.org.easysite</groupId>
+                <artifactId>easy-spring-boot-wr-separation</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.org.easysite</groupId>
                 <artifactId>easy-spring-boot-data-jpa</artifactId>
                 <version>${revision}</version>
             </dependency>
@@ -109,7 +115,7 @@
 
             <dependency>
                 <groupId>cn.org.easysite</groupId>
-                <artifactId>easy-dlock-spring-boot-starter</artifactId>
+                <artifactId>easy-spring-boot-starter-dlock</artifactId>
                 <version>${revision}</version>
             </dependency>
 
@@ -133,13 +139,13 @@
 
             <dependency>
                 <groupId>cn.org.easysite</groupId>
-                <artifactId>easy-tk-mybatis-spring-boot-starter</artifactId>
+                <artifactId>easy-spring-boot-starter-tk-mybatis</artifactId>
                 <version>${revision}</version>
             </dependency>
 
             <dependency>
                 <groupId>cn.org.easysite</groupId>
-                <artifactId>easy-swagger-spring-boot-starter</artifactId>
+                <artifactId>easy-spring-boot-starter-swagger</artifactId>
                 <version>${revision}</version>
             </dependency>
 
