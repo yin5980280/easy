@@ -1,14 +1,16 @@
 package cn.org.easysite.spring.boot.distributed.lock.spi.redisson.impl;
 
-import cn.org.easysite.spring.boot.distributed.lock.model.LockInfo;
-import cn.org.easysite.spring.boot.distributed.lock.spi.redisson.AbstractRedissonLock;
-
 import org.redisson.api.RReadWriteLock;
 
 import java.util.concurrent.TimeUnit;
 
+import cn.org.easysite.spring.boot.distributed.lock.model.LockInfo;
+import cn.org.easysite.spring.boot.distributed.lock.spi.redisson.AbstractRedissonLock;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * @author 潘多拉
+ */
 @Slf4j
 public class DWriteLock extends AbstractRedissonLock {
 

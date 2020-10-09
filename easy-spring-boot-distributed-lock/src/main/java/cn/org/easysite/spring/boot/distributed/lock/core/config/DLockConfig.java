@@ -4,6 +4,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import lombok.Data;
 
+/**
+ * @author 潘多拉
+ */
 @ConfigurationProperties(prefix = DLockConfig.PREFIX)
 @Data
 public class DLockConfig {
