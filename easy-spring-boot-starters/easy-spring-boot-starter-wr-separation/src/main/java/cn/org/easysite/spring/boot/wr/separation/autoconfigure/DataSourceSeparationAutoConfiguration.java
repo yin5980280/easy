@@ -30,7 +30,7 @@ import cn.org.easysite.spring.boot.wr.separation.processor.TransactionalBeanPost
 @Configuration
 @EnableAspectJAutoProxy
 @Import(TransactionalBeanPostProcessor.class)
-public class DatasourceSeparationAutoConfiguration {
+public class DataSourceSeparationAutoConfiguration {
 
     @Bean(name = "transactionManager")
     @ConditionalOnMissingBean(PlatformTransactionManager.class)
