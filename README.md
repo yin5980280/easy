@@ -55,5 +55,8 @@ spring boot starter，提供springcloud统一数据解析和异常传递。
 ### doc
 该模块中包含为easycode插件提供的模版，easycode插件使用教程[https://gitee.com/makejava/EasyCode/wikis]
 
+### easy-spring-boot-wr-separation
+该模块提供简单的读写分离
+
 ## 升级日志
 升级日志 [https://github.com/yin5980280/easy/blob/develop/doc/update-log.md]
