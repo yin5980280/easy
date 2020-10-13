@@ -16,7 +16,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <spring-boot.version>2.3.4.RELEASE</spring-boot.version>
         <spring-boot-admin.version>2.3.0</spring-boot-admin.version>
-        <spring-cloud.version>Hoxton.SR5</spring-cloud.version>
+        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
         <druid-spring-boot-starter-version>1.1.24</druid-spring-boot-starter-version>
         <redisson-spring-boot-starter-version>3.13.5</redisson-spring-boot-starter-version>
         <commons-lang3.version>3.11</commons-lang3.version>
