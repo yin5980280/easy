@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
     <version>${revision}</version>
     <modules>
-        <module>${rootArtifactId}-boot</module>
+        <module>${rootArtifactId}-startup</module>
         <module>${rootArtifactId}-common</module>
         <module>${rootArtifactId}-core-service</module>
         <module>${rootArtifactId}-core-model</module>
@@ -71,7 +71,7 @@
             </dependency>
             <dependency>
                 <groupId>${groupId}</groupId>
-                <artifactId>${rootArtifactId}-boot</artifactId>
+                <artifactId>${rootArtifactId}-startup</artifactId>
                 <version>${revision}</version>
             </dependency>
         </dependencies>

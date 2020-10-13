@@ -35,7 +35,7 @@
     </fileSets>
 
     <modules>
-        <module id="${rootArtifactId}-boot" dir="__rootArtifactId__-boot" name="${rootArtifactId}-boot">
+        <module id="${rootArtifactId}-startup" dir="__rootArtifactId__-startup" name="${rootArtifactId}-startup">
             <fileSets>
                 <fileSet filtered="true" encoding="UTF-8" packaged="true">
                     <directory>src/main/java</directory>

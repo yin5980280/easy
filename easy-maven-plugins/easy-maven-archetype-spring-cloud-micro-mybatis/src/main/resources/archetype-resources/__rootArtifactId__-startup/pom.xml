@@ -10,7 +10,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>${rootArtifactId}-boot</artifactId>
+    <artifactId>${rootArtifactId}-startup</artifactId>
 
     <dependencies>
         <dependency>

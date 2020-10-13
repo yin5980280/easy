@@ -33,7 +33,7 @@ public class BaseEntity extends BaseObject {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", columnDefinition = "bigint(20) COMMENT '主键ID,自动生成'")
-    @OrderBy("DESC")
+    @OrderBy(value = "DESC")
     private Long id;
 
     /**
