@@ -58,5 +58,8 @@ spring boot starter，提供springcloud统一数据解析和异常传递。
 ### easy-spring-boot-wr-separation
 该模块提供简单的读写分离
 
+### easy-payment 聚合支付支付插件化代码
+该模块提供通用的支付插件化协议分发
+
 ## 升级日志
 升级日志 [https://github.com/yin5980280/easy/blob/develop/doc/update-log.md]

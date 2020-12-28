@@ -175,6 +175,12 @@
 
             <dependency>
                 <groupId>cn.org.easysite</groupId>
+                <artifactId>easy-payment</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.org.easysite</groupId>
                 <artifactId>easy-maven-plugins</artifactId>
                 <version>${revision}</version>
             </dependency>

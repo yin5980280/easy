@@ -10,27 +10,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>easy-spring-boot-distributed-lock</artifactId>
+    <artifactId>easy-payment</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>cn.org.easysite</groupId>
             <artifactId>easy-framework</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.redisson</groupId>
-            <artifactId>redisson-spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <optional>true</optional>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
+
 </project>
