@@ -22,6 +22,7 @@
         <module>easy-spring-boot-wr-separation</module>
         <module>easy-spring-cloud-feign</module>
         <module>easy-maven-plugins</module>
+        <module>easy-payment</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
