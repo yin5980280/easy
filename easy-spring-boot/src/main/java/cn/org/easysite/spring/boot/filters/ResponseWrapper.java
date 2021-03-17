@@ -108,16 +108,7 @@ public class ResponseWrapper extends HttpServletResponseWrapper {
     }
 
     private Charset getResponseCharset() {
-        String charset = super.getCharacterEncoding();
-        if (null == charset) {
-            //没有取到contentType，使用默认编码
-            return DEFAULT_CHARSET_OBJ;
-        }
-        try {
-            return Charset.forName(charset);
-        } catch (Exception e) {
-            //contentType有问题，使用默认编码
-            return DEFAULT_CHARSET_OBJ;
-        }
+        //没有取到contentType，使用默认编码
+        return DEFAULT_CHARSET_OBJ;
     }
 }

@@ -41,7 +41,7 @@
         <profile>
             <id>release</id>
             <properties>
-                <revision>1.0.0-RELEASE</revision>
+                <revision>1.0.3-RELEASE</revision>
             </properties>
         </profile>
     </profiles>
