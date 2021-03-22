@@ -22,6 +22,7 @@ import static cn.org.easysite.commons.constants.BaseConstants.HTTP_CONTENT_TYPE_
 import static cn.org.easysite.commons.constants.BaseConstants.HTTP_CONTENT_TYPE_JSON;
 import static cn.org.easysite.commons.constants.BaseConstants.HTTP_CONTENT_TYPE_TEXT;
 import static cn.org.easysite.commons.constants.BaseConstants.HTTP_CONTENT_TYPE_XML;
+import static cn.org.easysite.commons.constants.BaseConstants.ISO_8859_1;
 
 
 /**
@@ -108,7 +109,19 @@ public class ResponseWrapper extends HttpServletResponseWrapper {
     }
 
     private Charset getResponseCharset() {
-        //没有取到contentType，使用默认编码
-        return DEFAULT_CHARSET_OBJ;
+        String charset = super.getCharacterEncoding();
+        if (null == charset) {
+            //没有取到contentType，使用默认编码
+            return DEFAULT_CHARSET_OBJ;
+        }
+        if (charset.equalsIgnoreCase(ISO_8859_1)) {
+            return DEFAULT_CHARSET_OBJ;
+        }
+        try {
+            return Charset.forName(charset);
+        } catch (Exception e) {
+            //contentType有问题，使用默认编码
+            return DEFAULT_CHARSET_OBJ;
+        }
     }
 }

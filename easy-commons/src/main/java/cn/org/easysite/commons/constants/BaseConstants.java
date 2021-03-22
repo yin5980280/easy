@@ -15,6 +15,8 @@ public class BaseConstants {
 
     public static final Charset DEFAULT_CHARSET_OBJ = Charset.forName(DEFAULT_CHARSET);
 
+    public static final String ISO_8859_1 = "ISO-8859-1";
+
     public static final TimeZone TIME_ZONE = TimeZone.getTimeZone("GMT+8");
 
     public static final String LONG_DATE_FORMAT_STR = "yyyy-MM-dd HH:mm:ss";
