@@ -33,7 +33,7 @@
         <kaptcha.version>2.3.2</kaptcha.version>
         <pagehelper.boot.version>1.3.0</pagehelper.boot.version>
         <fastjson.version>1.2.73</fastjson.version>
-        <xstream.version>1.4.16</xstream.version>
+        <xstream.version>1.4.19</xstream.version>
         <dom4j.version>2.1.3</dom4j.version>
 
         <!-- maven-plugin -->
