@@ -1,8 +1,7 @@
 package cn.org.easysite.commons.utils;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.ZoneOffset;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
@@ -175,4 +174,68 @@ public final class DateUtils {
         calendar.setTime(new Date());
         return calendar.get(Calendar.MINUTE);
     }
+
+    /**
+     * 计算相差天数
+     */
+    public static int differentDaysByMillisecond(Date date1, Date date2)
+    {
+        return Math.abs((int) ((date2.getTime() - date1.getTime()) / (1000 * 3600 * 24)));
+    }
+
+    /**
+     * 计算日期相差天数
+     * @param date1
+     * @param date2
+     * @return
+     */
+    public static int diffDays(Date date1, Date date2) {
+        date1 = getMinOfDay(date1);
+        date2 = getMinOfDay(date2);
+        return Math.abs((int) ((date2.getTime() - date1.getTime()) / (1000 * 3600 * 24)));
+    }
+
+    public static Date getMinOfDay(Date date) {
+        if (date == null) {
+            date = new Date();
+        }
+        LocalDateTime localDateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(date.getTime()), ZoneId.systemDefault());
+        LocalDateTime startOfDay = localDateTime.with(LocalTime.MIN);
+        return Date.from(startOfDay.atZone(ZoneId.systemDefault()).toInstant());
+    }
+
+    public static Date getMaxOfDay(Date date) {
+        if (date == null) {
+            date = new Date();
+        }
+        LocalDateTime localDateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(date.getTime()), ZoneId.systemDefault());;
+        LocalDateTime endOfDay = localDateTime.with(LocalTime.MAX);
+        return Date.from(endOfDay.atZone(ZoneId.systemDefault()).toInstant());
+    }
+
+    public static Date getMinOfCurrentMonth() {
+        Calendar cale = Calendar.getInstance();
+        cale.add(Calendar.MONTH, 0);
+        cale.set(Calendar.DAY_OF_MONTH, 1);
+        return getMinOfDay(cale.getTime());
+    }
+
+    public static Date getMaxOfCurrentMonth() {
+        Calendar cale = Calendar.getInstance();
+        cale.add(Calendar.MONTH, 1);
+        cale.set(Calendar.DAY_OF_MONTH, 0);
+        return getMinOfDay(cale.getTime());
+    }
+
+    /**
+     * 在活动之间
+     * @param date
+     * @param startDate
+     * @param endDate
+     * @return
+     */
+    public static boolean between(Date date, Date startDate, Date endDate) {
+        return date.getTime() >= startDate.getTime() && date.getTime() <= endDate.getTime();
+    }
+
 }
